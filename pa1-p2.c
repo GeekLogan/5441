@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <sys/time.h>
+//#include <math.h>
 #define N 512
 #define Niter 10
 #define threshold 0.0000001
@@ -20,8 +21,8 @@ double rtclock();
 int i,j,k,it;
 
   for(i=0;i<N;i++)
-    for(j=0;j<N;j++) 
-     for(k=0;k<N;k++) 
+    for(j=0;j<N;j++)
+     for(k=0;k<N;k++)
       A[i][j][k] = (i+2.0*j+3*k)/(6.0*N);
 
   clkbegin = rtclock();
@@ -61,16 +62,19 @@ void pa1p2(int n, double x[n][n][n], double y[n][n])
 void pa1p2opt(int n, double x[n][n][n], double y[n][n])
 // Initially identical to reference; make your changes to optimize this code
 {
-	int i,j,k;
-	double sum;
+	int i,j,k,ii;
+	double sum[n];
 
 	for(i=0;i<n;i++) {
-		for(k=0;k<n;k++) {
-			sum = 0.0;
-			for(j=0;j<n;j++)
-				sum += x[i][j][k]*x[i][j][k];
-			y[i][k] = sum;
+		for( ii=0; ii<n; ii++) sum[ii]=0.0;
+
+		for(j=0;j<n;j++) {
+			for(k=0;k<n;k++)
+				sum[k] += x[i][j][k]*x[i][j][k];
+//				sum[k] += pow(x[i][j][k], 2.0);
 		}
+
+		for( ii=0; ii<n; ii++ ) y[i][ii] = sum[ii];
 	}
 }
 
