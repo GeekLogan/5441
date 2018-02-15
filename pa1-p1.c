@@ -115,21 +115,31 @@ void pa1p1opt( int n, double m[][n], double x[n], double y[n], double z[n] )
 // Initially identical to reference; make your changes to optimize this code
 {
 	int i, j;
+	const int iters = 2 * (n/2);
 
-	for( i=0; i<n; i++ ) {
-		for( j=0; j<n; j+=2 ) {
+	for( i=0; i<iters; i++ ) {
+		for( j=0; j<iters; j+=2 ) {
 			y[j] += m[i][j] * x[i];
 			y[j+1] += m[i][j+1] * x[i];
 		}
 	}
 
+	//remainder loop
+	for( i=iters; i<n; i++ )
+		for( j=iters; j<n; j+=1 )
+			y[j] += m[i][j] * x[i];
+
 	for( j=0; j<n; j++ ) {
 		for( i=0; i<n; i+=2 ) {
 			z[j] += m[j][i] * x[i];
-			z[j] += m[j][i + 1] * x[i + 1];
+			z[j] += m[j][i+1] * x[i+1];
 		}
 	}
 
+	//remainder loop
+	for( j=iters; j<n; j++ )
+		for( i=iters; i<n; i+=1 )
+			z[j] += m[j][i] * x[i];
 }
 
 
