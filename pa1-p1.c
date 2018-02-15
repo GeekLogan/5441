@@ -93,14 +93,18 @@ t = clkend-clkbegin;
 if (yy[N/2]*yy[N/2] < -100.0) printf("%f\n",yy[N/2]);
 printf("Problem 1 Optimized Version: Matrix Size = %d; %.2f GFLOPS; Time = %.3f sec; \n",
 	N,4.0*1e-9*N*N*Niter/t,t);
-compare(N,y,yy);
+
+compare( N, y, yy );
+compare( N, z, zz );
+
+return 0;
 
 }
 
 void pa1p1(int n, double m[][n], double x[n], double y[n], double z[n]) {
 	int i,j;
-	for(i=0;i<n;i++)
 
+	for(i=0;i<n;i++)
 	for(j=0;j<n;j++) {
 		y[j] = y[j] + m[i][j]*x[i];
 		z[j] = z[j] + m[j][i]*x[i];
@@ -112,16 +116,11 @@ void pa1p1opt(int n, double m[][n], double x[n], double y[n], double z[n])
 {
 	int i,j;
 
-	for( i=0; i<n; i++ )
-		for( j=0; j<n; j++ ) {
-			y[j] += m[i][j] * x[i];
+	for(i=0;i<n;i++)
+	for(j=0;j<n;j++) {
+		y[j] = y[j] + m[i][j]*x[i];
+		z[j] = z[j] + m[j][i]*x[i];
 	}
-
-	for( j=0; i<n; i++ )
-		for( i=0; j<n; j++ ) {
-			z[j] += m[j][i] * x[i];
-	}
-
 }
 
 
