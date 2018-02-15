@@ -3,3 +3,7 @@ default:
 	mv a.out pa1-p1.gcc
 	icc -O3 -DENABLE_PAPI -lpapi -qopt-report=2 -qopt-report-phase=vec pa1-p1.c
 	mv a.out pa1-p1.icc
+
+test:
+	./pa1-p1.gcc
+	./pa1-p1.icc
