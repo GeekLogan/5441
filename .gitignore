@@ -1,2 +1,4 @@
 *rpt
 a.out
+*.gcc
+*.icc
