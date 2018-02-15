@@ -1,15 +1,29 @@
 default:
-	gcc -O3 -DENABLE_PAPI -lpapi -ftree-vectorizer-verbose=2 pa1-p1.c >& pa1-p1.gccvecrpt
-	mv a.out pa1-p1.gcc
-	icc -O3 -DENABLE_PAPI -lpapi -qopt-report=2 -qopt-report-phase=vec pa1-p1.c
-	mv a.out pa1-p1.icc
+	gcc -O3 -DENABLE_PAPI -lpapi -ftree-vectorizer-verbose=5 pa1-p2.c >& pa1-p2.gccvecrpt
+	mv a.out pa1-p2.gcc
+	icc -O3 -DENABLE_PAPI -lpapi -qopt-report=5 -qopt-report-phase=vec pa1-p2.c
+	mv a.out pa1-p2.icc
 
-buildfull:
+buildp1:
 	gcc -O3 -DENABLE_PAPI -lpapi -ftree-vectorizer-verbose=5 pa1-p1.c >& pa1-p1.gccvecrpt
 	mv a.out pa1-p1.gcc
 	icc -O3 -DENABLE_PAPI -lpapi -qopt-report=5 -qopt-report-phase=vec pa1-p1.c
 	mv a.out pa1-p1.icc
 
-test:
+buildp2:
+	gcc -O3 -DENABLE_PAPI -lpapi -ftree-vectorizer-verbose=5 pa1-p2.c >& pa1-p2.gccvecrpt
+	mv a.out pa1-p2.gcc
+	icc -O3 -DENABLE_PAPI -lpapi -qopt-report=5 -qopt-report-phase=vec pa1-p2.c
+	mv a.out pa1-p2.icc
+
+clean:
+	rm *.icc
+	rm *.gcc
+
+testp1:
 	./pa1-p1.gcc
 	./pa1-p1.icc
+
+test:
+	./pa1-p2.gcc
+	./pa1-p2.icc

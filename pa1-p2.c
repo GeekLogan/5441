@@ -6,6 +6,7 @@
 #define threshold 0.0000001
 
 double A[N][N][N], B[N][N], BB[N][N];
+
 int main(){
 double rtclock();
 void pa1p2(int n, double x[n][n][n], double y[n][n]);
@@ -37,46 +38,51 @@ int i,j,k,it;
   t = clkend-clkbegin;
   printf("Problem 2 Optimized Version: Matrix Size = %d; %.2f GFLOPS; Time = %.3f sec; \n",
           N,2e-9*N*N*N*Niter/t,t);
+
   compare(N,B,BB);
 
+	return 0;
 }
 
 void pa1p2(int n, double x[n][n][n], double y[n][n])
-{ int i,j,k;
-  double sum;
-  for(i=0;i<n;i++)
-   for(k=0;k<n;k++)
-   {
-    sum = 0.0;
-    for(j=0;j<n;j++)
-      sum += x[i][j][k]*x[i][j][k];
-    y[i][k] = sum;
-   }
+{
+	int i,j,k;
+	double sum;
+
+	for(i=0;i<n;i++)
+	for(k=0;k<n;k++) {
+		sum = 0.0;
+		for(j=0;j<n;j++)
+			sum += x[i][j][k]*x[i][j][k];
+		y[i][k] = sum;
+	}
 }
 
 void pa1p2opt(int n, double x[n][n][n], double y[n][n])
 // Initially identical to reference; make your changes to optimize this code
-{ int i,j,k;
-  double sum;
-  for(i=0;i<n;i++)
-   for(k=0;k<n;k++)
-   {
-    sum = 0.0;
-    for(j=0;j<n;j++)
-      sum += x[i][j][k]*x[i][j][k];
-    y[i][k] = sum;
-   }
+{
+	int i,j,k;
+	register double sum;
+
+	for(i=0;i<n;i++) {
+		for(k=0;k<n;k++) {
+			sum = 0.0;
+			for(j=0;j<n;j++)
+				sum += x[i][j][k]*x[i][j][k];
+			y[i][k] = sum;
+   		}
+	}
 }
 
 
 double rtclock()
 {
-  struct timezone Tzp;
-  struct timeval Tp;
-  int stat;
-  stat = gettimeofday (&Tp, &Tzp);
-  if (stat != 0) printf("Error return from gettimeofday: %d",stat);
-  return(Tp.tv_sec + Tp.tv_usec*1.0e-6);
+	struct timezone Tzp;
+	struct timeval Tp;
+	int stat;
+	stat = gettimeofday (&Tp, &Tzp);
+	if (stat != 0) printf("Error return from gettimeofday: %d",stat);
+	return(Tp.tv_sec + Tp.tv_usec*1.0e-6);
 }
 
 void compare(int n, double wref[n][n], double w[n][n])
