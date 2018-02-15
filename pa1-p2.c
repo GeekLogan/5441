@@ -62,7 +62,7 @@ void pa1p2opt(int n, double x[n][n][n], double y[n][n])
 // Initially identical to reference; make your changes to optimize this code
 {
 	int i,j,k;
-	register double sum;
+	double sum;
 
 	for(i=0;i<n;i++) {
 		for(k=0;k<n;k++) {
@@ -70,7 +70,7 @@ void pa1p2opt(int n, double x[n][n][n], double y[n][n])
 			for(j=0;j<n;j++)
 				sum += x[i][j][k]*x[i][j][k];
 			y[i][k] = sum;
-   		}
+		}
 	}
 }
 
