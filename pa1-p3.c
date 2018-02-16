@@ -72,8 +72,9 @@ void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n])
 			for( j=0; j<n; j++ )
 				for( k=0; k<n; k++ )
 					z[l][k] += y[i][j][k]*x[l][i][j];
-		for( l=n/2; l<n; l++ ) // Other half of permutations
-			for( j=0; j<n; j++ )
+
+		for( l=n/2; l<n; l++ ) // Split loop to quickly tile
+			for( j=0; j<n; j++ ) 
 				for( k=0; k<n; k++ )
 					z[l][k] += y[i][j][k]*x[l][i][j];
 	}
