@@ -1,9 +1,15 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <sys/time.h>
+#include <stdlib.h>
+#include <papi.h>
 #define threshold 0.0000001
 #define N 128
 #define T 32
+
+#define PAPI_ERROR_CHECK(X) \
+        if((X)!=PAPI_OK) \
+    {fprintf(stderr,"PAPI Error \n"); exit(-1);}
 
 double A[N][N][N], C[N][N], B[N][N][N], CC[N][N];
 
@@ -12,6 +18,7 @@ double rtclock();
 void pa1p3(int n, double x[n][n][n], double y[n][n][n], double z[n][n]);
 void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n]);
 void compare(int n, double wref[n][n], double w[n][n]);
+void papi_print_helper(const char* msg, long long *values);
 
 double clkbegin, clkend;
 double t;
@@ -28,9 +35,27 @@ int i,j,k;
     }
    }
 
+#ifdef ENABLE_PAPI
+    int event_set = PAPI_NULL;
+    PAPI_library_init(PAPI_VER_CURRENT);
+    PAPI_ERROR_CHECK(PAPI_create_eventset(&event_set));
+    PAPI_ERROR_CHECK(PAPI_add_event(event_set, PAPI_DP_OPS));
+    PAPI_ERROR_CHECK(PAPI_add_event(event_set, PAPI_VEC_DP));
+    PAPI_ERROR_CHECK(PAPI_add_event(event_set, PAPI_L3_TCM));
+    PAPI_ERROR_CHECK(PAPI_add_event(event_set, PAPI_RES_STL));
+    long_long papi_values[4];
+    PAPI_ERROR_CHECK(PAPI_start(event_set));
+#endif
+
   clkbegin = rtclock();
   pa1p3(N,A,B,C);
   clkend = rtclock();
+
+#ifdef ENABLE_PAPI
+    PAPI_ERROR_CHECK(PAPI_stop(event_set, papi_values));
+    papi_print_helper("Base Version",papi_values);
+#endif
+
   t = clkend-clkbegin;
   if (C[N/2][N/2]*C[N/2][N/2] < -100.0) printf("%f\n",C[N/2][N/2]);
   printf("Problem 3 Reference Version: Tensor Size = %d; %.2f GFLOPS; Time = %.3f sec; \n",
@@ -39,9 +64,20 @@ int i,j,k;
   for(i=0;i<N;i++)
    for(j=0;j<N;j++) 
     CC[i][j] =0; 
+
+#ifdef ENABLE_PAPI
+    PAPI_ERROR_CHECK(PAPI_start(event_set));
+#endif
+
   clkbegin = rtclock();
   pa1p3opt(N,A,B,CC);
   clkend = rtclock();
+
+#ifdef ENABLE_PAPI
+    PAPI_ERROR_CHECK(PAPI_stop(event_set, papi_values));
+    papi_print_helper("Optimized Version",papi_values);
+#endif
+
   t = clkend-clkbegin;
   if (CC[N/2][N/2]*CC[N/2][N/2] < -100.0) printf("%f\n",CC[N/2][N/2]);
   printf("Problem 3 Optimized Version: Tensor Size = %d; %.2f GFLOPS; Time = %.3f sec; \n",
@@ -112,5 +148,15 @@ int i,j;
                numdiffs,threshold,maxdiff);
    else
       printf("No differences found between base and test versions\n");
+}
+
+void papi_print_helper(const char* msg, long long *values)
+{
+    printf("\n=====================PAPI COUNTERS==========================\n\n");
+    printf("(%s): DP operations : %.2f G\n",          msg, values[0]*1e-9);
+    printf("(%s): DP vector instructions : %.2f M\n", msg, values[1]*1e-6);
+    printf("(%s): L3 cache misses : %.2f M\n",              msg, values[2]*1e-6);
+    printf("(%s): Resource Stall Cycles: %.2f M\n",         msg, values[3]*1e-6);
+    printf("=================PAPI COUNTERS END==========================\n\n");
 }
 
