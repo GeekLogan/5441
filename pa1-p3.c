@@ -48,6 +48,8 @@ int i,j,k;
           N,2.0*1e-9*N*N*N*N/t,t);
 
   compare(N,C,CC);
+
+  return 0;
 }
 
 void pa1p3(int n, double x[n][n][n], double y[n][n][n], double z[n][n])
@@ -60,14 +62,15 @@ void pa1p3(int n, double x[n][n][n], double y[n][n][n], double z[n][n])
 
 }
 
-void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n])
+void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n]){
 // Initially identical to reference; make your changes to optimize this code
-{ int i,j,k,l;
-  for(i=0;i<n;i++)
-   for(j=0;j<n;j++)
-    for(k=0;k<n;k++)
-     for(l=0;l<n;l++)
-        z[l][k] += x[l][i][j]*y[i][j][k];
+	int i,j,k,l;
+
+	for(i=0;i<n;i++)
+	   for(l=0;l<n;l++)
+	      for(j=0;j<n;j++)
+	         for(k=0;k<n;k++)
+	            z[l][k] += x[l][i][j]*y[i][j][k];
 
 }
 
