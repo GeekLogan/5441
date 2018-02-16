@@ -49,7 +49,7 @@ int i,j,k;
 
   compare(N,C,CC);
 
-  return 0;
+  return 0; // add return to satisfy make
 }
 
 void pa1p3(int n, double x[n][n][n], double y[n][n][n], double z[n][n])
@@ -62,17 +62,17 @@ void pa1p3(int n, double x[n][n][n], double y[n][n][n], double z[n][n])
 
 }
 
-void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n]){
+void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n])
 // Initially identical to reference; make your changes to optimize this code
+{
 	int i, j, k, l;
-	int lt;
 
-	for( i=0; i<n; i++ ) {
-		for( l=0; l<n/2; l++ )
+	for( i=0; i<n; i++ ) { // Permute ijkl -> iljk to maximize locality
+		for( l=0; l<n/2; l++ ) // Split loop to quickly tile
 			for( j=0; j<n; j++ )
 				for( k=0; k<n; k++ )
 					z[l][k] += y[i][j][k]*x[l][i][j];
-		for( l=n/2; l<n; l++ )
+		for( l=n/2; l<n; l++ ) // Other half of permutations
 			for( j=0; j<n; j++ )
 				for( k=0; k<n; k++ )
 					z[l][k] += y[i][j][k]*x[l][i][j];
