@@ -116,11 +116,20 @@ void pa1p1opt( int n, double m[][n], double x[n], double y[n], double z[n] )
 {
 	int i,j;
 
+#ifdef __INTEL_COMPILER
+	// Intel icc code
 	for( j=0; j<n; j++ ) for( i=0; i<n; i++ ) {
 		y[j] += x[i] * m[i][j];
 		z[i] += x[j] * m[i][j];
 	}
+#else
+	// Code for other compilers
+	for(i=0;i<n;i++) for(j=0;j<n;j++)
+                y[j] += x[i] * m[i][j];
 
+	for(j=0;j<n;j++) for(i=0;i<n;i++)
+                z[j] += x[i] * m[j][i];
+#endif
 }
 
 
