@@ -68,11 +68,9 @@ void pa1p2opt(int n, double x[n][n][n], double y[n][n])
 	for(i=0;i<n;i++) {
 		for( ii=0; ii<n; ii++) sum[ii]=0.0;
 
-		for(j=0;j<n;j++) {
+		for(j=0;j<n;j++)
 			for(k=0;k<n;k++)
 				sum[k] += x[i][j][k]*x[i][j][k];
-//				sum[k] += pow(x[i][j][k], 2.0);
-		}
 
 		for( ii=0; ii<n; ii++ ) y[i][ii] = sum[ii];
 	}
