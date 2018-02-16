@@ -1,4 +1,3 @@
-
 #include <unistd.h>
 #include <stdio.h>
 #include <sys/time.h>
@@ -115,22 +114,13 @@ void pa1p1(int n, double m[][n], double x[n], double y[n], double z[n]) {
 void pa1p1opt( int n, double m[][n], double x[n], double y[n], double z[n] )
 // Initially identical to reference; make your changes to optimize this code
 {
-	int i, j;
-	const int iters = 2*(n/2);
+	int i,j;
 
-	// Split each matrix's code into a separate loop
-
-	for( i=0; i<n; i++ ) {
-		for( j=0; j<n; j++ ) {
-			y[j] += x[i] * m[i][j];
-		}
+	for( j=0; j<n; j++ ) for( i=0; i<n; i++ ) {
+		y[j] += x[i] * m[i][j];
+		z[i] += x[j] * m[i][j];
 	}
 
-	for( j=0; j<n; j++ ) {
-		for( i=0; i<n; i++ ) {
-			z[j] += x[i] * m[j][i];
-		}
-	}
 }
 
 
