@@ -62,17 +62,15 @@ void pa1p2(int n, double x[n][n][n], double y[n][n])
 void pa1p2opt(int n, double x[n][n][n], double y[n][n])
 // Initially identical to reference; make your changes to optimize this code
 {
-	int i,j,k,ii;
-	double sum[n];
+	int i,j,k;
+	double sum[n]; // Expand scalar to vector
 
 	for(i=0;i<n;i++) {
-		for( ii=0; ii<n; ii++) sum[ii]=0.0;
-
-		for(j=0;j<n;j++)
-			for(k=0;k<n;k++)
+		for( j=0; j<n; j++ ) sum[j]=0.0; // Reduces to memset
+		for( j=0; j<n; j++ ) // Permuted this loop
+			for( k=0; k<n; k++ )
 				sum[k] += x[i][j][k]*x[i][j][k];
-
-		for( ii=0; ii<n; ii++ ) y[i][ii] = sum[ii];
+		for( j=0; j<n; j++ ) y[i][j] = sum[j]; // Copy Results
 	}
 }
 

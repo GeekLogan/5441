@@ -118,6 +118,8 @@ void pa1p1opt( int n, double m[][n], double x[n], double y[n], double z[n] )
 	int i, j;
 	const int iters = 2 * (n/2);
 
+	// Split each matrix's code into a separate loop
+
 	for( i=0; i<iters; i++ ) {
 		for( j=0; j<iters; j+=2 ) {
 			y[j] += m[i][j] * x[i];
