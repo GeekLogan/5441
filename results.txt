@@ -1,0 +1,149 @@
+===================
+testp1
+===================
+
+./pa1-p1.gcc
+
+=====================PAPI COUNTERS==========================
+
+(Base Version): DP operations : 0.68 G
+(Base Version): DP vector instructions : 0.00 M
+(Base Version): L3 cache misses : 173.95 M
+(Base Version): Resource Stall Cycles: 6729.21 M
+=================PAPI COUNTERS END==========================
+
+Problem 1 Reference Version: Matrix Size = 4096; 0.27 GFLOPS; Time = 2.516 sec; 
+
+=====================PAPI COUNTERS==========================
+
+(Optimized Version): DP operations : 0.70 G
+(Optimized Version): DP vector instructions : 180.07 M
+(Optimized Version): L3 cache misses : 7.81 M
+(Optimized Version): Resource Stall Cycles: 654.60 M
+=================PAPI COUNTERS END==========================
+
+Problem 1 Optimized Version: Matrix Size = 4096; 1.44 GFLOPS; Time = 0.467 sec; 
+No differences found between base and test versions
+No differences found between base and test versions
+./pa1-p1.icc
+
+=====================PAPI COUNTERS==========================
+
+(Base Version): DP operations : 1.04 G
+(Base Version): DP vector instructions : 517.75 M
+(Base Version): L3 cache misses : 166.63 M
+(Base Version): Resource Stall Cycles: 7693.24 M
+=================PAPI COUNTERS END==========================
+
+Problem 1 Reference Version: Matrix Size = 4096; 0.26 GFLOPS; Time = 2.625 sec; 
+
+=====================PAPI COUNTERS==========================
+
+(Optimized Version): DP operations : 0.68 G
+(Optimized Version): DP vector instructions : 340.35 M
+(Optimized Version): L3 cache misses : 0.45 M
+(Optimized Version): Resource Stall Cycles: 175.63 M
+=================PAPI COUNTERS END==========================
+
+Problem 1 Optimized Version: Matrix Size = 4096; 4.76 GFLOPS; Time = 0.141 sec; 
+No differences found between base and test versions
+No differences found between base and test versions
+
+===================
+testp2
+===================
+
+./pa1-p2.gcc
+
+=====================PAPI COUNTERS==========================
+
+(Base Version): DP operations : 2.69 G
+(Base Version): DP vector instructions : 0.00 M
+(Base Version): L3 cache misses : 168.10 M
+(Base Version): Resource Stall Cycles: 9778.12 M
+=================PAPI COUNTERS END==========================
+
+Problem 2 Reference Version: Matrix Size = 512; 0.58 GFLOPS; Time = 4.664 sec;
+
+=====================PAPI COUNTERS==========================
+
+(Optimized Version): DP operations : 2.80 G
+(Optimized Version): DP vector instructions : 1402.20 M
+(Optimized Version): L3 cache misses : 19.41 M
+(Optimized Version): Resource Stall Cycles: 1770.19 M
+=================PAPI COUNTERS END==========================
+
+Problem 2 Optimized Version: Matrix Size = 512; 1.57 GFLOPS; Time = 1.713 sec; 
+No differences found between base and test versions
+./pa1-p2.icc
+
+=====================PAPI COUNTERS==========================
+
+(Base Version): DP operations : 6.73 G
+(Base Version): DP vector instructions : 3364.11 M
+(Base Version): L3 cache misses : 168.10 M
+(Base Version): Resource Stall Cycles: 12064.73 M
+=================PAPI COUNTERS END==========================
+
+Problem 2 Reference Version: Matrix Size = 512; 0.60 GFLOPS; Time = 4.437 sec;
+
+=====================PAPI COUNTERS==========================
+
+(Optimized Version): DP operations : 2.69 G
+(Optimized Version): DP vector instructions : 1345.25 M
+(Optimized Version): L3 cache misses : 151.54 M
+(Optimized Version): Resource Stall Cycles: 3520.49 M
+=================PAPI COUNTERS END==========================
+
+Problem 2 Optimized Version: Matrix Size = 512; 1.64 GFLOPS; Time = 1.641 sec; 
+No differences found between base and test versions
+
+===================
+testp3
+===================
+
+./pa1-p3.gcc
+
+=====================PAPI COUNTERS==========================
+
+(Base Version): DP operations : 0.57 G
+(Base Version): DP vector instructions : 0.00 M
+(Base Version): L3 cache misses : 111.85 M
+(Base Version): Resource Stall Cycles: 6597.69 M
+=================PAPI COUNTERS END==========================
+
+Problem 3 Reference Version: Tensor Size = 128; 0.21 GFLOPS; Time = 2.585 sec; 
+
+=====================PAPI COUNTERS==========================
+
+(Optimized Version): DP operations : 0.54 G
+(Optimized Version): DP vector instructions : 272.17 M
+(Optimized Version): L3 cache misses : 0.10 M
+(Optimized Version): Resource Stall Cycles: 62.90 M
+=================PAPI COUNTERS END==========================
+
+Problem 3 Optimized Version: Tensor Size = 128; 2.15 GFLOPS; Time = 0.250 sec; 
+No differences found between base and test versions
+./pa1-p3.icc
+
+=====================PAPI COUNTERS==========================
+
+(Base Version): DP operations : 1.63 G
+(Base Version): DP vector instructions : 812.71 M
+(Base Version): L3 cache misses : 92.83 M
+(Base Version): Resource Stall Cycles: 5336.66 M
+=================PAPI COUNTERS END==========================
+
+Problem 3 Reference Version: Tensor Size = 128; 0.27 GFLOPS; Time = 1.990 sec; 
+
+=====================PAPI COUNTERS==========================
+
+(Optimized Version): DP operations : 0.54 G
+(Optimized Version): DP vector instructions : 269.44 M
+(Optimized Version): L3 cache misses : 0.07 M
+(Optimized Version): Resource Stall Cycles: 34.04 M
+=================PAPI COUNTERS END==========================
+
+Problem 3 Optimized Version: Tensor Size = 128; 5.47 GFLOPS; Time = 0.098 sec; 
+No differences found between base and test versions
+
