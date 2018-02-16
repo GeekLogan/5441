@@ -70,7 +70,7 @@ void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n]){
 	   for(l=0;l<n;l++)
 	      for(j=0;j<n;j++)
 	         for(k=0;k<n;k++)
-	            z[l][k] += x[l][i][j]*y[i][j][k];
+	            z[l][k] += y[i][j][k]*x[l][i][j];
 
 }
 
