@@ -22,9 +22,7 @@
 // Using PAPI and vectorization getting report can of course be combined
 
 double A[N][N], x[N],y[N],z[N],yy[N],zz[N];
-
 int main(){
-
 double rtclock();
 
 void papi_print_helper(const char* msg, long long *values);
@@ -39,12 +37,13 @@ double rtclock();
 
 int i,j,it;
 
-for(i=0;i<N;i++) {
-	x[i] = i;
-	y[i]= 0;	z[i] = 1.0;
-	yy[i]= 0;	zz[i] = 1.0;
-	for(j=0;j<N;j++) A[i][j] = (i+2.0*j)/(2.0*N);
-}
+  for(i=0;i<N;i++)
+   { 
+     x[i] = i; 
+     y[i]= 0; z[i] = 1.0;
+     yy[i]= 0; zz[i] = 1.0;
+     for(j=0;j<N;j++) A[i][j] = (i+2.0*j)/(2.0*N);
+   }
 
 #ifdef ENABLE_PAPI
     int event_set = PAPI_NULL;
@@ -58,69 +57,61 @@ for(i=0;i<N;i++) {
     PAPI_ERROR_CHECK(PAPI_start(event_set));
 #endif
 
-clkbegin = rtclock();
-for(it=0;it<Niter;it++) pa1p1(N,A,x,y,z);
-clkend = rtclock();
-
+  clkbegin = rtclock();
+  for(it=0;it<Niter;it++) pa1p1(N,A,x,y,z);
+  clkend = rtclock();
 #ifdef ENABLE_PAPI
     PAPI_ERROR_CHECK(PAPI_stop(event_set, papi_values));
     papi_print_helper("Base Version",papi_values);
 #endif
+  t = clkend-clkbegin;
+  if (y[N/2]*y[N/2] < -100.0) printf("%f\n",y[N/2]);
+  printf("Problem 1 Reference Version: Matrix Size = %d; %.2f GFLOPS; Time = %.3f sec; \n",
+          N,4.0*1e-9*N*N*Niter/t,t);
 
-t = clkend-clkbegin;
-if (y[N/2]*y[N/2] < -100.0) printf("%f\n",y[N/2]);
-printf("Problem 1 Reference Version: Matrix Size = %d; %.2f GFLOPS; Time = %.3f sec; \n",
-	N,4.0*1e-9*N*N*Niter/t,t);
-
-for(i=0;i<N;i++) {
-	yy[i]= 0; zz[i] = 1.0;
-}
-
+  for(i=0;i<N;i++)
+   {
+     yy[i]= 0; zz[i] = 1.0;
+   }
 #ifdef ENABLE_PAPI
     PAPI_ERROR_CHECK(PAPI_start(event_set));
 #endif
-
-clkbegin = rtclock();
-for(it=0;it<Niter;it++) pa1p1opt(N,A,x,yy,zz);
-clkend = rtclock();
-t = clkend-clkbegin;
-
+  clkbegin = rtclock();
+  for(it=0;it<Niter;it++) pa1p1opt(N,A,x,yy,zz);
+  clkend = rtclock();
+  t = clkend-clkbegin;
 #ifdef ENABLE_PAPI
     PAPI_ERROR_CHECK(PAPI_stop(event_set, papi_values));
     papi_print_helper("Optimized Version",papi_values);
 #endif
+  if (yy[N/2]*yy[N/2] < -100.0) printf("%f\n",yy[N/2]);
+  printf("Problem 1 Optimized Version: Matrix Size = %d; %.2f GFLOPS; Time = %.3f sec; \n",
+          N,4.0*1e-9*N*N*Niter/t,t);
+  compare(N,y,yy);
+  compare(N,z,zz);
 
-if (yy[N/2]*yy[N/2] < -100.0) printf("%f\n",yy[N/2]);
-printf("Problem 1 Optimized Version: Matrix Size = %d; %.2f GFLOPS; Time = %.3f sec; \n",
-	N,4.0*1e-9*N*N*Niter/t,t);
-
-compare( N, y, yy );
-compare( N, z, zz );
-
-return 0;
-
+  return 0;
 }
 
-void pa1p1(int n, double m[][n], double x[n], double y[n], double z[n]) {
-	int i,j;
-
-	for(i=0;i<n;i++)
-	for(j=0;j<n;j++) {
-		y[j] = y[j] + m[i][j]*x[i];
-		z[j] = z[j] + m[j][i]*x[i];
-	}
+void pa1p1(int n, double m[][n], double x[n], double y[n], double z[n])
+{ int i,j;
+  for(i=0;i<n;i++)
+    for(j=0;j<n;j++)
+    {
+      y[j] = y[j] + m[i][j]*x[i];
+      z[j] = z[j] + m[j][i]*x[i];
+    }
 }
 
-void pa1p1opt( int n, double m[][n], double x[n], double y[n], double z[n] )
+void pa1p1opt(int n, double m[][n], double x[n], double y[n], double z[n]) {
 // Initially identical to reference; make your changes to optimize this code
-{
 	int i,j;
 
 #ifdef __INTEL_COMPILER
 	// Intel icc code
 	for( j=0; j<n; j++ ) for( i=0; i<n; i++ ) {
 		y[j] += x[i] * m[i][j];
-		z[i] += x[j] * m[i][j];
+		z[i] += x[j] * m[i][j]; // Permute indicies
 	}
 #else
 	// Code for other compilers
@@ -135,46 +126,45 @@ void pa1p1opt( int n, double m[][n], double x[n], double y[n], double z[n] )
 
 double rtclock()
 {
-	struct timezone Tzp;
-	struct timeval Tp;
-	int stat;
-
-	stat = gettimeofday (&Tp, &Tzp);
-	if (stat != 0) printf("Error return from gettimeofday: %d",stat);
-	return(Tp.tv_sec + Tp.tv_usec*1.0e-6);
+  struct timezone Tzp;
+  struct timeval Tp;
+  int stat;
+  stat = gettimeofday (&Tp, &Tzp);
+  if (stat != 0) printf("Error return from gettimeofday: %d",stat);
+  return(Tp.tv_sec + Tp.tv_usec*1.0e-6);
 }
 
 void compare(int n, double wref[n], double w[n])
 {
-	double maxdiff,this_diff;
-	int numdiffs;
-	int i;
-
-	numdiffs = 0;
-	maxdiff = 0;
-	for (i=0;i<n;i++) {
-		this_diff = wref[i]-w[i];
-		if (this_diff < 0) this_diff = -1.0*this_diff;
-		if (this_diff>threshold) {
-			numdiffs++;
-			if (this_diff > maxdiff) maxdiff=this_diff;
-		}
-	}
-
-	if (numdiffs > 0)
-		printf("%d Diffs found over threshold %f; Max Diff = %f\n",
-			numdiffs,threshold,maxdiff);
-	else
-		printf("No differences found between base and test versions\n");
+double maxdiff,this_diff;
+int numdiffs;
+int i;
+  numdiffs = 0;
+  maxdiff = 0;
+  for (i=0;i<n;i++)
+    {
+     this_diff = wref[i]-w[i];
+     if (this_diff < 0) this_diff = -1.0*this_diff;
+     if (this_diff>threshold)
+      { numdiffs++;
+        if (this_diff > maxdiff) maxdiff=this_diff;
+      }
+    }
+   if (numdiffs > 0)
+      printf("%d Diffs found over threshold %f; Max Diff = %f\n",
+               numdiffs,threshold,maxdiff);
+   else
+      printf("No differences found between base and test versions\n");
 }
 
 void papi_print_helper(const char* msg, long long *values)
 {
-	printf("\n=====================PAPI COUNTERS==========================\n");
-	printf("(%s): DP operations : %.2f G\n",          msg, values[0]*1e-9);
-	printf("(%s): DP vector instructions : %.2f M\n", msg, values[1]*1e-6);
-	printf("(%s): L3 cache misses : %.2f M\n",              msg, values[2]*1e-6);
-	printf("(%s): Resource Stall Cycles: %.2f M\n",         msg, values[3]*1e-6);
-	printf("=================PAPI COUNTERS END==========================\n\n");
+    printf("\n=====================PAPI COUNTERS==========================\n\n");
+    printf("(%s): DP operations : %.2f G\n",          msg, values[0]*1e-9);
+    printf("(%s): DP vector instructions : %.2f M\n", msg, values[1]*1e-6);
+    printf("(%s): L3 cache misses : %.2f M\n",              msg, values[2]*1e-6);
+    printf("(%s): Resource Stall Cycles: %.2f M\n",         msg, values[3]*1e-6);
+    printf("=================PAPI COUNTERS END==========================\n\n");
 }
+
 
