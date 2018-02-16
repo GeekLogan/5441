@@ -1,8 +1,5 @@
 default:
-	gcc -O3 -DENABLE_PAPI -lpapi -ftree-vectorizer-verbose=5 pa1-p3.c >& pa1-p3.gccvecrpt
-	mv a.out pa1-p3.gcc
-	icc -O3 -DENABLE_PAPI -lpapi -qopt-report=5 -qopt-report-phase=vec pa1-p3.c
-	mv a.out pa1-p3.icc
+	echo "See Other Commands"
 
 buildp1:
 	gcc -O3 -DENABLE_PAPI -lpapi -ftree-vectorizer-verbose=5 pa1-p1.c >& pa1-p1.gccvecrpt
@@ -34,6 +31,6 @@ testp2:
 	./pa1-p2.gcc
 	./pa1-p2.icc
 
-test:
+testp3:
 	./pa1-p3.gcc
 	./pa1-p3.icc
