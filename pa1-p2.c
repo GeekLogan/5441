@@ -1,13 +1,11 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <sys/time.h>
-//#include <math.h>
 #define N 512
 #define Niter 10
 #define threshold 0.0000001
 
 double A[N][N][N], B[N][N], BB[N][N];
-
 int main(){
 double rtclock();
 void pa1p2(int n, double x[n][n][n], double y[n][n]);
@@ -21,8 +19,8 @@ double rtclock();
 int i,j,k,it;
 
   for(i=0;i<N;i++)
-    for(j=0;j<N;j++)
-     for(k=0;k<N;k++)
+    for(j=0;j<N;j++) 
+     for(k=0;k<N;k++) 
       A[i][j][k] = (i+2.0*j+3*k)/(6.0*N);
 
   clkbegin = rtclock();
@@ -39,32 +37,37 @@ int i,j,k,it;
   t = clkend-clkbegin;
   printf("Problem 2 Optimized Version: Matrix Size = %d; %.2f GFLOPS; Time = %.3f sec; \n",
           N,2e-9*N*N*N*Niter/t,t);
-
   compare(N,B,BB);
 
-	return 0;
+  return 0;
 }
 
 void pa1p2(int n, double x[n][n][n], double y[n][n])
-{
-	int i,j,k;
-	double sum;
-
-	for(i=0;i<n;i++)
-	for(k=0;k<n;k++) {
-		sum = 0.0;
-		for(j=0;j<n;j++)
-			sum += x[i][j][k]*x[i][j][k];
-		y[i][k] = sum;
-	}
+{ int i,j,k;
+  double sum;
+  for(i=0;i<n;i++)
+   for(k=0;k<n;k++)
+   {
+    sum = 0.0;
+    for(j=0;j<n;j++)
+      sum += x[i][j][k]*x[i][j][k];
+    y[i][k] = sum;
+   }
 }
 
 void pa1p2opt(int n, double x[n][n][n], double y[n][n])
 // Initially identical to reference; make your changes to optimize this code
 {
-	int i,j,k;
-	double sum[n]; // Expand scalar to vector
+	int i, j, k;
 
+	for(i=0;i<n;i++) {
+		for( j=0; j<n; j++ ) y[i][j]=0.0; // Reduces to memset
+		for( j=0; j<n; j++ ) // Permuted this loop
+			for( k=0; k<n; k++ )
+				y[i][k] += x[i][j][k]*x[i][j][k];
+	}
+
+/*
 	for(i=0;i<n;i++) {
 		for( j=0; j<n; j++ ) sum[j]=0.0; // Reduces to memset
 		for( j=0; j<n; j++ ) // Permuted this loop
@@ -72,17 +75,18 @@ void pa1p2opt(int n, double x[n][n][n], double y[n][n])
 				sum[k] += x[i][j][k]*x[i][j][k];
 		for( j=0; j<n; j++ ) y[i][j] = sum[j]; // Copy Results
 	}
+*/
 }
 
 
 double rtclock()
 {
-	struct timezone Tzp;
-	struct timeval Tp;
-	int stat;
-	stat = gettimeofday (&Tp, &Tzp);
-	if (stat != 0) printf("Error return from gettimeofday: %d",stat);
-	return(Tp.tv_sec + Tp.tv_usec*1.0e-6);
+  struct timezone Tzp;
+  struct timeval Tp;
+  int stat;
+  stat = gettimeofday (&Tp, &Tzp);
+  if (stat != 0) printf("Error return from gettimeofday: %d",stat);
+  return(Tp.tv_sec + Tp.tv_usec*1.0e-6);
 }
 
 void compare(int n, double wref[n][n], double w[n][n])
@@ -108,3 +112,4 @@ int i,j;
    else
       printf("No differences found between base and test versions\n");
 }
+
