@@ -8,7 +8,6 @@
 double A[N][N][N], C[N][N], B[N][N][N], CC[N][N];
 
 int main(){
-
 double rtclock();
 void pa1p3(int n, double x[n][n][n], double y[n][n][n], double z[n][n]);
 void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n]);
@@ -49,38 +48,27 @@ int i,j,k;
           N,2.0*1e-9*N*N*N*N/t,t);
 
   compare(N,C,CC);
-
-	return 0;
 }
 
-void pa1p3(int n, double x[n][n][n], double y[n][n][n], double z[n][n]) {
-	int i,j,k,l;
-	for(i=0;i<n;i++)
-		for(j=0;j<n;j++)
-			for(k=0;k<n;k++)
-				for(l=0;l<n;l++)
-					z[l][k] += x[l][i][j]*y[i][j][k];
+void pa1p3(int n, double x[n][n][n], double y[n][n][n], double z[n][n])
+{ int i,j,k,l;
+  for(i=0;i<n;i++)
+   for(j=0;j<n;j++)
+    for(k=0;k<n;k++)
+     for(l=0;l<n;l++)
+        z[l][k] += x[l][i][j]*y[i][j][k];
 
 }
 
-void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n]) {
+void pa1p3opt(int n, double x[n][n][n], double y[n][n][n], double z[n][n])
 // Initially identical to reference; make your changes to optimize this code
-	int i, j, k, l;
+{ int i,j,k,l;
+  for(i=0;i<n;i++)
+   for(j=0;j<n;j++)
+    for(k=0;k<n;k++)
+     for(l=0;l<n;l++)
+        z[l][k] += x[l][i][j]*y[i][j][k];
 
-	for( i=0; i<n; i++ )
-		for( l=0; l<n; l++ )
-			for( j=0; j<n/2; j++ ) {
-				for( k=0; k<n/2; k++ )
-					z[l][k] += x[l][i][j]*y[i][j][k];
-				for( k=n/2; k<n; k++ )
-					z[l][k] += x[l][i][j]*y[i][j][k];
-			}
-			for( j=n/2; j<n; j++ ) {
-				for( k=0; k<n/2; k++ )
-					z[l][k] += x[l][i][j]*y[i][j][k];
-				for( k=n/2; k<n; k++ )
-					z[l][k] += x[l][i][j]*y[i][j][k];
-			}
 }
 
 double rtclock()
@@ -116,3 +104,4 @@ int i,j;
    else
       printf("No differences found between base and test versions\n");
 }
+
