@@ -1,4 +1,8 @@
 default:
+	make buildp1
+	make buildp2
+	make buildp3
+
 	echo "See Other Commands"
 
 buildp1:
