@@ -1,0 +1,271 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: main()
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at pa1-p3.c(29,3)
+<Distributed chunk1>
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+LOOP END
+
+LOOP BEGIN at pa1-p3.c(29,3)
+<Distributed chunk2>
+   remark #15310: loop was not vectorized: operation cannot be vectorized   [ pa1-p3.c(34,6) ]
+
+   LOOP BEGIN at pa1-p3.c(30,4)
+   <Distributed chunk2>
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.045
+      remark #15462: unmasked indexed (or gather) loads: 2 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 44 
+      remark #15477: vector loop cost: 111.500 
+      remark #15478: estimated potential speedup: 0.390 
+      remark #15482: vectorized math library calls: 2 
+      remark #15487: type converts: 2 
+      remark #15488: --- end vector loop cost summary ---
+
+      LOOP BEGIN at pa1-p3.c(32,5)
+         remark #15388: vectorization support: reference A has aligned access   [ pa1-p3.c(33,6) ]
+         remark #15388: vectorization support: reference B has aligned access   [ pa1-p3.c(34,6) ]
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.009
+         remark #15449: unmasked aligned unit stride stores: 2 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 44 
+         remark #15477: vector loop cost: 106.000 
+         remark #15478: estimated potential speedup: 0.410 
+         remark #15482: vectorized math library calls: 2 
+         remark #15487: type converts: 2 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa1-p3.c(93,3) inlined into pa1-p3.c(51,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at pa1-p3.c(94,4) inlined into pa1-p3.c(51,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at pa1-p3.c(95,5) inlined into pa1-p3.c(51,3)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at pa1-p3.c(96,6) inlined into pa1-p3.c(51,3)
+            remark #15305: vectorization support: vector length 2
+            remark #15399: vectorization support: unroll factor set to 4
+            remark #15309: vectorization support: normalized vectorization overhead 0.033
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15460: masked strided loads: 2 
+            remark #15462: unmasked indexed (or gather) loads: 1 
+            remark #15475: --- begin vector loop cost summary ---
+            remark #15476: scalar loop cost: 9 
+            remark #15477: vector loop cost: 7.500 
+            remark #15478: estimated potential speedup: 1.190 
+            remark #15488: --- end vector loop cost summary ---
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa1-p3.c(64,3)
+   remark #15306: loop was not vectorized: inner loop was transformed to memset or memcpy   [ pa1-p3.c(65,4) ]
+
+   LOOP BEGIN at pa1-p3.c(65,4)
+      remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa1-p3.c(106,2) inlined into pa1-p3.c(73,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at pa1-p3.c(107,3) inlined into pa1-p3.c(73,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at pa1-p3.c(108,4) inlined into pa1-p3.c(73,3)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at pa1-p3.c(109,5) inlined into pa1-p3.c(73,3)
+            remark #15388: vectorization support: reference CC has aligned access   [ pa1-p3.c(110,6) ]
+            remark #15388: vectorization support: reference CC has aligned access   [ pa1-p3.c(110,6) ]
+            remark #15388: vectorization support: reference B has aligned access   [ pa1-p3.c(110,6) ]
+            remark #15388: vectorization support: reference CC has aligned access   [ pa1-p3.c(115,6) ]
+            remark #15388: vectorization support: reference CC has aligned access   [ pa1-p3.c(115,6) ]
+            remark #15388: vectorization support: reference B has aligned access   [ pa1-p3.c(115,6) ]
+            remark #15305: vectorization support: vector length 2
+            remark #15399: vectorization support: unroll factor set to 4
+            remark #15309: vectorization support: normalized vectorization overhead 0.062
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15448: unmasked aligned unit stride loads: 4 
+            remark #15449: unmasked aligned unit stride stores: 2 
+            remark #15475: --- begin vector loop cost summary ---
+            remark #15476: scalar loop cost: 18 
+            remark #15477: vector loop cost: 8.000 
+            remark #15478: estimated potential speedup: 2.240 
+            remark #15488: --- end vector loop cost summary ---
+         LOOP END
+
+         LOOP BEGIN at pa1-p3.c(114,5) inlined into pa1-p3.c(73,3)
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at pa1-p3.c(113,4) inlined into pa1-p3.c(73,3)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at pa1-p3.c(112,3) inlined into pa1-p3.c(73,3)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa1-p3.c(136,3) inlined into pa1-p3.c(86,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at pa1-p3.c(137,4) inlined into pa1-p3.c(86,3)
+      remark #15388: vectorization support: reference C has aligned access   [ pa1-p3.c(140,6) ]
+      remark #15388: vectorization support: reference CC has aligned access   [ pa1-p3.c(140,6) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.635
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 2 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 36 
+      remark #15477: vector loop cost: 13.000 
+      remark #15478: estimated potential speedup: 2.710 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: pa1p3(int, double (*)[*][*], double (*)[*][*], double (*)[*])
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at pa1-p3.c(93,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between z line 97 and z line 97
+   remark #15346: vector dependence: assumed OUTPUT dependence between z line 97 and z line 97
+
+   LOOP BEGIN at pa1-p3.c(94,4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between z line 97 and z line 97
+      remark #15346: vector dependence: assumed OUTPUT dependence between z line 97 and z line 97
+
+      LOOP BEGIN at pa1-p3.c(95,5)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between z line 97 and y line 97
+         remark #15346: vector dependence: assumed ANTI dependence between y line 97 and z line 97
+
+         LOOP BEGIN at pa1-p3.c(96,6)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between z line 97 and y line 97
+            remark #15346: vector dependence: assumed ANTI dependence between y line 97 and z line 97
+         LOOP END
+
+         LOOP BEGIN at pa1-p3.c(96,6)
+         <Remainder>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: pa1p3opt(int, double (*)[*][*], double (*)[*][*], double (*)[*])
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at pa1-p3.c(106,2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between z line 110 and z line 115
+   remark #15346: vector dependence: assumed OUTPUT dependence between z line 115 and z line 110
+
+   LOOP BEGIN at pa1-p3.c(107,3)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between z line 110 and x line 110
+      remark #15346: vector dependence: assumed ANTI dependence between x line 110 and z line 110
+
+      LOOP BEGIN at pa1-p3.c(108,4)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between z line 110 and z line 110
+         remark #15346: vector dependence: assumed OUTPUT dependence between z line 110 and z line 110
+
+         LOOP BEGIN at pa1-p3.c(109,5)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between z line 110 and x line 110
+            remark #15346: vector dependence: assumed ANTI dependence between x line 110 and z line 110
+         LOOP END
+
+         LOOP BEGIN at pa1-p3.c(109,5)
+         <Remainder>
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at pa1-p3.c(112,3)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between z line 115 and x line 115
+      remark #15346: vector dependence: assumed ANTI dependence between x line 115 and z line 115
+
+      LOOP BEGIN at pa1-p3.c(113,4)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between z line 115 and z line 115
+         remark #15346: vector dependence: assumed OUTPUT dependence between z line 115 and z line 115
+
+         LOOP BEGIN at pa1-p3.c(114,5)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between z line 115 and x line 115
+            remark #15346: vector dependence: assumed ANTI dependence between x line 115 and z line 115
+         LOOP END
+
+         LOOP BEGIN at pa1-p3.c(114,5)
+         <Remainder>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: compare(int, double (*)[*], double (*)[*])
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at pa1-p3.c(136,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at pa1-p3.c(137,4)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at pa1-p3.c(137,4)
+      remark #15388: vectorization support: reference wref has aligned access   [ pa1-p3.c(140,6) ]
+      remark #15388: vectorization support: reference w has aligned access   [ pa1-p3.c(140,6) ]
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 1.167
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 2 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 36 
+      remark #15477: vector loop cost: 15.000 
+      remark #15478: estimated potential speedup: 2.350 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at pa1-p3.c(137,4)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at pa1-p3.c(137,4)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+===========================================================================

@@ -1,3 +1,3 @@
-a.out
-*.gcc
-*.icc
+*/a.out
+*/*.gcc
+*/*.icc
