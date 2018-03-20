@@ -45,17 +45,31 @@ void Merge_Sort_Par(int a[],int b[],int n, int nThreads)
 {
   omp_set_num_threads(nThreads);
 // To be modified to create a parallel merge sort
-int lo = 0;
-int hi = n-1;
-int mid = ( lo + hi ) / 2;
-#pragma omp sections
-  {
-   #pragma omp section
-   Merge_Sort( a, b, lo, mid );
-   #pragma omp section
-   Merge_Sort( a, b, mid + 1, hi );
-  }
-	Merge( a, b, 0, (n - 1) / 2, n - 1 );
+int num_executed;
+
+#pragma omp parallel
+{
+	int id = omp_get_thread_num();
+	int num_threads = omp_get_num_threads();
+
+	#pragma omp master
+	{
+		num_executed = num_threads;
+	}
+
+	int block_size = (n-1) / num_threads;
+	int thread_start = block_size * id;
+
+	Merge_Sort(a,b,thread_start,thread_start + block_size );
+}
+
+//int i;
+//int block_size = n / num_executed;
+//for( i = 0; i < num_executed - 1; i++ )
+//Merge( a, b, 0, block_size * (i+1), block_size * (i+2) );
+
+Merge(a,b,0,(n-1)/2,n-1);
+
 }
 
 void Test_Sorted(a,lo,hi)
