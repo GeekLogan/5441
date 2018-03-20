@@ -12,5 +12,5 @@ clean:
 	rm *.gcc
 
 testp1:
-	./pa2-p1.gcc 2
-	./pa2-p1.icc 2
+	./pa2-p1.gcc 10
+	./pa2-p1.icc 10

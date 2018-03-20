@@ -6,7 +6,7 @@
 #include <sys/time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define N (50000000)
+#define N (5000000)//0)
 int A[N],B[N];
 
 void Merge(a,b,lo,mid,hi)
@@ -45,22 +45,39 @@ void Merge_Sort_Par(int a[],int b[],int n, int nThreads)
 {
   omp_set_num_threads(nThreads);
 // To be modified to create a parallel merge sort
+int num_exe;
 #pragma omp parallel
 {
 	int id = omp_get_thread_num();
 	int num_threads = omp_get_num_threads();
+	#pragma omp master
+	num_exe = num_threads;
 
 	//(0, 24999999)
 	//(25000000, 49999999)
 
-	int block_size = n / num_threads;
+	int block_size = ( n + num_threads - 1 ) / num_threads; // ciel
 	int thread_start = block_size * id;
-	int thread_end = ( block_size * (id+1) ) - 1;
+	int thread_end = thread_start + block_size - 1;
+	if( thread_end == n ) thread_end--;
+
+	printf( "Sort id: %d, (%d, %d)\n", id, thread_start, thread_end );
 
 	Merge_Sort( a, b, thread_start, thread_end );
-  }
+}
 
-Merge(a,b,0,(n-1)/2,n-1);
+int block_size = ( n + num_exe - 1 ) / num_exe;;
+int i;
+for( i=1; i<num_exe; i++ ) {
+	int thread_start = block_size * i;
+	int thread_stop = thread_start + block_size - 1;
+	if( thread_stop == n ) thread_stop--;
+
+	printf( "Merge id: %d, (%d, %d)\n", i, thread_start, thread_stop );
+	Merge(a,b,0,thread_start-1, thread_stop);
+}
+
+
 
 }
 
