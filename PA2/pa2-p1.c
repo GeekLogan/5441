@@ -45,11 +45,17 @@ void Merge_Sort_Par(int a[],int b[],int n, int nThreads)
 {
   omp_set_num_threads(nThreads);
 // To be modified to create a parallel merge sort
-#pragma omp parallel
+int lo = 0;
+int hi = n-1;
+int mid = ( lo + hi ) / 2;
+#pragma omp sections
   {
-   #pragma omp master
-   Merge_Sort(a,b,0,n-1);
+   #pragma omp section
+   Merge_Sort( a, b, lo, mid );
+   #pragma omp section
+   Merge_Sort( a, b, mid + 1, hi );
   }
+	Merge( a, b, 0, (n - 1) / 2, n - 1 );
 }
 
 void Test_Sorted(a,lo,hi)
@@ -116,6 +122,8 @@ int i,j,k;
   Test_Sorted(A,0,N-1); 
   printf("Parallel Sort Rate: %.1f Mega-Elements/Second; Time = %.3f sec; a[N/2] = %d; \n",
 1.0*N/t/1000000,t,A[N/2]);
+
+	return( 0 );
 
 }
 double rtclock(void)
