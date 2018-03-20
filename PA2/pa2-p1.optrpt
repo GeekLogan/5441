@@ -8,9 +8,9 @@ Begin optimization report for: main(int, char **)
     Report from: Vector optimizations [vec]
 
 
-LOOP BEGIN at pa2-p1.c(125,3)
-   remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(125,21) ]
-   remark #15412: vectorization support: streaming store was generated for A   [ pa2-p1.c(125,21) ]
+LOOP BEGIN at pa2-p1.c(119,3)
+   remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(119,21) ]
+   remark #15412: vectorization support: streaming store was generated for A   [ pa2-p1.c(119,21) ]
    remark #15305: vectorization support: vector length 4
    remark #15309: vectorization support: normalized vectorization overhead 0.333
    remark #15300: LOOP WAS VECTORIZED
@@ -23,7 +23,7 @@ LOOP BEGIN at pa2-p1.c(125,3)
    remark #15488: --- end vector loop cost summary ---
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(126,23)
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(120,23)
    remark #15305: vectorization support: vector length 4
    remark #15399: vectorization support: unroll factor set to 4
    remark #15309: vectorization support: normalized vectorization overhead 0.646
@@ -37,34 +37,34 @@ LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(126,23)
    remark #15488: --- end vector loop cost summary ---
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(126,23)
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(120,23)
 <Remainder loop for vectorization>
    remark #15305: vectorization support: vector length 4
    remark #15309: vectorization support: normalized vectorization overhead 2.562
    remark #15301: REMAINDER LOOP WAS VECTORIZED
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(126,23)
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(120,23)
 <Remainder loop for vectorization>
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(127,3)
+LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(121,3)
    remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(127,3)
+LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(121,3)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(127,3)
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(121,3)
    <Peeled loop for vectorization, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(127,3)
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(121,3)
    <Multiversioned v2>
       remark #15388: vectorization support: reference B has aligned access   [ pa2-p1.c(22,27) ]
       remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(22,27) ]
-      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(127,16) ]
-      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(127,16) ]
+      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(121,16) ]
+      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(121,16) ]
       remark #15305: vectorization support: vector length 4
       remark #15309: vectorization support: normalized vectorization overhead 4.667
       remark #15300: LOOP WAS VECTORIZED
@@ -78,28 +78,28 @@ LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(127,3)
       remark #15488: --- end vector loop cost summary ---
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(127,3)
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(121,3)
    <Alternate Alignment Vectorized Loop, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(127,3)
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(121,3)
    <Remainder loop for vectorization, Multiversioned v2>
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(127,3)
+LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(121,3)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(127,3)
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(121,3)
    <Peeled loop for vectorization, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(127,3)
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(121,3)
    <Multiversioned v2>
       remark #15388: vectorization support: reference B has aligned access   [ pa2-p1.c(24,28) ]
       remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(24,28) ]
-      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(127,16) ]
-      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(127,16) ]
+      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(121,16) ]
+      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(121,16) ]
       remark #15305: vectorization support: vector length 4
       remark #15309: vectorization support: normalized vectorization overhead 4.667
       remark #15300: LOOP WAS VECTORIZED
@@ -113,23 +113,23 @@ LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(127,3)
       remark #15488: --- end vector loop cost summary ---
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(127,3)
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(121,3)
    <Alternate Alignment Vectorized Loop, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(127,3)
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(121,3)
    <Remainder loop for vectorization, Multiversioned v2>
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(127,3)
+LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(121,3)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(127,3)
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(121,3)
    <Multiversioned v2>
       remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(25,23) ]
       remark #15388: vectorization support: reference B has aligned access   [ pa2-p1.c(25,23) ]
-      remark #15412: vectorization support: streaming store was generated for A   [ pa2-p1.c(127,14) ]
+      remark #15412: vectorization support: streaming store was generated for A   [ pa2-p1.c(121,14) ]
       remark #15305: vectorization support: vector length 4
       remark #15300: LOOP WAS VECTORIZED
       remark #15448: unmasked aligned unit stride loads: 1 
@@ -143,23 +143,23 @@ LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(127,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(129,3)
+LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(123,3)
    remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(129,3)
+LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(123,3)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(129,3)
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(123,3)
    <Peeled loop for vectorization, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(129,3)
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(123,3)
    <Multiversioned v2>
       remark #15388: vectorization support: reference B has aligned access   [ pa2-p1.c(22,27) ]
       remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(22,27) ]
-      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(129,16) ]
-      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(129,16) ]
+      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(123,16) ]
+      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(123,16) ]
       remark #15305: vectorization support: vector length 4
       remark #15309: vectorization support: normalized vectorization overhead 4.667
       remark #15300: LOOP WAS VECTORIZED
@@ -173,28 +173,28 @@ LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(129,3)
       remark #15488: --- end vector loop cost summary ---
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(129,3)
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(123,3)
    <Alternate Alignment Vectorized Loop, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(129,3)
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(123,3)
    <Remainder loop for vectorization, Multiversioned v2>
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(129,3)
+LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(123,3)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(129,3)
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(123,3)
    <Peeled loop for vectorization, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(129,3)
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(123,3)
    <Multiversioned v2>
       remark #15388: vectorization support: reference B has aligned access   [ pa2-p1.c(24,28) ]
       remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(24,28) ]
-      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(129,16) ]
-      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(129,16) ]
+      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(123,16) ]
+      remark #15412: vectorization support: streaming store was generated for B   [ pa2-p1.c(123,16) ]
       remark #15305: vectorization support: vector length 4
       remark #15309: vectorization support: normalized vectorization overhead 4.667
       remark #15300: LOOP WAS VECTORIZED
@@ -208,23 +208,23 @@ LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(129,3)
       remark #15488: --- end vector loop cost summary ---
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(129,3)
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(123,3)
    <Alternate Alignment Vectorized Loop, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(129,3)
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(123,3)
    <Remainder loop for vectorization, Multiversioned v2>
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(129,3)
+LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(123,3)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(129,3)
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(123,3)
    <Multiversioned v2>
       remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(25,23) ]
       remark #15388: vectorization support: reference B has aligned access   [ pa2-p1.c(25,23) ]
-      remark #15412: vectorization support: streaming store was generated for A   [ pa2-p1.c(129,14) ]
+      remark #15412: vectorization support: streaming store was generated for A   [ pa2-p1.c(123,14) ]
       remark #15305: vectorization support: vector length 4
       remark #15300: LOOP WAS VECTORIZED
       remark #15448: unmasked aligned unit stride loads: 1 
@@ -238,7 +238,7 @@ LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(129,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(131,38)
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(125,38)
    remark #15305: vectorization support: vector length 4
    remark #15399: vectorization support: unroll factor set to 4
    remark #15309: vectorization support: normalized vectorization overhead 0.646
@@ -252,20 +252,20 @@ LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(131,38)
    remark #15488: --- end vector loop cost summary ---
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(131,38)
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(125,38)
 <Remainder loop for vectorization>
    remark #15305: vectorization support: vector length 4
    remark #15309: vectorization support: normalized vectorization overhead 2.562
    remark #15301: REMAINDER LOOP WAS VECTORIZED
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(131,38)
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(125,38)
 <Remainder loop for vectorization>
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(136,3)
-   remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(136,21) ]
-   remark #15412: vectorization support: streaming store was generated for A   [ pa2-p1.c(136,21) ]
+LOOP BEGIN at pa2-p1.c(130,3)
+   remark #15388: vectorization support: reference A has aligned access   [ pa2-p1.c(130,21) ]
+   remark #15412: vectorization support: streaming store was generated for A   [ pa2-p1.c(130,21) ]
    remark #15305: vectorization support: vector length 4
    remark #15309: vectorization support: normalized vectorization overhead 0.333
    remark #15300: LOOP WAS VECTORIZED
@@ -278,149 +278,473 @@ LOOP BEGIN at pa2-p1.c(136,3)
    remark #15488: --- end vector loop cost summary ---
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(139,3)
-   remark #15305: vectorization support: vector length 4
-   remark #15399: vectorization support: unroll factor set to 4
-   remark #15309: vectorization support: normalized vectorization overhead 0.646
-   remark #15300: LOOP WAS VECTORIZED
-   remark #15448: unmasked aligned unit stride loads: 1 
-   remark #15450: unmasked unaligned unit stride loads: 1 
-   remark #15475: --- begin vector loop cost summary ---
-   remark #15476: scalar loop cost: 21 
-   remark #15477: vector loop cost: 3.000 
-   remark #15478: estimated potential speedup: 6.990 
-   remark #15488: --- end vector loop cost summary ---
-LOOP END
+LOOP BEGIN at pa2-p1.c(68,1) inlined into pa2-p1.c(132,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
 
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(139,3)
-<Remainder loop for vectorization>
-   remark #15305: vectorization support: vector length 4
-   remark #15309: vectorization support: normalized vectorization overhead 2.562
-   remark #15301: REMAINDER LOOP WAS VECTORIZED
-LOOP END
-
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(139,3)
-<Remainder loop for vectorization>
-LOOP END
-
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(145,3)
-   remark #15305: vectorization support: vector length 4
-   remark #15399: vectorization support: unroll factor set to 4
-   remark #15309: vectorization support: normalized vectorization overhead 0.646
-   remark #15300: LOOP WAS VECTORIZED
-   remark #15448: unmasked aligned unit stride loads: 1 
-   remark #15450: unmasked unaligned unit stride loads: 1 
-   remark #15475: --- begin vector loop cost summary ---
-   remark #15476: scalar loop cost: 21 
-   remark #15477: vector loop cost: 3.000 
-   remark #15478: estimated potential speedup: 6.990 
-   remark #15488: --- end vector loop cost summary ---
-LOOP END
-
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(145,3)
-<Remainder loop for vectorization>
-   remark #15305: vectorization support: vector length 4
-   remark #15309: vectorization support: normalized vectorization overhead 2.562
-   remark #15301: REMAINDER LOOP WAS VECTORIZED
-LOOP END
-
-LOOP BEGIN at pa2-p1.c(88,3) inlined into pa2-p1.c(145,3)
-<Remainder loop for vectorization>
-LOOP END
-===========================================================================
-
-Begin optimization report for: Merge_Sort_Par(int *, int *, int, int)
-
-    Report from: Vector optimizations [vec]
-
-
-LOOP BEGIN at pa2-p1.c(71,1)
-   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-
-   LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(77,2)
+   LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(132,3)
       remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(77,2)
-      remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
 
-      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(77,2)
-      <Multiversioned v2>
-         remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+      <Peeled loop for vectorization, Multiversioned v2>
       LOOP END
 
-      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(77,2)
-      <Remainder, Multiversioned v2>
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+      <Multiversioned v2>
+         remark #15388: vectorization support: reference b_479 has aligned access   [ pa2-p1.c(22,27) ]
+         remark #15388: vectorization support: reference a_479 has aligned access   [ pa2-p1.c(22,27) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 4.667
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 7 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 7.950 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+      <Alternate Alignment Vectorized Loop, Multiversioned v2>
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+      <Remainder loop for vectorization, Multiversioned v2>
       LOOP END
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(77,2)
-      remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
 
-      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(77,2)
-      <Multiversioned v2>
-         remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+      <Peeled loop for vectorization, Multiversioned v2>
       LOOP END
 
-      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(77,2)
-      <Remainder, Multiversioned v2>
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+      <Multiversioned v2>
+         remark #15388: vectorization support: reference b_479 has aligned access   [ pa2-p1.c(24,28) ]
+         remark #15388: vectorization support: reference a_479 has aligned access   [ pa2-p1.c(24,28) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 4.667
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 7 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 7.950 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+      <Alternate Alignment Vectorized Loop, Multiversioned v2>
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+      <Remainder loop for vectorization, Multiversioned v2>
       LOOP END
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(77,2)
-      remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
 
-      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(77,2)
-      <Multiversioned v2>
-         remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+      <Peeled loop for vectorization, Multiversioned v2>
       LOOP END
 
-      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(77,2)
-      <Remainder, Multiversioned v2>
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+      <Multiversioned v2>
+         remark #15388: vectorization support: reference a_479 has aligned access   [ pa2-p1.c(25,23) ]
+         remark #15388: vectorization support: reference b_479 has aligned access   [ pa2-p1.c(25,23) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 4.667
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 7 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 7.950 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+      <Alternate Alignment Vectorized Loop, Multiversioned v2>
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+      <Remainder loop for vectorization, Multiversioned v2>
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(66,2)
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(133,3)
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.646
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 21 
+   remark #15477: vector loop cost: 3.000 
+   remark #15478: estimated potential speedup: 6.990 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(133,3)
+<Remainder loop for vectorization>
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 2.562
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(133,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(68,1) inlined into pa2-p1.c(135,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(135,3)
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+      <Peeled loop for vectorization, Multiversioned v2>
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+      <Multiversioned v2>
+         remark #15388: vectorization support: reference b_479 has aligned access   [ pa2-p1.c(22,27) ]
+         remark #15388: vectorization support: reference a_479 has aligned access   [ pa2-p1.c(22,27) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 4.667
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 7 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 7.950 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+      <Alternate Alignment Vectorized Loop, Multiversioned v2>
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+      <Remainder loop for vectorization, Multiversioned v2>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+      <Peeled loop for vectorization, Multiversioned v2>
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+      <Multiversioned v2>
+         remark #15388: vectorization support: reference b_479 has aligned access   [ pa2-p1.c(24,28) ]
+         remark #15388: vectorization support: reference a_479 has aligned access   [ pa2-p1.c(24,28) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 4.667
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 7 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 7.950 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+      <Alternate Alignment Vectorized Loop, Multiversioned v2>
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+      <Remainder loop for vectorization, Multiversioned v2>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+      <Peeled loop for vectorization, Multiversioned v2>
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+      <Multiversioned v2>
+         remark #15388: vectorization support: reference a_479 has aligned access   [ pa2-p1.c(25,23) ]
+         remark #15388: vectorization support: reference b_479 has aligned access   [ pa2-p1.c(25,23) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 4.667
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 7 
+         remark #15477: vector loop cost: 0.750 
+         remark #15478: estimated potential speedup: 7.950 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+      <Alternate Alignment Vectorized Loop, Multiversioned v2>
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+      <Remainder loop for vectorization, Multiversioned v2>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(139,3)
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.646
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 21 
+   remark #15477: vector loop cost: 3.000 
+   remark #15478: estimated potential speedup: 6.990 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(139,3)
+<Remainder loop for vectorization>
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 2.562
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(82,3) inlined into pa2-p1.c(139,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(132,3)
    remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(66,2)
-   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(66,2)
-   <Multiversioned v2>
-      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+   <Peeled loop for vectorization, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(66,2)
-   <Remainder, Multiversioned v2>
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+   <Multiversioned v2>
+      remark #15388: vectorization support: reference b_474 has aligned access   [ pa2-p1.c(22,27) ]
+      remark #15388: vectorization support: reference a_474 has aligned access   [ pa2-p1.c(22,27) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 4.667
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 7 
+      remark #15477: vector loop cost: 0.750 
+      remark #15478: estimated potential speedup: 7.950 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+   <Alternate Alignment Vectorized Loop, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(132,3)
+   <Remainder loop for vectorization, Multiversioned v2>
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(66,2)
-   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(66,2)
-   <Multiversioned v2>
-      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+   <Peeled loop for vectorization, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(66,2)
-   <Remainder, Multiversioned v2>
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+   <Multiversioned v2>
+      remark #15388: vectorization support: reference b_474 has aligned access   [ pa2-p1.c(24,28) ]
+      remark #15388: vectorization support: reference a_474 has aligned access   [ pa2-p1.c(24,28) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 4.667
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 7 
+      remark #15477: vector loop cost: 0.750 
+      remark #15478: estimated potential speedup: 7.950 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+   <Alternate Alignment Vectorized Loop, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(132,3)
+   <Remainder loop for vectorization, Multiversioned v2>
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(66,2)
-   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(66,2)
-   <Multiversioned v2>
-      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+   <Peeled loop for vectorization, Multiversioned v2>
    LOOP END
 
-   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(66,2)
-   <Remainder, Multiversioned v2>
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+   <Multiversioned v2>
+      remark #15388: vectorization support: reference a_474 has aligned access   [ pa2-p1.c(25,23) ]
+      remark #15388: vectorization support: reference b_474 has aligned access   [ pa2-p1.c(25,23) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 4.667
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 7 
+      remark #15477: vector loop cost: 0.750 
+      remark #15478: estimated potential speedup: 7.950 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+   <Alternate Alignment Vectorized Loop, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(132,3)
+   <Remainder loop for vectorization, Multiversioned v2>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(135,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+   <Peeled loop for vectorization, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+   <Multiversioned v2>
+      remark #15388: vectorization support: reference b_474 has aligned access   [ pa2-p1.c(22,27) ]
+      remark #15388: vectorization support: reference a_474 has aligned access   [ pa2-p1.c(22,27) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 4.667
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 7 
+      remark #15477: vector loop cost: 0.750 
+      remark #15478: estimated potential speedup: 7.950 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+   <Alternate Alignment Vectorized Loop, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(135,3)
+   <Remainder loop for vectorization, Multiversioned v2>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+   <Peeled loop for vectorization, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+   <Multiversioned v2>
+      remark #15388: vectorization support: reference b_474 has aligned access   [ pa2-p1.c(24,28) ]
+      remark #15388: vectorization support: reference a_474 has aligned access   [ pa2-p1.c(24,28) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 4.667
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 7 
+      remark #15477: vector loop cost: 0.750 
+      remark #15478: estimated potential speedup: 7.950 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+   <Alternate Alignment Vectorized Loop, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(135,3)
+   <Remainder loop for vectorization, Multiversioned v2>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+   <Peeled loop for vectorization, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+   <Multiversioned v2>
+      remark #15388: vectorization support: reference a_474 has aligned access   [ pa2-p1.c(25,23) ]
+      remark #15388: vectorization support: reference b_474 has aligned access   [ pa2-p1.c(25,23) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 4.667
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 7 
+      remark #15477: vector loop cost: 0.750 
+      remark #15478: estimated potential speedup: 7.950 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+   <Alternate Alignment Vectorized Loop, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(135,3)
+   <Remainder loop for vectorization, Multiversioned v2>
    LOOP END
 LOOP END
 ===========================================================================
@@ -523,16 +847,112 @@ LOOP BEGIN at pa2-p1.c(25,3)
 LOOP END
 ===========================================================================
 
+Begin optimization report for: Merge_Sort_Par(int *, int *, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at pa2-p1.c(68,1)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(73,2)
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(73,2)
+      remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(73,2)
+      <Multiversioned v2>
+         remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(73,2)
+      <Remainder, Multiversioned v2>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(73,2)
+      remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(73,2)
+      <Multiversioned v2>
+         remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(73,2)
+      <Remainder, Multiversioned v2>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(73,2)
+      remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(73,2)
+      <Multiversioned v2>
+         remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      LOOP END
+
+      LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(73,2)
+      <Remainder, Multiversioned v2>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(19,3) inlined into pa2-p1.c(65,2)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(65,2)
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(65,2)
+   <Multiversioned v2>
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(22,8) inlined into pa2-p1.c(65,2)
+   <Remainder, Multiversioned v2>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(65,2)
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(65,2)
+   <Multiversioned v2>
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(24,8) inlined into pa2-p1.c(65,2)
+   <Remainder, Multiversioned v2>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(65,2)
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(65,2)
+   <Multiversioned v2>
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+
+   LOOP BEGIN at pa2-p1.c(25,3) inlined into pa2-p1.c(65,2)
+   <Remainder, Multiversioned v2>
+   LOOP END
+LOOP END
+===========================================================================
+
 Begin optimization report for: Test_Sorted()
 
     Report from: Vector optimizations [vec]
 
 
-LOOP BEGIN at pa2-p1.c(88,3)
+LOOP BEGIN at pa2-p1.c(82,3)
 <Peeled loop for vectorization>
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(88,3)
+LOOP BEGIN at pa2-p1.c(82,3)
    remark #15305: vectorization support: vector length 4
    remark #15309: vectorization support: normalized vectorization overhead 3.417
    remark #15300: LOOP WAS VECTORIZED
@@ -546,7 +966,7 @@ LOOP BEGIN at pa2-p1.c(88,3)
    remark #15488: --- end vector loop cost summary ---
 LOOP END
 
-LOOP BEGIN at pa2-p1.c(88,3)
+LOOP BEGIN at pa2-p1.c(82,3)
 <Remainder loop for vectorization>
 LOOP END
 ===========================================================================
@@ -556,8 +976,8 @@ Begin optimization report for: Dump()
     Report from: Vector optimizations [vec]
 
 
-LOOP BEGIN at pa2-p1.c(97,3)
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ pa2-p1.c(97,23) ]
+LOOP BEGIN at pa2-p1.c(91,3)
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ pa2-p1.c(91,23) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 ===========================================================================
