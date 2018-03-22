@@ -75,17 +75,22 @@ t1 = rtclock();
 	float sum[N][N];
 	for(j=0;j<N;j++) for(i=0;i<N;i++) sum[i][j] = 0;
 
+	printf( "HERE[1]\n" );
+
 	for(k=id;k<N;k+=num_threads)
 		for(j=0;j<N;j++) //j
 			for(i=0;i<N;i++) //i
 			{
-				printf( "(%d, %d, %d)\n", i, j, k);
-				sum[j][i] += a[k][i] * b[k][j];
+			//	printf( "(%d, %d, %d)\n", i, j, k);
+			//	sum[j][i] += a[k][i] * b[k][j];
+			sum[j][i] += a[k][i] * b[k][j];
 			}
 
+	printf( "HERE[2]\n" );
+
+	#pragma omp critical
 	for(j=0;j<N;j++) {
 		for(i=0;i<N;i++) {
-			#pragma omp atomic
 			c[j][i] += sum[j][i];
 		}
 	}
