@@ -6,7 +6,7 @@
 #include <sys/time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define N (5000000)//0)
+#define N (50000000)
 int A[N],B[N];
 
 void Merge(a,b,lo,mid,hi)

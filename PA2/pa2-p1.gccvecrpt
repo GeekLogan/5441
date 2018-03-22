@@ -2438,7 +2438,7 @@ Analyzing loop at pa2-p1.c:130
 pa2-p1.c:130: note: ===== analyze_loop_nest =====
 pa2-p1.c:130: note: === vect_analyze_loop_form ===
 pa2-p1.c:130: note: === get_loop_niters ===
-pa2-p1.c:130: note: ==> get_loop_niters:5000000
+pa2-p1.c:130: note: ==> get_loop_niters:50000000
 pa2-p1.c:130: note: === vect_analyze_data_refs ===
 
 pa2-p1.c:130: note: get vectype with 4 units of type int
@@ -2451,10 +2451,10 @@ pa2-p1.c:130: note: step: 1,  init: 0
 pa2-p1.c:130: note: Detected induction.
 pa2-p1.c:130: note: Analyze phi: .MEM_60 = PHI <.MEM_33(11), .MEM_31(9)>
 
-pa2-p1.c:130: note: Analyze phi: ivtmp_55 = PHI <ivtmp_54(11), 5000000(9)>
+pa2-p1.c:130: note: Analyze phi: ivtmp_55 = PHI <ivtmp_54(11), 50000000(9)>
 
-pa2-p1.c:130: note: Access function of PHI: {5000000, +, 4294967295}_2
-pa2-p1.c:130: note: step: 4294967295,  init: 5000000
+pa2-p1.c:130: note: Access function of PHI: {50000000, +, 4294967295}_2
+pa2-p1.c:130: note: step: 4294967295,  init: 50000000
 pa2-p1.c:130: note: Detected induction.
 pa2-p1.c:130: note: === vect_pattern_recog ===
 pa2-p1.c:130: note: === vect_mark_stmts_to_be_vectorized ===
@@ -2462,9 +2462,9 @@ pa2-p1.c:130: note: init: phi relevant? i_58 = PHI <i_34(11), 0(9)>
 
 pa2-p1.c:130: note: init: phi relevant? .MEM_60 = PHI <.MEM_33(11), .MEM_31(9)>
 
-pa2-p1.c:130: note: init: phi relevant? ivtmp_55 = PHI <ivtmp_54(11), 5000000(9)>
+pa2-p1.c:130: note: init: phi relevant? ivtmp_55 = PHI <ivtmp_54(11), 50000000(9)>
 
-pa2-p1.c:130: note: init: stmt relevant? _32 = 5000000 - i_58;
+pa2-p1.c:130: note: init: stmt relevant? _32 = 50000000 - i_58;
 
 pa2-p1.c:130: note: init: stmt relevant? A[i_58] = _32;
 
@@ -2479,11 +2479,11 @@ pa2-p1.c:130: note: init: stmt relevant? if (ivtmp_54 != 0)
 pa2-p1.c:130: note: worklist: examine stmt: A[i_58] = _32;
 
 pa2-p1.c:130: note: vect_is_simple_use: operand _32
-pa2-p1.c:130: note: def_stmt: _32 = 5000000 - i_58;
+pa2-p1.c:130: note: def_stmt: _32 = 50000000 - i_58;
 
 pa2-p1.c:130: note: type of def: 3.
 pa2-p1.c:130: note: mark relevant 4, live 0.
-pa2-p1.c:130: note: worklist: examine stmt: _32 = 5000000 - i_58;
+pa2-p1.c:130: note: worklist: examine stmt: _32 = 50000000 - i_58;
 
 pa2-p1.c:130: note: vect_is_simple_use: operand i_58
 pa2-p1.c:130: note: def_stmt: i_58 = PHI <i_34(11), 0(9)>
@@ -2517,9 +2517,9 @@ pa2-p1.c:130: note: vectype: vector(4) int
 pa2-p1.c:130: note: nunits = 4
 pa2-p1.c:130: note: ==> examining phi: .MEM_60 = PHI <.MEM_33(11), .MEM_31(9)>
 
-pa2-p1.c:130: note: ==> examining phi: ivtmp_55 = PHI <ivtmp_54(11), 5000000(9)>
+pa2-p1.c:130: note: ==> examining phi: ivtmp_55 = PHI <ivtmp_54(11), 50000000(9)>
 
-pa2-p1.c:130: note: ==> examining statement: _32 = 5000000 - i_58;
+pa2-p1.c:130: note: ==> examining statement: _32 = 50000000 - i_58;
 
 pa2-p1.c:130: note: get vectype for scalar type:  int
 pa2-p1.c:130: note: get vectype with 4 units of type int
@@ -2566,9 +2566,9 @@ pa2-p1.c:130: note: Access function of PHI: {0, +, 1}_2
 pa2-p1.c:130: note: Analyze phi: .MEM_60 = PHI <.MEM_33(11), .MEM_31(9)>
 
 pa2-p1.c:130: note: virtual phi. skip.
-pa2-p1.c:130: note: Analyze phi: ivtmp_55 = PHI <ivtmp_54(11), 5000000(9)>
+pa2-p1.c:130: note: Analyze phi: ivtmp_55 = PHI <ivtmp_54(11), 50000000(9)>
 
-pa2-p1.c:130: note: Access function of PHI: {5000000, +, 4294967295}_2
+pa2-p1.c:130: note: Access function of PHI: {50000000, +, 4294967295}_2
 pa2-p1.c:130: note: vect_model_store_cost: aligned.
 pa2-p1.c:130: note: vect_get_data_access_cost: inside_cost = 1, outside_cost = 0.
 pa2-p1.c:130: note: === vect_analyze_slp ===
@@ -2581,11 +2581,11 @@ pa2-p1.c:130: note: === vectorizable_induction ===
 pa2-p1.c:130: note: vect_model_induction_cost: inside_cost = 1, prologue_cost = 2 .
 pa2-p1.c:130: note: examining phi: .MEM_60 = PHI <.MEM_33(11), .MEM_31(9)>
 
-pa2-p1.c:130: note: examining phi: ivtmp_55 = PHI <ivtmp_54(11), 5000000(9)>
+pa2-p1.c:130: note: examining phi: ivtmp_55 = PHI <ivtmp_54(11), 50000000(9)>
 
-pa2-p1.c:130: note: ==> examining statement: _32 = 5000000 - i_58;
+pa2-p1.c:130: note: ==> examining statement: _32 = 50000000 - i_58;
 
-pa2-p1.c:130: note: vect_is_simple_use: operand 5000000
+pa2-p1.c:130: note: vect_is_simple_use: operand 50000000
 pa2-p1.c:130: note: get vectype with 4 units of type int
 pa2-p1.c:130: note: vectype: vector(4) int
 pa2-p1.c:130: note: vect_is_simple_use: operand i_58
@@ -2597,7 +2597,7 @@ pa2-p1.c:130: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 1 .
 pa2-p1.c:130: note: ==> examining statement: A[i_58] = _32;
 
 pa2-p1.c:130: note: vect_is_simple_use: operand _32
-pa2-p1.c:130: note: def_stmt: _32 = 5000000 - i_58;
+pa2-p1.c:130: note: def_stmt: _32 = 50000000 - i_58;
 
 pa2-p1.c:130: note: type of def: 3.
 pa2-p1.c:130: note: vect_model_store_cost: aligned.
@@ -2617,7 +2617,7 @@ pa2-p1.c:130: note: irrelevant.
 pa2-p1.c:130: note: ==> examining statement: if (ivtmp_54 != 0)
 
 pa2-p1.c:130: note: irrelevant.
-pa2-p1.c:130: note: vectorization_factor = 4, niters = 5000000
+pa2-p1.c:130: note: vectorization_factor = 4, niters = 50000000
 pa2-p1.c:130: note: === vect_update_slp_costs_according_to_vf ===
 pa2-p1.c:130: note: Cost model analysis: 
   Vector inside of loop cost: 4
@@ -2664,16 +2664,16 @@ vect_vec_iv_.175_63 = vect_vec_iv_.175_62 + vect_cst_.174_61;
 
 pa2-p1.c:130: note: ------>vectorizing phi: .MEM_60 = PHI <.MEM_33(11), .MEM_31(13)>
 
-pa2-p1.c:130: note: ------>vectorizing phi: ivtmp_55 = PHI <ivtmp_54(11), 5000000(13)>
+pa2-p1.c:130: note: ------>vectorizing phi: ivtmp_55 = PHI <ivtmp_54(11), 50000000(13)>
 
 pa2-p1.c:130: note: ------>vectorizing phi: vect_vec_iv_.175_62 = PHI <vect_vec_iv_.175_63(11), vect_cst_.173_3(13)>
 
 pa2-p1.c:130: note: ------>vectorizing statement: vect_vec_iv_.175_63 = vect_vec_iv_.175_62 + vect_cst_.174_61;
 
-pa2-p1.c:130: note: ------>vectorizing statement: _32 = 5000000 - i_58;
+pa2-p1.c:130: note: ------>vectorizing statement: _32 = 50000000 - i_58;
 
 pa2-p1.c:130: note: transform statement.
-pa2-p1.c:130: note: vect_is_simple_use: operand 5000000
+pa2-p1.c:130: note: vect_is_simple_use: operand 50000000
 pa2-p1.c:130: note: get vectype with 4 units of type int
 pa2-p1.c:130: note: vectype: vector(4) int
 pa2-p1.c:130: note: vect_is_simple_use: operand i_58
@@ -2681,12 +2681,12 @@ pa2-p1.c:130: note: def_stmt: i_58 = PHI <i_34(11), 0(13)>
 
 pa2-p1.c:130: note: type of def: 4.
 pa2-p1.c:130: note: transform binary/unary operation.
-pa2-p1.c:130: note: vect_get_vec_def_for_operand: 5000000
-pa2-p1.c:130: note: vect_is_simple_use: operand 5000000
+pa2-p1.c:130: note: vect_get_vec_def_for_operand: 50000000
+pa2-p1.c:130: note: vect_is_simple_use: operand 50000000
 pa2-p1.c:130: note: get vectype with 4 units of type int
 pa2-p1.c:130: note: vectype: vector(4) int
 pa2-p1.c:130: note: Create vector_cst. nunits = 4
-pa2-p1.c:130: note: created new init_stmt: vect_cst_.177_64 = { 5000000, 5000000, 5000000, 5000000 };
+pa2-p1.c:130: note: created new init_stmt: vect_cst_.177_64 = { 50000000, 50000000, 50000000, 50000000 };
 
 pa2-p1.c:130: note: vect_get_vec_def_for_operand: i_58
 pa2-p1.c:130: note: vect_is_simple_use: operand i_58
@@ -2701,20 +2701,20 @@ pa2-p1.c:130: note: ------>vectorizing statement: A[i_58] = _32;
 
 pa2-p1.c:130: note: transform statement.
 pa2-p1.c:130: note: vect_is_simple_use: operand _32
-pa2-p1.c:130: note: def_stmt: _32 = 5000000 - i_58;
+pa2-p1.c:130: note: def_stmt: _32 = 50000000 - i_58;
 
 pa2-p1.c:130: note: type of def: 3.
 pa2-p1.c:130: note: transform store. ncopies = 1
 pa2-p1.c:130: note: vect_get_vec_def_for_operand: _32
 pa2-p1.c:130: note: vect_is_simple_use: operand _32
-pa2-p1.c:130: note: def_stmt: _32 = 5000000 - i_58;
+pa2-p1.c:130: note: def_stmt: _32 = 50000000 - i_58;
 
 pa2-p1.c:130: note: type of def: 3.
-pa2-p1.c:130: note: def =  _32  def_stmt =  _32 = 5000000 - i_58;
+pa2-p1.c:130: note: def =  _32  def_stmt =  _32 = 50000000 - i_58;
 
 pa2-p1.c:130: note: create vector_type-pointer variable to type: vector(4) int  vectorizing an array ref: A
 pa2-p1.c:130: note: created vect_pA.181_66
-pa2-p1.c:130: note: add new stmt: MEM[(int[5000000] *)vect_pA.178_67] = vect_var_.176_65;
+pa2-p1.c:130: note: add new stmt: MEM[(int[50000000] *)vect_pA.178_67] = vect_var_.176_65;
 
 pa2-p1.c:130: note: ------>vectorizing statement: i_34 = i_58 + 1;
 
@@ -2747,7 +2747,7 @@ pa2-p1.c:130: note: ------>vectorizing statement: vect_pA.178_68 = vect_pA.178_6
 
 pa2-p1.c:130: note: ------>vectorizing statement: if (ivtmp_54 != 0)
 
-loop at pa2-p1.c:130: if (ivtmp_72 < 1250000)
+loop at pa2-p1.c:130: if (ivtmp_72 < 12500000)
 
 pa2-p1.c:130: note: LOOP VECTORIZED.
 Analyzing loop at pa2-p1.c:119
@@ -2755,7 +2755,7 @@ Analyzing loop at pa2-p1.c:119
 pa2-p1.c:119: note: ===== analyze_loop_nest =====
 pa2-p1.c:119: note: === vect_analyze_loop_form ===
 pa2-p1.c:119: note: === get_loop_niters ===
-pa2-p1.c:119: note: ==> get_loop_niters:5000000
+pa2-p1.c:119: note: ==> get_loop_niters:50000000
 pa2-p1.c:119: note: === vect_analyze_data_refs ===
 
 pa2-p1.c:119: note: get vectype with 4 units of type int
@@ -2768,10 +2768,10 @@ pa2-p1.c:119: note: step: 1,  init: 0
 pa2-p1.c:119: note: Detected induction.
 pa2-p1.c:119: note: Analyze phi: .MEM_59 = PHI <.MEM_16(8), .MEM_14(6)>
 
-pa2-p1.c:119: note: Analyze phi: ivtmp_2 = PHI <ivtmp_1(8), 5000000(6)>
+pa2-p1.c:119: note: Analyze phi: ivtmp_2 = PHI <ivtmp_1(8), 50000000(6)>
 
-pa2-p1.c:119: note: Access function of PHI: {5000000, +, 4294967295}_1
-pa2-p1.c:119: note: step: 4294967295,  init: 5000000
+pa2-p1.c:119: note: Access function of PHI: {50000000, +, 4294967295}_1
+pa2-p1.c:119: note: step: 4294967295,  init: 50000000
 pa2-p1.c:119: note: Detected induction.
 pa2-p1.c:119: note: === vect_pattern_recog ===
 pa2-p1.c:119: note: === vect_mark_stmts_to_be_vectorized ===
@@ -2779,9 +2779,9 @@ pa2-p1.c:119: note: init: phi relevant? i_57 = PHI <i_17(8), 0(6)>
 
 pa2-p1.c:119: note: init: phi relevant? .MEM_59 = PHI <.MEM_16(8), .MEM_14(6)>
 
-pa2-p1.c:119: note: init: phi relevant? ivtmp_2 = PHI <ivtmp_1(8), 5000000(6)>
+pa2-p1.c:119: note: init: phi relevant? ivtmp_2 = PHI <ivtmp_1(8), 50000000(6)>
 
-pa2-p1.c:119: note: init: stmt relevant? _15 = 5000000 - i_57;
+pa2-p1.c:119: note: init: stmt relevant? _15 = 50000000 - i_57;
 
 pa2-p1.c:119: note: init: stmt relevant? A[i_57] = _15;
 
@@ -2796,11 +2796,11 @@ pa2-p1.c:119: note: init: stmt relevant? if (ivtmp_1 != 0)
 pa2-p1.c:119: note: worklist: examine stmt: A[i_57] = _15;
 
 pa2-p1.c:119: note: vect_is_simple_use: operand _15
-pa2-p1.c:119: note: def_stmt: _15 = 5000000 - i_57;
+pa2-p1.c:119: note: def_stmt: _15 = 50000000 - i_57;
 
 pa2-p1.c:119: note: type of def: 3.
 pa2-p1.c:119: note: mark relevant 4, live 0.
-pa2-p1.c:119: note: worklist: examine stmt: _15 = 5000000 - i_57;
+pa2-p1.c:119: note: worklist: examine stmt: _15 = 50000000 - i_57;
 
 pa2-p1.c:119: note: vect_is_simple_use: operand i_57
 pa2-p1.c:119: note: def_stmt: i_57 = PHI <i_17(8), 0(6)>
@@ -2834,9 +2834,9 @@ pa2-p1.c:119: note: vectype: vector(4) int
 pa2-p1.c:119: note: nunits = 4
 pa2-p1.c:119: note: ==> examining phi: .MEM_59 = PHI <.MEM_16(8), .MEM_14(6)>
 
-pa2-p1.c:119: note: ==> examining phi: ivtmp_2 = PHI <ivtmp_1(8), 5000000(6)>
+pa2-p1.c:119: note: ==> examining phi: ivtmp_2 = PHI <ivtmp_1(8), 50000000(6)>
 
-pa2-p1.c:119: note: ==> examining statement: _15 = 5000000 - i_57;
+pa2-p1.c:119: note: ==> examining statement: _15 = 50000000 - i_57;
 
 pa2-p1.c:119: note: get vectype for scalar type:  int
 pa2-p1.c:119: note: get vectype with 4 units of type int
@@ -2883,9 +2883,9 @@ pa2-p1.c:119: note: Access function of PHI: {0, +, 1}_1
 pa2-p1.c:119: note: Analyze phi: .MEM_59 = PHI <.MEM_16(8), .MEM_14(6)>
 
 pa2-p1.c:119: note: virtual phi. skip.
-pa2-p1.c:119: note: Analyze phi: ivtmp_2 = PHI <ivtmp_1(8), 5000000(6)>
+pa2-p1.c:119: note: Analyze phi: ivtmp_2 = PHI <ivtmp_1(8), 50000000(6)>
 
-pa2-p1.c:119: note: Access function of PHI: {5000000, +, 4294967295}_1
+pa2-p1.c:119: note: Access function of PHI: {50000000, +, 4294967295}_1
 pa2-p1.c:119: note: vect_model_store_cost: aligned.
 pa2-p1.c:119: note: vect_get_data_access_cost: inside_cost = 1, outside_cost = 0.
 pa2-p1.c:119: note: === vect_analyze_slp ===
@@ -2898,11 +2898,11 @@ pa2-p1.c:119: note: === vectorizable_induction ===
 pa2-p1.c:119: note: vect_model_induction_cost: inside_cost = 1, prologue_cost = 2 .
 pa2-p1.c:119: note: examining phi: .MEM_59 = PHI <.MEM_16(8), .MEM_14(6)>
 
-pa2-p1.c:119: note: examining phi: ivtmp_2 = PHI <ivtmp_1(8), 5000000(6)>
+pa2-p1.c:119: note: examining phi: ivtmp_2 = PHI <ivtmp_1(8), 50000000(6)>
 
-pa2-p1.c:119: note: ==> examining statement: _15 = 5000000 - i_57;
+pa2-p1.c:119: note: ==> examining statement: _15 = 50000000 - i_57;
 
-pa2-p1.c:119: note: vect_is_simple_use: operand 5000000
+pa2-p1.c:119: note: vect_is_simple_use: operand 50000000
 pa2-p1.c:119: note: get vectype with 4 units of type int
 pa2-p1.c:119: note: vectype: vector(4) int
 pa2-p1.c:119: note: vect_is_simple_use: operand i_57
@@ -2914,7 +2914,7 @@ pa2-p1.c:119: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 1 .
 pa2-p1.c:119: note: ==> examining statement: A[i_57] = _15;
 
 pa2-p1.c:119: note: vect_is_simple_use: operand _15
-pa2-p1.c:119: note: def_stmt: _15 = 5000000 - i_57;
+pa2-p1.c:119: note: def_stmt: _15 = 50000000 - i_57;
 
 pa2-p1.c:119: note: type of def: 3.
 pa2-p1.c:119: note: vect_model_store_cost: aligned.
@@ -2934,7 +2934,7 @@ pa2-p1.c:119: note: irrelevant.
 pa2-p1.c:119: note: ==> examining statement: if (ivtmp_1 != 0)
 
 pa2-p1.c:119: note: irrelevant.
-pa2-p1.c:119: note: vectorization_factor = 4, niters = 5000000
+pa2-p1.c:119: note: vectorization_factor = 4, niters = 50000000
 pa2-p1.c:119: note: === vect_update_slp_costs_according_to_vf ===
 pa2-p1.c:119: note: Cost model analysis: 
   Vector inside of loop cost: 4
@@ -2981,16 +2981,16 @@ vect_vec_iv_.187_79 = vect_vec_iv_.187_78 + vect_cst_.186_77;
 
 pa2-p1.c:119: note: ------>vectorizing phi: .MEM_59 = PHI <.MEM_16(8), .MEM_14(14)>
 
-pa2-p1.c:119: note: ------>vectorizing phi: ivtmp_2 = PHI <ivtmp_1(8), 5000000(14)>
+pa2-p1.c:119: note: ------>vectorizing phi: ivtmp_2 = PHI <ivtmp_1(8), 50000000(14)>
 
 pa2-p1.c:119: note: ------>vectorizing phi: vect_vec_iv_.187_78 = PHI <vect_vec_iv_.187_79(8), vect_cst_.185_76(14)>
 
 pa2-p1.c:119: note: ------>vectorizing statement: vect_vec_iv_.187_79 = vect_vec_iv_.187_78 + vect_cst_.186_77;
 
-pa2-p1.c:119: note: ------>vectorizing statement: _15 = 5000000 - i_57;
+pa2-p1.c:119: note: ------>vectorizing statement: _15 = 50000000 - i_57;
 
 pa2-p1.c:119: note: transform statement.
-pa2-p1.c:119: note: vect_is_simple_use: operand 5000000
+pa2-p1.c:119: note: vect_is_simple_use: operand 50000000
 pa2-p1.c:119: note: get vectype with 4 units of type int
 pa2-p1.c:119: note: vectype: vector(4) int
 pa2-p1.c:119: note: vect_is_simple_use: operand i_57
@@ -2998,12 +2998,12 @@ pa2-p1.c:119: note: def_stmt: i_57 = PHI <i_17(8), 0(14)>
 
 pa2-p1.c:119: note: type of def: 4.
 pa2-p1.c:119: note: transform binary/unary operation.
-pa2-p1.c:119: note: vect_get_vec_def_for_operand: 5000000
-pa2-p1.c:119: note: vect_is_simple_use: operand 5000000
+pa2-p1.c:119: note: vect_get_vec_def_for_operand: 50000000
+pa2-p1.c:119: note: vect_is_simple_use: operand 50000000
 pa2-p1.c:119: note: get vectype with 4 units of type int
 pa2-p1.c:119: note: vectype: vector(4) int
 pa2-p1.c:119: note: Create vector_cst. nunits = 4
-pa2-p1.c:119: note: created new init_stmt: vect_cst_.189_80 = { 5000000, 5000000, 5000000, 5000000 };
+pa2-p1.c:119: note: created new init_stmt: vect_cst_.189_80 = { 50000000, 50000000, 50000000, 50000000 };
 
 pa2-p1.c:119: note: vect_get_vec_def_for_operand: i_57
 pa2-p1.c:119: note: vect_is_simple_use: operand i_57
@@ -3018,20 +3018,20 @@ pa2-p1.c:119: note: ------>vectorizing statement: A[i_57] = _15;
 
 pa2-p1.c:119: note: transform statement.
 pa2-p1.c:119: note: vect_is_simple_use: operand _15
-pa2-p1.c:119: note: def_stmt: _15 = 5000000 - i_57;
+pa2-p1.c:119: note: def_stmt: _15 = 50000000 - i_57;
 
 pa2-p1.c:119: note: type of def: 3.
 pa2-p1.c:119: note: transform store. ncopies = 1
 pa2-p1.c:119: note: vect_get_vec_def_for_operand: _15
 pa2-p1.c:119: note: vect_is_simple_use: operand _15
-pa2-p1.c:119: note: def_stmt: _15 = 5000000 - i_57;
+pa2-p1.c:119: note: def_stmt: _15 = 50000000 - i_57;
 
 pa2-p1.c:119: note: type of def: 3.
-pa2-p1.c:119: note: def =  _15  def_stmt =  _15 = 5000000 - i_57;
+pa2-p1.c:119: note: def =  _15  def_stmt =  _15 = 50000000 - i_57;
 
 pa2-p1.c:119: note: create vector_type-pointer variable to type: vector(4) int  vectorizing an array ref: A
 pa2-p1.c:119: note: created vect_pA.193_82
-pa2-p1.c:119: note: add new stmt: MEM[(int[5000000] *)vect_pA.190_83] = vect_var_.188_81;
+pa2-p1.c:119: note: add new stmt: MEM[(int[50000000] *)vect_pA.190_83] = vect_var_.188_81;
 
 pa2-p1.c:119: note: ------>vectorizing statement: i_17 = i_57 + 1;
 
@@ -3064,7 +3064,7 @@ pa2-p1.c:119: note: ------>vectorizing statement: vect_pA.190_84 = vect_pA.190_8
 
 pa2-p1.c:119: note: ------>vectorizing statement: if (ivtmp_1 != 0)
 
-loop at pa2-p1.c:119: if (ivtmp_88 < 1250000)
+loop at pa2-p1.c:119: if (ivtmp_88 < 12500000)
 
 pa2-p1.c:119: note: LOOP VECTORIZED.
 pa2-p1.c:95: note: vectorized 2 loops in function.
@@ -3115,7 +3115,7 @@ pa2-p1.c:119: note: ===vect_slp_analyze_bb===
 
 pa2-p1.c:119: note: === vect_analyze_data_refs ===
 
-pa2-p1.c:119: note: not vectorized: no vectype for stmt: MEM[(int[5000000] *)vect_pA.190_83] = vect_var_.188_81;
+pa2-p1.c:119: note: not vectorized: no vectype for stmt: MEM[(int[50000000] *)vect_pA.190_83] = vect_var_.188_81;
  scalar_type: vector(4) int
 pa2-p1.c:119: note: === vect_pattern_recog ===
 pa2-p1.c:119: note: === vect_analyze_dependences ===
@@ -3141,7 +3141,7 @@ pa2-p1.c:130: note: ===vect_slp_analyze_bb===
 
 pa2-p1.c:130: note: === vect_analyze_data_refs ===
 
-pa2-p1.c:130: note: not vectorized: no vectype for stmt: MEM[(int[5000000] *)vect_pA.178_67] = vect_var_.176_65;
+pa2-p1.c:130: note: not vectorized: no vectype for stmt: MEM[(int[50000000] *)vect_pA.178_67] = vect_var_.176_65;
  scalar_type: vector(4) int
 pa2-p1.c:130: note: === vect_pattern_recog ===
 pa2-p1.c:130: note: === vect_analyze_dependences ===

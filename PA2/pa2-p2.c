@@ -6,12 +6,11 @@
 #include <sys/time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define N (2048)
+#define N (2000)
 #define threshold (0.0000001)
 void compare(int n, float wref[][n], float w[][n]);
 
 float c[N][N],b[N][N],a[N][N],cc[N][N];
-
 
 
 int main(int argc, char *argv[]){
@@ -58,10 +57,18 @@ for(i=0;i<N;i++)
 // OpenMP parallelization
 for(i=0;i<N;i++) for(j=0;j<N;j++) c[j][i] = 0;
 t1 = rtclock();
-for(i=0;i<N;i++)
- for(j=0;j<N;j++)
-  for(k=0;k<N;k++)
-    c[j][i] = c[j][i] + a[k][i]*b[k][j];
+
+#pragma omp parallel private(j,k,i)
+{
+	int num_threads = omp_get_num_threads();
+	int id = omp_get_thread_num();
+
+	for( j=id; j<N; j+=num_threads )
+		for(k=0;k<N;k++) //j
+			for(i=0;i<N;i++) //i
+				c[j][i] += a[k][i] * b[k][j];
+}
+
 t2 = rtclock();
 printf("Optimized/parallelized version: %.2f GFLOPs; Time = %.2f\n",2.0e-9*N*N*N/(t2-t1),t2-t1);
  compare(N,c,cc);
