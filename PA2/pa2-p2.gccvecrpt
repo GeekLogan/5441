@@ -1,0 +1,3973 @@
+
+Analyzing loop at pa2-p2.c:63
+
+pa2-p2.c:63: note: ===== analyze_loop_nest =====
+pa2-p2.c:63: note: === vect_analyze_loop_form ===
+pa2-p2.c:63: note: not vectorized: multiple nested loops.
+pa2-p2.c:63: note: bad loop form.
+Analyzing loop at pa2-p2.c:63
+
+pa2-p2.c:63: note: ===== analyze_loop_nest =====
+pa2-p2.c:63: note: === vect_analyze_loop_form ===
+pa2-p2.c:63: note: ===== analyze_loop_nest_1 =====
+pa2-p2.c:63: note: === vect_analyze_loop_form ===
+pa2-p2.c:63: note: === get_loop_niters ===
+pa2-p2.c:63: note: ==> get_loop_niters:2000
+pa2-p2.c:63: note: Considering outer-loop vectorization.
+pa2-p2.c:63: note: === get_loop_niters ===
+pa2-p2.c:63: note: ==> get_loop_niters:2000
+pa2-p2.c:63: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:63: note: get vectype with 4 units of type float
+pa2-p2.c:63: note: vectype: vector(4) float
+pa2-p2.c:63: note: analyze in outer-loop: c
+pa2-p2.c:63: note: 	outer base_address: &c
+	outer offset from base address: (ssizetype) ((sizetype) j_3 * 8000)
+	outer constant offset from base address: 0
+	outer step: 0
+	outer aligned to: 64
+pa2-p2.c:63: note: get vectype with 4 units of type float
+pa2-p2.c:63: note: vectype: vector(4) float
+pa2-p2.c:63: note: analyze in outer-loop: a
+pa2-p2.c:63: note: 	outer base_address: &a
+	outer offset from base address: 0
+	outer constant offset from base address: 0
+	outer step: 8000
+	outer aligned to: 128
+pa2-p2.c:63: note: get vectype with 4 units of type float
+pa2-p2.c:63: note: vectype: vector(4) float
+pa2-p2.c:63: note: analyze in outer-loop: c
+pa2-p2.c:63: note: 	outer base_address: &c
+	outer offset from base address: (ssizetype) ((sizetype) j_3 * 8000)
+	outer constant offset from base address: 0
+	outer step: 0
+	outer aligned to: 64
+pa2-p2.c:63: note: get vectype with 4 units of type float
+pa2-p2.c:63: note: vectype: vector(4) float
+pa2-p2.c:63: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:63: note: Analyze phi: .MEM_31 = PHI <.MEM_6(5), .MEM_29(10)>
+
+pa2-p2.c:63: note: Analyze phi: k_39 = PHI <0(5), k_23(10)>
+
+pa2-p2.c:63: note: Access function of PHI: {0, +, 1}_2
+pa2-p2.c:63: note: step: 1,  init: 0
+pa2-p2.c:63: note: Detected induction.
+pa2-p2.c:63: note: Analyze phi: ivtmp_53 = PHI <2000(5), ivtmp_52(10)>
+
+pa2-p2.c:63: note: Access function of PHI: {2000, +, 4294967295}_2
+pa2-p2.c:63: note: step: 4294967295,  init: 2000
+pa2-p2.c:63: note: Detected induction.
+pa2-p2.c:63: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:63: note: Analyze phi: i_38 = PHI <i_30(11), 0(6)>
+
+pa2-p2.c:63: note: Access function of PHI: {0, +, 1}_3
+pa2-p2.c:63: note: step: 1,  init: 0
+pa2-p2.c:63: note: Detected induction.
+pa2-p2.c:63: note: Analyze phi: .MEM_37 = PHI <.MEM_29(11), .MEM_31(6)>
+
+pa2-p2.c:63: note: Analyze phi: ivtmp_9 = PHI <ivtmp_54(11), 2000(6)>
+
+pa2-p2.c:63: note: Access function of PHI: {2000, +, 4294967295}_3
+pa2-p2.c:63: note: step: 4294967295,  init: 2000
+pa2-p2.c:63: note: Detected induction.
+pa2-p2.c:63: note: === vect_pattern_recog ===
+pa2-p2.c:63: note: vect_is_simple_use: operand _25
+pa2-p2.c:63: note: def_stmt: _25 = a[k_39][i_38];
+
+pa2-p2.c:63: note: type of def: 3.
+pa2-p2.c:63: note: === vect_mark_stmts_to_be_vectorized ===
+pa2-p2.c:63: note: init: phi relevant? .MEM_31 = PHI <.MEM_6(5), .MEM_29(10)>
+
+pa2-p2.c:63: note: init: phi relevant? k_39 = PHI <0(5), k_23(10)>
+
+pa2-p2.c:63: note: init: phi relevant? ivtmp_53 = PHI <2000(5), ivtmp_52(10)>
+
+pa2-p2.c:63: note: init: stmt relevant? # DEBUG k => k_39
+
+pa2-p2.c:63: note: init: stmt relevant? # DEBUG i => 0
+
+pa2-p2.c:63: note: init: stmt relevant? pretmp_56 = b[k_39][j_3];
+
+pa2-p2.c:63: note: init: phi relevant? i_38 = PHI <i_30(11), 0(6)>
+
+pa2-p2.c:63: note: init: phi relevant? .MEM_37 = PHI <.MEM_29(11), .MEM_31(6)>
+
+pa2-p2.c:63: note: init: phi relevant? ivtmp_9 = PHI <ivtmp_54(11), 2000(6)>
+
+pa2-p2.c:63: note: init: stmt relevant? # DEBUG i => i_38
+
+pa2-p2.c:63: note: init: stmt relevant? _24 = c[j_3][i_38];
+
+pa2-p2.c:63: note: init: stmt relevant? _25 = a[k_39][i_38];
+
+pa2-p2.c:63: note: init: stmt relevant? _27 = _25 * pretmp_56;
+
+pa2-p2.c:63: note: init: stmt relevant? _28 = _24 + _27;
+
+pa2-p2.c:63: note: init: stmt relevant? c[j_3][i_38] = _28;
+
+pa2-p2.c:63: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:63: note: mark relevant 4, live 0.
+pa2-p2.c:63: note: init: stmt relevant? i_30 = i_38 + 1;
+
+pa2-p2.c:63: note: init: stmt relevant? # DEBUG i => i_30
+
+pa2-p2.c:63: note: init: stmt relevant? # DEBUG i => i_30
+
+pa2-p2.c:63: note: init: stmt relevant? ivtmp_54 = ivtmp_9 - 1;
+
+pa2-p2.c:63: note: init: stmt relevant? if (ivtmp_54 != 0)
+
+pa2-p2.c:63: note: init: stmt relevant? k_23 = k_39 + 1;
+
+pa2-p2.c:63: note: init: stmt relevant? # DEBUG k => k_23
+
+pa2-p2.c:63: note: init: stmt relevant? # DEBUG k => k_23
+
+pa2-p2.c:63: note: init: stmt relevant? ivtmp_52 = ivtmp_53 - 1;
+
+pa2-p2.c:63: note: init: stmt relevant? if (ivtmp_52 != 0)
+
+pa2-p2.c:63: note: worklist: examine stmt: c[j_3][i_38] = _28;
+
+pa2-p2.c:63: note: vect_is_simple_use: operand _28
+pa2-p2.c:63: note: def_stmt: _28 = _24 + _27;
+
+pa2-p2.c:63: note: type of def: 3.
+pa2-p2.c:63: note: mark relevant 4, live 0.
+pa2-p2.c:63: note: worklist: examine stmt: _28 = _24 + _27;
+
+pa2-p2.c:63: note: vect_is_simple_use: operand _24
+pa2-p2.c:63: note: def_stmt: _24 = c[j_3][i_38];
+
+pa2-p2.c:63: note: type of def: 3.
+pa2-p2.c:63: note: mark relevant 4, live 0.
+pa2-p2.c:63: note: vect_is_simple_use: operand _27
+pa2-p2.c:63: note: def_stmt: _27 = _25 * pretmp_56;
+
+pa2-p2.c:63: note: type of def: 3.
+pa2-p2.c:63: note: mark relevant 4, live 0.
+pa2-p2.c:63: note: worklist: examine stmt: _27 = _25 * pretmp_56;
+
+pa2-p2.c:63: note: vect_is_simple_use: operand _25
+pa2-p2.c:63: note: def_stmt: _25 = a[k_39][i_38];
+
+pa2-p2.c:63: note: type of def: 3.
+pa2-p2.c:63: note: mark relevant 4, live 0.
+pa2-p2.c:63: note: vect_is_simple_use: operand pretmp_56
+pa2-p2.c:63: note: def_stmt: pretmp_56 = b[k_39][j_3];
+
+pa2-p2.c:63: note: type of def: 3.
+pa2-p2.c:63: note: outer-loop def-stmt defining inner-loop stmt.
+pa2-p2.c:63: note: mark relevant 4, live 0.
+pa2-p2.c:63: note: worklist: examine stmt: pretmp_56 = b[k_39][j_3];
+
+pa2-p2.c:63: note: worklist: examine stmt: _25 = a[k_39][i_38];
+
+pa2-p2.c:63: note: worklist: examine stmt: _24 = c[j_3][i_38];
+
+pa2-p2.c:63: note: === vect_analyze_dependences ===
+pa2-p2.c:63: note: dependence distance  = 0.
+pa2-p2.c:63: note: dependence distance == 0 between c[j_3][i_38] and c[j_3][i_38]
+pa2-p2.c:63: note: dependence distance  = 1.
+pa2-p2.c:63: note: not vectorized, possible dependence between data-refs c[j_3][i_38] and c[j_3][i_38]
+pa2-p2.c:63: note: bad data dependence.
+Analyzing loop at pa2-p2.c:64
+
+pa2-p2.c:64: note: ===== analyze_loop_nest =====
+pa2-p2.c:64: note: === vect_analyze_loop_form ===
+pa2-p2.c:64: note: === get_loop_niters ===
+pa2-p2.c:64: note: ==> get_loop_niters:2000
+pa2-p2.c:64: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:64: note: Analyze phi: i_38 = PHI <i_30(11), 0(6)>
+
+pa2-p2.c:64: note: Access function of PHI: {0, +, 1}_3
+pa2-p2.c:64: note: step: 1,  init: 0
+pa2-p2.c:64: note: Detected induction.
+pa2-p2.c:64: note: Analyze phi: .MEM_37 = PHI <.MEM_29(11), .MEM_31(6)>
+
+pa2-p2.c:64: note: Analyze phi: ivtmp_9 = PHI <ivtmp_54(11), 2000(6)>
+
+pa2-p2.c:64: note: Access function of PHI: {2000, +, 4294967295}_3
+pa2-p2.c:64: note: step: 4294967295,  init: 2000
+pa2-p2.c:64: note: Detected induction.
+pa2-p2.c:64: note: === vect_pattern_recog ===
+pa2-p2.c:64: note: vect_is_simple_use: operand _25
+pa2-p2.c:64: note: def_stmt: _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: === vect_mark_stmts_to_be_vectorized ===
+pa2-p2.c:64: note: init: phi relevant? i_38 = PHI <i_30(11), 0(6)>
+
+pa2-p2.c:64: note: init: phi relevant? .MEM_37 = PHI <.MEM_29(11), .MEM_31(6)>
+
+pa2-p2.c:64: note: init: phi relevant? ivtmp_9 = PHI <ivtmp_54(11), 2000(6)>
+
+pa2-p2.c:64: note: init: stmt relevant? # DEBUG i => i_38
+
+pa2-p2.c:64: note: init: stmt relevant? _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: init: stmt relevant? _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: init: stmt relevant? _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: init: stmt relevant? _28 = _24 + _27;
+
+pa2-p2.c:64: note: init: stmt relevant? c[j_3][i_38] = _28;
+
+pa2-p2.c:64: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:64: note: mark relevant 4, live 0.
+pa2-p2.c:64: note: init: stmt relevant? i_30 = i_38 + 1;
+
+pa2-p2.c:64: note: init: stmt relevant? # DEBUG i => i_30
+
+pa2-p2.c:64: note: init: stmt relevant? # DEBUG i => i_30
+
+pa2-p2.c:64: note: init: stmt relevant? ivtmp_54 = ivtmp_9 - 1;
+
+pa2-p2.c:64: note: init: stmt relevant? if (ivtmp_54 != 0)
+
+pa2-p2.c:64: note: worklist: examine stmt: c[j_3][i_38] = _28;
+
+pa2-p2.c:64: note: vect_is_simple_use: operand _28
+pa2-p2.c:64: note: def_stmt: _28 = _24 + _27;
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: mark relevant 4, live 0.
+pa2-p2.c:64: note: worklist: examine stmt: _28 = _24 + _27;
+
+pa2-p2.c:64: note: vect_is_simple_use: operand _24
+pa2-p2.c:64: note: def_stmt: _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: mark relevant 4, live 0.
+pa2-p2.c:64: note: vect_is_simple_use: operand _27
+pa2-p2.c:64: note: def_stmt: _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: mark relevant 4, live 0.
+pa2-p2.c:64: note: worklist: examine stmt: _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: vect_is_simple_use: operand _25
+pa2-p2.c:64: note: def_stmt: _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: mark relevant 4, live 0.
+pa2-p2.c:64: note: vect_is_simple_use: operand pretmp_56
+pa2-p2.c:64: note: def_stmt: pretmp_56 = b[k_39][j_3];
+
+pa2-p2.c:64: note: type of def: 2.
+pa2-p2.c:64: note: def_stmt is out of loop.
+pa2-p2.c:64: note: worklist: examine stmt: _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: worklist: examine stmt: _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: === vect_analyze_dependences ===
+pa2-p2.c:64: note: dependence distance  = 0.
+pa2-p2.c:64: note: dependence distance == 0 between c[j_3][i_38] and c[j_3][i_38]
+pa2-p2.c:64: note: === vect_determine_vectorization_factor ===
+pa2-p2.c:64: note: ==> examining phi: i_38 = PHI <i_30(11), 0(6)>
+
+pa2-p2.c:64: note: ==> examining phi: .MEM_37 = PHI <.MEM_29(11), .MEM_31(6)>
+
+pa2-p2.c:64: note: ==> examining phi: ivtmp_9 = PHI <ivtmp_54(11), 2000(6)>
+
+pa2-p2.c:64: note: ==> examining statement: # DEBUG i => i_38
+
+pa2-p2.c:64: note: skip.
+pa2-p2.c:64: note: ==> examining statement: _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: get vectype for scalar type:  float
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: nunits = 4
+pa2-p2.c:64: note: ==> examining statement: _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: get vectype for scalar type:  float
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: nunits = 4
+pa2-p2.c:64: note: ==> examining statement: _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: get vectype for scalar type:  float
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: get vectype for scalar type:  float
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: nunits = 4
+pa2-p2.c:64: note: ==> examining statement: _28 = _24 + _27;
+
+pa2-p2.c:64: note: get vectype for scalar type:  float
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: get vectype for scalar type:  float
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: nunits = 4
+pa2-p2.c:64: note: ==> examining statement: c[j_3][i_38] = _28;
+
+pa2-p2.c:64: note: get vectype for scalar type:  float
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: nunits = 4
+pa2-p2.c:64: note: ==> examining statement: i_30 = i_38 + 1;
+
+pa2-p2.c:64: note: skip.
+pa2-p2.c:64: note: ==> examining statement: # DEBUG i => i_30
+
+pa2-p2.c:64: note: skip.
+pa2-p2.c:64: note: ==> examining statement: # DEBUG i => i_30
+
+pa2-p2.c:64: note: skip.
+pa2-p2.c:64: note: ==> examining statement: ivtmp_54 = ivtmp_9 - 1;
+
+pa2-p2.c:64: note: skip.
+pa2-p2.c:64: note: ==> examining statement: if (ivtmp_54 != 0)
+
+pa2-p2.c:64: note: skip.
+pa2-p2.c:64: note: vectorization factor = 4
+pa2-p2.c:64: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:64: note: dependence distance  = 0.
+pa2-p2.c:64: note: accesses have the same alignment.dependence distance modulo vf == 0 between c[j_3][i_38] and c[j_3][i_38]
+pa2-p2.c:64: note: vect_compute_data_ref_alignment:
+pa2-p2.c:64: note: misalign = 0 bytes of ref c[j_3][i_38]
+pa2-p2.c:64: note: vect_compute_data_ref_alignment:
+pa2-p2.c:64: note: misalign = 0 bytes of ref a[k_39][i_38]
+pa2-p2.c:64: note: vect_compute_data_ref_alignment:
+pa2-p2.c:64: note: misalign = 0 bytes of ref c[j_3][i_38]
+pa2-p2.c:64: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:64: note: === vect_prune_runtime_alias_test_list ===
+pa2-p2.c:64: note: === vect_enhance_data_refs_alignment ===
+pa2-p2.c:64: note: vect_can_advance_ivs_p:
+pa2-p2.c:64: note: Analyze phi: i_38 = PHI <i_30(11), 0(6)>
+
+pa2-p2.c:64: note: Access function of PHI: {0, +, 1}_3
+pa2-p2.c:64: note: Analyze phi: .MEM_37 = PHI <.MEM_29(11), .MEM_31(6)>
+
+pa2-p2.c:64: note: virtual phi. skip.
+pa2-p2.c:64: note: Analyze phi: ivtmp_9 = PHI <ivtmp_54(11), 2000(6)>
+
+pa2-p2.c:64: note: Access function of PHI: {2000, +, 4294967295}_3
+pa2-p2.c:64: note: vect_model_load_cost: aligned.
+pa2-p2.c:64: note: vect_get_data_access_cost: inside_cost = 1, outside_cost = 0.
+pa2-p2.c:64: note: vect_model_load_cost: aligned.
+pa2-p2.c:64: note: vect_get_data_access_cost: inside_cost = 2, outside_cost = 0.
+pa2-p2.c:64: note: vect_model_store_cost: aligned.
+pa2-p2.c:64: note: vect_get_data_access_cost: inside_cost = 3, outside_cost = 0.
+pa2-p2.c:64: note: === vect_analyze_slp ===
+pa2-p2.c:64: note: === vect_make_slp_decision ===
+pa2-p2.c:64: note: === vect_detect_hybrid_slp ===
+pa2-p2.c:64: note: === vect_analyze_loop_operations ===
+pa2-p2.c:64: note: examining phi: i_38 = PHI <i_30(11), 0(6)>
+
+pa2-p2.c:64: note: examining phi: .MEM_37 = PHI <.MEM_29(11), .MEM_31(6)>
+
+pa2-p2.c:64: note: examining phi: ivtmp_9 = PHI <ivtmp_54(11), 2000(6)>
+
+pa2-p2.c:64: note: ==> examining statement: # DEBUG i => i_38
+
+pa2-p2.c:64: note: irrelevant.
+pa2-p2.c:64: note: ==> examining statement: _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: num. args = 4 (not unary/binary/ternary op).
+pa2-p2.c:64: note: vect_is_simple_use: operand c[j_3][i_38]
+pa2-p2.c:64: note: not ssa-name.
+pa2-p2.c:64: note: use not simple.
+pa2-p2.c:64: note: vect_model_load_cost: aligned.
+pa2-p2.c:64: note: vect_model_load_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:64: note: ==> examining statement: _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: num. args = 4 (not unary/binary/ternary op).
+pa2-p2.c:64: note: vect_is_simple_use: operand a[k_39][i_38]
+pa2-p2.c:64: note: not ssa-name.
+pa2-p2.c:64: note: use not simple.
+pa2-p2.c:64: note: vect_model_load_cost: aligned.
+pa2-p2.c:64: note: vect_model_load_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:64: note: ==> examining statement: _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: vect_is_simple_use: operand _25
+pa2-p2.c:64: note: def_stmt: _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: vect_is_simple_use: operand pretmp_56
+pa2-p2.c:64: note: def_stmt: pretmp_56 = b[k_39][j_3];
+
+pa2-p2.c:64: note: type of def: 2.
+pa2-p2.c:64: note: === vectorizable_operation ===
+pa2-p2.c:64: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 1 .
+pa2-p2.c:64: note: ==> examining statement: _28 = _24 + _27;
+
+pa2-p2.c:64: note: vect_is_simple_use: operand _24
+pa2-p2.c:64: note: def_stmt: _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: vect_is_simple_use: operand _27
+pa2-p2.c:64: note: def_stmt: _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: === vectorizable_operation ===
+pa2-p2.c:64: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:64: note: ==> examining statement: c[j_3][i_38] = _28;
+
+pa2-p2.c:64: note: vect_is_simple_use: operand _28
+pa2-p2.c:64: note: def_stmt: _28 = _24 + _27;
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: vect_model_store_cost: aligned.
+pa2-p2.c:64: note: vect_model_store_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:64: note: ==> examining statement: i_30 = i_38 + 1;
+
+pa2-p2.c:64: note: irrelevant.
+pa2-p2.c:64: note: ==> examining statement: # DEBUG i => i_30
+
+pa2-p2.c:64: note: irrelevant.
+pa2-p2.c:64: note: ==> examining statement: # DEBUG i => i_30
+
+pa2-p2.c:64: note: irrelevant.
+pa2-p2.c:64: note: ==> examining statement: ivtmp_54 = ivtmp_9 - 1;
+
+pa2-p2.c:64: note: irrelevant.
+pa2-p2.c:64: note: ==> examining statement: if (ivtmp_54 != 0)
+
+pa2-p2.c:64: note: irrelevant.
+pa2-p2.c:64: note: vectorization_factor = 4, niters = 2000
+pa2-p2.c:64: note: === vect_update_slp_costs_according_to_vf ===
+pa2-p2.c:64: note: Cost model analysis: 
+  Vector inside of loop cost: 5
+  Vector prologue cost: 1
+  Vector epilogue cost: 0
+  Scalar iteration cost: 5
+  Scalar outside cost: 0
+  Vector outside cost: 1
+  prologue iterations: 0
+  epilogue iterations: 0
+  Calculated minimum iters for profitability: 1
+
+pa2-p2.c:64: note:   Runtime profitability threshold = 3
+
+pa2-p2.c:64: note:   Static estimate profitability threshold = 3
+
+
+Vectorizing loop at pa2-p2.c:64
+
+pa2-p2.c:64: note: === vec_transform_loop ===
+pa2-p2.c:64: note: ------>vectorizing phi: i_38 = PHI <i_30(11), 0(16)>
+
+pa2-p2.c:64: note: ------>vectorizing phi: .MEM_37 = PHI <.MEM_29(11), .MEM_31(16)>
+
+pa2-p2.c:64: note: ------>vectorizing phi: ivtmp_9 = PHI <ivtmp_54(11), 2000(16)>
+
+pa2-p2.c:64: note: ------>vectorizing statement: # DEBUG i => i_38
+
+pa2-p2.c:64: note: ------>vectorizing statement: _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: transform statement.
+pa2-p2.c:64: note: transform load. ncopies = 1
+pa2-p2.c:64: note: create vector_type-pointer variable to type: vector(4) float  vectorizing an array ref: c
+pa2-p2.c:64: note: created vect_pc.15_49
+pa2-p2.c:64: note: add new stmt: vect_var_.16_46 = MEM[(float[2000][2000] *)vect_pc.12_48];
+
+pa2-p2.c:64: note: ------>vectorizing statement: _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: transform statement.
+pa2-p2.c:64: note: transform load. ncopies = 1
+pa2-p2.c:64: note: create vector_type-pointer variable to type: vector(4) float  vectorizing an array ref: a
+pa2-p2.c:64: note: created vect_pa.20_43
+pa2-p2.c:64: note: add new stmt: vect_var_.21_40 = MEM[(float[2000][2000] *)vect_pa.17_42];
+
+pa2-p2.c:64: note: ------>vectorizing statement: _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: transform statement.
+pa2-p2.c:64: note: vect_is_simple_use: operand _25
+pa2-p2.c:64: note: def_stmt: _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: vect_is_simple_use: operand pretmp_56
+pa2-p2.c:64: note: def_stmt: pretmp_56 = b[k_39][j_3];
+
+pa2-p2.c:64: note: type of def: 2.
+pa2-p2.c:64: note: transform binary/unary operation.
+pa2-p2.c:64: note: vect_get_vec_def_for_operand: _25
+pa2-p2.c:64: note: vect_is_simple_use: operand _25
+pa2-p2.c:64: note: def_stmt: _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: def =  _25  def_stmt =  _25 = a[k_39][i_38];
+
+pa2-p2.c:64: note: vect_get_vec_def_for_operand: pretmp_56
+pa2-p2.c:64: note: vect_is_simple_use: operand pretmp_56
+pa2-p2.c:64: note: def_stmt: pretmp_56 = b[k_39][j_3];
+
+pa2-p2.c:64: note: type of def: 2.
+pa2-p2.c:64: note: def =  pretmp_56  def_stmt =  pretmp_56 = b[k_39][j_3];
+
+pa2-p2.c:64: note: get vectype with 4 units of type float
+pa2-p2.c:64: note: vectype: vector(4) float
+pa2-p2.c:64: note: Create vector_inv.
+pa2-p2.c:64: note: created new init_stmt: vect_cst_.23_36 = {pretmp_56, pretmp_56, pretmp_56, pretmp_56};
+
+pa2-p2.c:64: note: add new stmt: vect_var_.22_35 = vect_var_.21_40 * vect_cst_.23_36;
+
+pa2-p2.c:64: note: ------>vectorizing statement: _28 = _24 + _27;
+
+pa2-p2.c:64: note: transform statement.
+pa2-p2.c:64: note: vect_is_simple_use: operand _24
+pa2-p2.c:64: note: def_stmt: _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: vect_is_simple_use: operand _27
+pa2-p2.c:64: note: def_stmt: _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: transform binary/unary operation.
+pa2-p2.c:64: note: vect_get_vec_def_for_operand: _24
+pa2-p2.c:64: note: vect_is_simple_use: operand _24
+pa2-p2.c:64: note: def_stmt: _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: def =  _24  def_stmt =  _24 = c[j_3][i_38];
+
+pa2-p2.c:64: note: vect_get_vec_def_for_operand: _27
+pa2-p2.c:64: note: vect_is_simple_use: operand _27
+pa2-p2.c:64: note: def_stmt: _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: def =  _27  def_stmt =  _27 = _25 * pretmp_56;
+
+pa2-p2.c:64: note: add new stmt: vect_var_.24_34 = vect_var_.16_46 + vect_var_.22_35;
+
+pa2-p2.c:64: note: ------>vectorizing statement: c[j_3][i_38] = _28;
+
+pa2-p2.c:64: note: transform statement.
+pa2-p2.c:64: note: vect_is_simple_use: operand _28
+pa2-p2.c:64: note: def_stmt: _28 = _24 + _27;
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: transform store. ncopies = 1
+pa2-p2.c:64: note: vect_get_vec_def_for_operand: _28
+pa2-p2.c:64: note: vect_is_simple_use: operand _28
+pa2-p2.c:64: note: def_stmt: _28 = _24 + _27;
+
+pa2-p2.c:64: note: type of def: 3.
+pa2-p2.c:64: note: def =  _28  def_stmt =  _28 = _24 + _27;
+
+pa2-p2.c:64: note: create vector_type-pointer variable to type: vector(4) float  vectorizing an array ref: c
+pa2-p2.c:64: note: created vect_pc.28_22
+pa2-p2.c:64: note: add new stmt: MEM[(float[2000][2000] *)vect_pc.25_20] = vect_var_.24_34;
+
+pa2-p2.c:64: note: ------>vectorizing statement: i_30 = i_38 + 1;
+
+pa2-p2.c:64: note: ------>vectorizing statement: # DEBUG i => i_30
+
+pa2-p2.c:64: note: ------>vectorizing statement: # DEBUG i => i_30
+
+pa2-p2.c:64: note: ------>vectorizing statement: ivtmp_54 = ivtmp_9 - 1;
+
+pa2-p2.c:64: note: ------>vectorizing statement: vect_pc.12_47 = vect_pc.12_48 + 16;
+
+pa2-p2.c:64: note: ------>vectorizing statement: vect_pa.17_41 = vect_pa.17_42 + 16;
+
+pa2-p2.c:64: note: ------>vectorizing statement: vect_pc.25_19 = vect_pc.25_20 + 16;
+
+pa2-p2.c:64: note: ------>vectorizing statement: if (ivtmp_54 != 0)
+
+loop at pa2-p2.c:65: if (ivtmp_7 < 500)
+
+pa2-p2.c:64: note: LOOP VECTORIZED.
+pa2-p2.c:61: note: vectorized 1 loops in function.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:63: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:63: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:63: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: get vectype with 4 units of type float
+pa2-p2.c:61: note: vectype: vector(4) float
+pa2-p2.c:61: note: === vect_pattern_recog ===
+pa2-p2.c:61: note: vect_is_simple_use: operand _50
+pa2-p2.c:61: note: def_stmt: _50 = (sizetype) j_3;
+
+pa2-p2.c:61: note: type of def: 3.
+pa2-p2.c:61: note: vect_is_simple_use: operand j_3
+pa2-p2.c:61: note: def_stmt: j_3 = PHI <j_16(4), j_21(8)>
+
+pa2-p2.c:61: note: type of def: 2.
+pa2-p2.c:61: note: vect_is_simple_use: operand 8000
+pa2-p2.c:61: note: vect_is_simple_use: operand _44
+pa2-p2.c:61: note: def_stmt: _44 = (sizetype) k_39;
+
+pa2-p2.c:61: note: type of def: 3.
+pa2-p2.c:61: note: vect_is_simple_use: operand k_39
+pa2-p2.c:61: note: def_stmt: k_39 = PHI <0(5), k_23(10)>
+
+pa2-p2.c:61: note: type of def: 2.
+pa2-p2.c:61: note: vect_is_simple_use: operand 8000
+pa2-p2.c:61: note: vect_is_simple_use: operand _32
+pa2-p2.c:61: note: def_stmt: _32 = (sizetype) j_3;
+
+pa2-p2.c:61: note: type of def: 3.
+pa2-p2.c:61: note: vect_is_simple_use: operand j_3
+pa2-p2.c:61: note: def_stmt: j_3 = PHI <j_16(4), j_21(8)>
+
+pa2-p2.c:61: note: type of def: 2.
+pa2-p2.c:61: note: vect_is_simple_use: operand 8000
+pa2-p2.c:61: note: === vect_analyze_dependences ===
+pa2-p2.c:61: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:61: note: vect_compute_data_ref_alignment:
+pa2-p2.c:61: note: Unknown alignment for access: b
+pa2-p2.c:61: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:61: note: not consecutive access pretmp_56 = b[k_39][j_3];
+
+pa2-p2.c:61: note: === vect_analyze_slp ===
+pa2-p2.c:61: note: Failed to SLP the basic block.
+pa2-p2.c:61: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:63: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:63: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:63: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:65: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:65: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:65: note: not vectorized: no vectype for stmt: vect_var_.16_46 = MEM[(float[2000][2000] *)vect_pc.12_48];
+ scalar_type: vector(4) float
+pa2-p2.c:65: note: === vect_pattern_recog ===
+pa2-p2.c:65: note: vect_is_simple_use: operand vect_var_.21_40
+pa2-p2.c:65: note: def_stmt: vect_var_.21_40 = MEM[(float[2000][2000] *)vect_pa.17_42];
+
+pa2-p2.c:65: note: type of def: 3.
+pa2-p2.c:65: note: === vect_analyze_dependences ===
+pa2-p2.c:65: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:65: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:65: note: === vect_analyze_slp ===
+pa2-p2.c:65: note: Failed to SLP the basic block.
+pa2-p2.c:65: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:61: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:61: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:61: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:77: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:77: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:77: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:78: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:78: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:78: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:79: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:79: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:79: note: get vectype with 2 units of type __time_t
+pa2-p2.c:79: note: vectype: vector(2) long int
+pa2-p2.c:79: note: get vectype with 2 units of type __suseconds_t
+pa2-p2.c:79: note: vectype: vector(2) long int
+pa2-p2.c:79: note: get vectype with 2 units of type long unsigned int
+pa2-p2.c:79: note: vectype: vector(2) long unsigned int
+pa2-p2.c:79: note: not vectorized: no vectype for stmt: Tp ={v} {CLOBBER};
+ scalar_type: struct timeval
+pa2-p2.c:79: note: === vect_pattern_recog ===
+pa2-p2.c:79: note: vect_is_simple_use: operand _9
+pa2-p2.c:79: note: def_stmt: _9 = (double) _8;
+
+pa2-p2.c:79: note: type of def: 3.
+pa2-p2.c:79: note: === vect_analyze_dependences ===
+pa2-p2.c:79: note: Detected interleaving Tp.tv_sec and Tp.tv_usec
+pa2-p2.c:79: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:79: note: vect_compute_data_ref_alignment:
+pa2-p2.c:79: note: misalign = 0 bytes of ref Tp.tv_sec
+pa2-p2.c:79: note: vect_compute_data_ref_alignment:
+pa2-p2.c:79: note: misalign = 8 bytes of ref Tp.tv_usec
+pa2-p2.c:79: note: vect_compute_data_ref_alignment:
+pa2-p2.c:79: note: misalign = 0 bytes of ref Tzp
+pa2-p2.c:79: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:79: note: Detected interleaving of size 2
+pa2-p2.c:79: note: not consecutive access Tzp ={v} {CLOBBER};
+
+pa2-p2.c:79: note: === vect_analyze_slp ===
+pa2-p2.c:79: note: Failed to SLP the basic block.
+pa2-p2.c:79: note: not vectorized: failed to find SLP opportunities in basic block.
+
+Analyzing loop at pa2-p2.c:89
+
+pa2-p2.c:89: note: ===== analyze_loop_nest =====
+pa2-p2.c:89: note: === vect_analyze_loop_form ===
+pa2-p2.c:89: note: ===== analyze_loop_nest_1 =====
+pa2-p2.c:89: note: === vect_analyze_loop_form ===
+pa2-p2.c:89: note: not vectorized: control flow in loop.
+pa2-p2.c:89: note: bad inner-loop form.
+pa2-p2.c:89: note: not vectorized: Bad inner loop.
+pa2-p2.c:89: note: bad loop form.
+Analyzing loop at pa2-p2.c:90
+
+pa2-p2.c:90: note: ===== analyze_loop_nest =====
+pa2-p2.c:90: note: === vect_analyze_loop_form ===
+pa2-p2.c:90: note: not vectorized: control flow in loop.
+pa2-p2.c:90: note: bad loop form.
+pa2-p2.c:82: note: vectorized 0 loops in function.
+
+pa2-p2.c:82: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:82: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:82: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:82: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:82: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:82: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:82: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:82: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:82: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:92: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:92: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:92: note: get vectype with 4 units of type float
+pa2-p2.c:92: note: vectype: vector(4) float
+pa2-p2.c:92: note: get vectype with 4 units of type float
+pa2-p2.c:92: note: vectype: vector(4) float
+pa2-p2.c:92: note: === vect_pattern_recog ===
+pa2-p2.c:92: note: === vect_analyze_dependences ===
+pa2-p2.c:92: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:92: note: vect_compute_data_ref_alignment:
+pa2-p2.c:92: note: SLP: step doesn't divide the vector-size.
+pa2-p2.c:92: note: Unknown alignment for access: *(wref_16(D) + pretmp_54)
+pa2-p2.c:92: note: vect_compute_data_ref_alignment:
+pa2-p2.c:92: note: SLP: step doesn't divide the vector-size.
+pa2-p2.c:92: note: Unknown alignment for access: *(w_23(D) + pretmp_54)
+pa2-p2.c:92: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:92: note: === vect_analyze_slp ===
+pa2-p2.c:92: note: Failed to SLP the basic block.
+pa2-p2.c:92: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:93: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:93: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:93: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:94: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:94: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:94: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:95: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:95: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:95: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:82: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:82: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:82: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:90: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:90: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:90: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:89: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:89: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:89: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:82: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:82: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:82: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:82: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:82: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:82: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:99: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:99: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:99: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:100: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:100: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:100: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:103: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:103: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:103: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:104: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:104: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:104: note: not vectorized: not enough data-refs in basic block.
+
+Analyzing loop at pa2-p2.c:58
+
+pa2-p2.c:58: note: ===== analyze_loop_nest =====
+pa2-p2.c:58: note: === vect_analyze_loop_form ===
+pa2-p2.c:58: note: ===== analyze_loop_nest_1 =====
+pa2-p2.c:58: note: === vect_analyze_loop_form ===
+pa2-p2.c:58: note: === get_loop_niters ===
+pa2-p2.c:58: note: ==> get_loop_niters:2000
+pa2-p2.c:58: note: Considering outer-loop vectorization.
+pa2-p2.c:58: note: === get_loop_niters ===
+pa2-p2.c:58: note: ==> get_loop_niters:2000
+pa2-p2.c:58: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:58: note: analyze in outer-loop: c
+pa2-p2.c:58: note: 	outer base_address: &c
+	outer offset from base address: 0
+	outer constant offset from base address: 0
+	outer step: 4
+	outer aligned to: 128
+pa2-p2.c:58: note: get vectype with 4 units of type float
+pa2-p2.c:58: note: vectype: vector(4) float
+pa2-p2.c:58: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:58: note: Analyze phi: .MEM_56 = PHI <.MEM_74(31), .MEM_78(37)>
+
+pa2-p2.c:58: note: Analyze phi: i_129 = PHI <0(31), i_80(37)>
+
+pa2-p2.c:58: note: Access function of PHI: {0, +, 1}_10
+pa2-p2.c:58: note: step: 1,  init: 0
+pa2-p2.c:58: note: Detected induction.
+pa2-p2.c:58: note: Analyze phi: ivtmp_57 = PHI <2000(31), ivtmp_156(37)>
+
+pa2-p2.c:58: note: Access function of PHI: {2000, +, 4294967295}_10
+pa2-p2.c:58: note: step: 4294967295,  init: 2000
+pa2-p2.c:58: note: Detected induction.
+pa2-p2.c:58: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:58: note: Analyze phi: j_134 = PHI <j_79(34), 0(38)>
+
+pa2-p2.c:58: note: Access function of PHI: {0, +, 1}_11
+pa2-p2.c:58: note: step: 1,  init: 0
+pa2-p2.c:58: note: Detected induction.
+pa2-p2.c:58: note: Analyze phi: .MEM_140 = PHI <.MEM_78(34), .MEM_56(38)>
+
+pa2-p2.c:58: note: Analyze phi: ivtmp_35 = PHI <ivtmp_62(34), 2000(38)>
+
+pa2-p2.c:58: note: Access function of PHI: {2000, +, 4294967295}_11
+pa2-p2.c:58: note: step: 4294967295,  init: 2000
+pa2-p2.c:58: note: Detected induction.
+pa2-p2.c:58: note: === vect_pattern_recog ===
+pa2-p2.c:58: note: === vect_mark_stmts_to_be_vectorized ===
+pa2-p2.c:58: note: init: phi relevant? .MEM_56 = PHI <.MEM_74(31), .MEM_78(37)>
+
+pa2-p2.c:58: note: init: phi relevant? i_129 = PHI <0(31), i_80(37)>
+
+pa2-p2.c:58: note: init: phi relevant? ivtmp_57 = PHI <2000(31), ivtmp_156(37)>
+
+pa2-p2.c:58: note: init: stmt relevant? # DEBUG i => i_129
+
+pa2-p2.c:58: note: init: stmt relevant? # DEBUG j => 0
+
+pa2-p2.c:58: note: init: phi relevant? j_134 = PHI <j_79(34), 0(38)>
+
+pa2-p2.c:58: note: init: phi relevant? .MEM_140 = PHI <.MEM_78(34), .MEM_56(38)>
+
+pa2-p2.c:58: note: init: phi relevant? ivtmp_35 = PHI <ivtmp_62(34), 2000(38)>
+
+pa2-p2.c:58: note: init: stmt relevant? # DEBUG j => j_134
+
+pa2-p2.c:58: note: init: stmt relevant? c[j_134][i_129] = 0.0;
+
+pa2-p2.c:58: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:58: note: mark relevant 4, live 0.
+pa2-p2.c:58: note: init: stmt relevant? j_79 = j_134 + 1;
+
+pa2-p2.c:58: note: init: stmt relevant? # DEBUG j => j_79
+
+pa2-p2.c:58: note: init: stmt relevant? # DEBUG j => j_79
+
+pa2-p2.c:58: note: init: stmt relevant? ivtmp_62 = ivtmp_35 - 1;
+
+pa2-p2.c:58: note: init: stmt relevant? if (ivtmp_62 != 0)
+
+pa2-p2.c:58: note: init: stmt relevant? i_80 = i_129 + 1;
+
+pa2-p2.c:58: note: init: stmt relevant? # DEBUG i => i_80
+
+pa2-p2.c:58: note: init: stmt relevant? # DEBUG i => i_80
+
+pa2-p2.c:58: note: init: stmt relevant? ivtmp_156 = ivtmp_57 - 1;
+
+pa2-p2.c:58: note: init: stmt relevant? if (ivtmp_156 != 0)
+
+pa2-p2.c:58: note: worklist: examine stmt: c[j_134][i_129] = 0.0;
+
+pa2-p2.c:58: note: === vect_analyze_dependences ===
+pa2-p2.c:58: note: === vect_determine_vectorization_factor ===
+pa2-p2.c:58: note: ==> examining phi: .MEM_56 = PHI <.MEM_74(31), .MEM_78(37)>
+
+pa2-p2.c:58: note: ==> examining phi: i_129 = PHI <0(31), i_80(37)>
+
+pa2-p2.c:58: note: ==> examining phi: ivtmp_57 = PHI <2000(31), ivtmp_156(37)>
+
+pa2-p2.c:58: note: ==> examining statement: # DEBUG i => i_129
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG j => 0
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining phi: j_134 = PHI <j_79(34), 0(38)>
+
+pa2-p2.c:58: note: ==> examining phi: .MEM_140 = PHI <.MEM_78(34), .MEM_56(38)>
+
+pa2-p2.c:58: note: ==> examining phi: ivtmp_35 = PHI <ivtmp_62(34), 2000(38)>
+
+pa2-p2.c:58: note: ==> examining statement: # DEBUG j => j_134
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: c[j_134][i_129] = 0.0;
+
+pa2-p2.c:58: note: get vectype for scalar type:  float
+pa2-p2.c:58: note: get vectype with 4 units of type float
+pa2-p2.c:58: note: vectype: vector(4) float
+pa2-p2.c:58: note: vectype: vector(4) float
+pa2-p2.c:58: note: nunits = 4
+pa2-p2.c:58: note: ==> examining statement: j_79 = j_134 + 1;
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG j => j_79
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG j => j_79
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: ivtmp_62 = ivtmp_35 - 1;
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: if (ivtmp_62 != 0)
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: i_80 = i_129 + 1;
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG i => i_80
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG i => i_80
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: ivtmp_156 = ivtmp_57 - 1;
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: ==> examining statement: if (ivtmp_156 != 0)
+
+pa2-p2.c:58: note: skip.
+pa2-p2.c:58: note: vectorization factor = 4
+pa2-p2.c:58: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:58: note: vect_compute_data_ref_alignment:
+pa2-p2.c:58: note: inner step divides the vector-size.
+pa2-p2.c:58: note: misalign = 0 bytes of ref c[j_134][i_129]
+pa2-p2.c:58: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:58: note: === vect_prune_runtime_alias_test_list ===
+pa2-p2.c:58: note: === vect_enhance_data_refs_alignment ===
+pa2-p2.c:58: note: vect_can_advance_ivs_p:
+pa2-p2.c:58: note: Analyze phi: .MEM_56 = PHI <.MEM_74(31), .MEM_78(37)>
+
+pa2-p2.c:58: note: virtual phi. skip.
+pa2-p2.c:58: note: Analyze phi: i_129 = PHI <0(31), i_80(37)>
+
+pa2-p2.c:58: note: Access function of PHI: {0, +, 1}_10
+pa2-p2.c:58: note: Analyze phi: ivtmp_57 = PHI <2000(31), ivtmp_156(37)>
+
+pa2-p2.c:58: note: Access function of PHI: {2000, +, 4294967295}_10
+pa2-p2.c:58: note: === vect_analyze_slp ===
+pa2-p2.c:58: note: === vect_make_slp_decision ===
+pa2-p2.c:58: note: === vect_detect_hybrid_slp ===
+pa2-p2.c:58: note: === vect_analyze_loop_operations ===
+pa2-p2.c:58: note: examining phi: .MEM_56 = PHI <.MEM_74(31), .MEM_78(37)>
+
+pa2-p2.c:58: note: examining phi: i_129 = PHI <0(31), i_80(37)>
+
+pa2-p2.c:58: note: examining phi: ivtmp_57 = PHI <2000(31), ivtmp_156(37)>
+
+pa2-p2.c:58: note: ==> examining statement: # DEBUG i => i_129
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG j => 0
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: examining phi: j_134 = PHI <j_79(34), 0(38)>
+
+pa2-p2.c:58: note: examining phi: .MEM_140 = PHI <.MEM_78(34), .MEM_56(38)>
+
+pa2-p2.c:58: note: examining phi: ivtmp_35 = PHI <ivtmp_62(34), 2000(38)>
+
+pa2-p2.c:58: note: ==> examining statement: # DEBUG j => j_134
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: c[j_134][i_129] = 0.0;
+
+pa2-p2.c:58: note: vect_is_simple_use: operand 0.0
+pa2-p2.c:58: note: vect_model_store_cost: aligned.
+pa2-p2.c:58: note: vect_model_store_cost: inside_cost = 50, prologue_cost = 1 .
+pa2-p2.c:58: note: ==> examining statement: j_79 = j_134 + 1;
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG j => j_79
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG j => j_79
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: ivtmp_62 = ivtmp_35 - 1;
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: if (ivtmp_62 != 0)
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: i_80 = i_129 + 1;
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG i => i_80
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: # DEBUG i => i_80
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: ivtmp_156 = ivtmp_57 - 1;
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: ==> examining statement: if (ivtmp_156 != 0)
+
+pa2-p2.c:58: note: irrelevant.
+pa2-p2.c:58: note: vectorization_factor = 4, niters = 2000
+pa2-p2.c:58: note: === vect_update_slp_costs_according_to_vf ===
+pa2-p2.c:58: note: Cost model analysis: 
+  Vector inside of loop cost: 50
+  Vector prologue cost: 1
+  Vector epilogue cost: 0
+  Scalar iteration cost: 50
+  Scalar outside cost: 0
+  Vector outside cost: 1
+  prologue iterations: 0
+  epilogue iterations: 0
+  Calculated minimum iters for profitability: 1
+
+pa2-p2.c:58: note:   Runtime profitability threshold = 3
+
+pa2-p2.c:58: note:   Static estimate profitability threshold = 3
+
+
+Vectorizing loop at pa2-p2.c:58
+
+pa2-p2.c:58: note: === vec_transform_loop ===
+pa2-p2.c:58: note: ------>vectorizing phi: .MEM_56 = PHI <.MEM_74(40), .MEM_78(37)>
+
+pa2-p2.c:58: note: ------>vectorizing phi: i_129 = PHI <0(40), i_80(37)>
+
+pa2-p2.c:58: note: ------>vectorizing phi: ivtmp_57 = PHI <2000(40), ivtmp_156(37)>
+
+pa2-p2.c:58: note: ------>vectorizing statement: # DEBUG i => i_129
+
+pa2-p2.c:58: note: ------>vectorizing statement: # DEBUG j => 0
+
+pa2-p2.c:58: note: ------>vectorizing phi: j_134 = PHI <j_79(34), 0(38)>
+
+pa2-p2.c:58: note: ------>vectorizing phi: .MEM_140 = PHI <.MEM_78(34), .MEM_56(38)>
+
+pa2-p2.c:58: note: ------>vectorizing phi: ivtmp_35 = PHI <ivtmp_62(34), 2000(38)>
+
+pa2-p2.c:58: note: ------>vectorizing statement: # DEBUG j => j_134
+
+pa2-p2.c:58: note: ------>vectorizing statement: c[j_134][i_129] = 0.0;
+
+pa2-p2.c:58: note: transform statement.
+pa2-p2.c:58: note: vect_is_simple_use: operand 0.0
+pa2-p2.c:58: note: transform store. ncopies = 1
+pa2-p2.c:58: note: vect_get_vec_def_for_operand: 0.0
+pa2-p2.c:58: note: vect_is_simple_use: operand 0.0
+pa2-p2.c:58: note: get vectype with 4 units of type float
+pa2-p2.c:58: note: vectype: vector(4) float
+pa2-p2.c:58: note: Create vector_cst. nunits = 4
+pa2-p2.c:58: note: created new init_stmt: vect_cst_.77_112 = { 0.0, 0.0, 0.0, 0.0 };
+
+pa2-p2.c:58: note: create vector_type-pointer variable to type: vector(4) float  vectorizing an array ref: c
+pa2-p2.c:58: note: created vect_pc.81_111
+pa2-p2.c:58: note: add new stmt: MEM[(float[2000][2000] *)vect_pc.78_108] = vect_cst_.77_112;
+
+pa2-p2.c:58: note: ------>vectorizing statement: j_79 = j_134 + 1;
+
+pa2-p2.c:58: note: ------>vectorizing statement: # DEBUG j => j_79
+
+pa2-p2.c:58: note: ------>vectorizing statement: # DEBUG j => j_79
+
+pa2-p2.c:58: note: ------>vectorizing statement: ivtmp_62 = ivtmp_35 - 1;
+
+pa2-p2.c:58: note: ------>vectorizing statement: vect_pc.78_107 = vect_pc.78_108 + 8000;
+
+pa2-p2.c:58: note: ------>vectorizing statement: if (ivtmp_62 != 0)
+
+pa2-p2.c:58: note: ------>vectorizing statement: i_80 = i_129 + 1;
+
+pa2-p2.c:58: note: ------>vectorizing statement: # DEBUG i => i_80
+
+pa2-p2.c:58: note: ------>vectorizing statement: # DEBUG i => i_80
+
+pa2-p2.c:58: note: ------>vectorizing statement: ivtmp_156 = ivtmp_57 - 1;
+
+pa2-p2.c:58: note: ------>vectorizing statement: vect_pc.78_109 = vect_pc.78_110 + 16;
+
+pa2-p2.c:58: note: ------>vectorizing statement: if (ivtmp_156 != 0)
+if (ivtmp_105 < 500)
+
+pa2-p2.c:58: note: LOOP VECTORIZED.
+pa2-p2.c:58: note: OUTER LOOP VECTORIZED.
+Analyzing loop at pa2-p2.c:58
+
+pa2-p2.c:58: note: ===== analyze_loop_nest =====
+pa2-p2.c:58: note: outer-loop already vectorized.
+Analyzing loop at pa2-p2.c:51
+
+pa2-p2.c:51: note: ===== analyze_loop_nest =====
+pa2-p2.c:51: note: === vect_analyze_loop_form ===
+pa2-p2.c:51: note: ===== analyze_loop_nest_1 =====
+pa2-p2.c:51: note: === vect_analyze_loop_form ===
+pa2-p2.c:51: note: === get_loop_niters ===
+pa2-p2.c:51: note: ==> get_loop_niters:2000
+pa2-p2.c:51: note: Considering outer-loop vectorization.
+pa2-p2.c:51: note: === get_loop_niters ===
+pa2-p2.c:51: note: ==> get_loop_niters:2000
+pa2-p2.c:51: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:51: note: analyze in outer-loop: c
+pa2-p2.c:51: note: 	outer base_address: &c
+	outer offset from base address: 0
+	outer constant offset from base address: 0
+	outer step: 4
+	outer aligned to: 128
+pa2-p2.c:51: note: get vectype with 4 units of type float
+pa2-p2.c:51: note: vectype: vector(4) float
+pa2-p2.c:51: note: analyze in outer-loop: cc
+pa2-p2.c:51: note: 	outer base_address: &cc
+	outer offset from base address: 0
+	outer constant offset from base address: 0
+	outer step: 4
+	outer aligned to: 128
+pa2-p2.c:51: note: get vectype with 4 units of type float
+pa2-p2.c:51: note: vectype: vector(4) float
+pa2-p2.c:51: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:51: note: Analyze phi: .MEM_49 = PHI <.MEM_71(27), .MEM_74(32)>
+
+pa2-p2.c:51: note: Analyze phi: i_128 = PHI <0(27), i_76(32)>
+
+pa2-p2.c:51: note: Access function of PHI: {0, +, 1}_8
+pa2-p2.c:51: note: step: 1,  init: 0
+pa2-p2.c:51: note: Detected induction.
+pa2-p2.c:51: note: Analyze phi: ivtmp_144 = PHI <2000(27), ivtmp_143(32)>
+
+pa2-p2.c:51: note: Access function of PHI: {2000, +, 4294967295}_8
+pa2-p2.c:51: note: step: 4294967295,  init: 2000
+pa2-p2.c:51: note: Detected induction.
+pa2-p2.c:51: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:51: note: Analyze phi: j_133 = PHI <j_75(28), 0(33)>
+
+pa2-p2.c:51: note: Access function of PHI: {0, +, 1}_9
+pa2-p2.c:51: note: step: 1,  init: 0
+pa2-p2.c:51: note: Detected induction.
+pa2-p2.c:51: note: Analyze phi: .MEM_139 = PHI <.MEM_74(28), .MEM_49(33)>
+
+pa2-p2.c:51: note: Analyze phi: ivtmp_153 = PHI <ivtmp_145(28), 2000(33)>
+
+pa2-p2.c:51: note: Access function of PHI: {2000, +, 4294967295}_9
+pa2-p2.c:51: note: step: 4294967295,  init: 2000
+pa2-p2.c:51: note: Detected induction.
+pa2-p2.c:51: note: === vect_pattern_recog ===
+pa2-p2.c:51: note: === vect_mark_stmts_to_be_vectorized ===
+pa2-p2.c:51: note: init: phi relevant? .MEM_49 = PHI <.MEM_71(27), .MEM_74(32)>
+
+pa2-p2.c:51: note: init: phi relevant? i_128 = PHI <0(27), i_76(32)>
+
+pa2-p2.c:51: note: init: phi relevant? ivtmp_144 = PHI <2000(27), ivtmp_143(32)>
+
+pa2-p2.c:51: note: init: stmt relevant? # DEBUG i => i_128
+
+pa2-p2.c:51: note: init: stmt relevant? # DEBUG j => 0
+
+pa2-p2.c:51: note: init: phi relevant? j_133 = PHI <j_75(28), 0(33)>
+
+pa2-p2.c:51: note: init: phi relevant? .MEM_139 = PHI <.MEM_74(28), .MEM_49(33)>
+
+pa2-p2.c:51: note: init: phi relevant? ivtmp_153 = PHI <ivtmp_145(28), 2000(33)>
+
+pa2-p2.c:51: note: init: stmt relevant? # DEBUG j => j_133
+
+pa2-p2.c:51: note: init: stmt relevant? _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: init: stmt relevant? cc[j_133][i_128] = _73;
+
+pa2-p2.c:51: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:51: note: mark relevant 4, live 0.
+pa2-p2.c:51: note: init: stmt relevant? j_75 = j_133 + 1;
+
+pa2-p2.c:51: note: init: stmt relevant? # DEBUG j => j_75
+
+pa2-p2.c:51: note: init: stmt relevant? # DEBUG j => j_75
+
+pa2-p2.c:51: note: init: stmt relevant? ivtmp_145 = ivtmp_153 - 1;
+
+pa2-p2.c:51: note: init: stmt relevant? if (ivtmp_145 != 0)
+
+pa2-p2.c:51: note: init: stmt relevant? i_76 = i_128 + 1;
+
+pa2-p2.c:51: note: init: stmt relevant? # DEBUG i => i_76
+
+pa2-p2.c:51: note: init: stmt relevant? # DEBUG i => i_76
+
+pa2-p2.c:51: note: init: stmt relevant? ivtmp_143 = ivtmp_144 - 1;
+
+pa2-p2.c:51: note: init: stmt relevant? if (ivtmp_143 != 0)
+
+pa2-p2.c:51: note: worklist: examine stmt: cc[j_133][i_128] = _73;
+
+pa2-p2.c:51: note: vect_is_simple_use: operand _73
+pa2-p2.c:51: note: def_stmt: _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: type of def: 3.
+pa2-p2.c:51: note: mark relevant 4, live 0.
+pa2-p2.c:51: note: worklist: examine stmt: _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: === vect_analyze_dependences ===
+pa2-p2.c:51: note: === vect_determine_vectorization_factor ===
+pa2-p2.c:51: note: ==> examining phi: .MEM_49 = PHI <.MEM_71(27), .MEM_74(32)>
+
+pa2-p2.c:51: note: ==> examining phi: i_128 = PHI <0(27), i_76(32)>
+
+pa2-p2.c:51: note: ==> examining phi: ivtmp_144 = PHI <2000(27), ivtmp_143(32)>
+
+pa2-p2.c:51: note: ==> examining statement: # DEBUG i => i_128
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG j => 0
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining phi: j_133 = PHI <j_75(28), 0(33)>
+
+pa2-p2.c:51: note: ==> examining phi: .MEM_139 = PHI <.MEM_74(28), .MEM_49(33)>
+
+pa2-p2.c:51: note: ==> examining phi: ivtmp_153 = PHI <ivtmp_145(28), 2000(33)>
+
+pa2-p2.c:51: note: ==> examining statement: # DEBUG j => j_133
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: get vectype for scalar type:  float
+pa2-p2.c:51: note: get vectype with 4 units of type float
+pa2-p2.c:51: note: vectype: vector(4) float
+pa2-p2.c:51: note: vectype: vector(4) float
+pa2-p2.c:51: note: nunits = 4
+pa2-p2.c:51: note: ==> examining statement: cc[j_133][i_128] = _73;
+
+pa2-p2.c:51: note: get vectype for scalar type:  float
+pa2-p2.c:51: note: get vectype with 4 units of type float
+pa2-p2.c:51: note: vectype: vector(4) float
+pa2-p2.c:51: note: vectype: vector(4) float
+pa2-p2.c:51: note: nunits = 4
+pa2-p2.c:51: note: ==> examining statement: j_75 = j_133 + 1;
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG j => j_75
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG j => j_75
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: ivtmp_145 = ivtmp_153 - 1;
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: if (ivtmp_145 != 0)
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: i_76 = i_128 + 1;
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG i => i_76
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG i => i_76
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: ivtmp_143 = ivtmp_144 - 1;
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: ==> examining statement: if (ivtmp_143 != 0)
+
+pa2-p2.c:51: note: skip.
+pa2-p2.c:51: note: vectorization factor = 4
+pa2-p2.c:51: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:51: note: vect_compute_data_ref_alignment:
+pa2-p2.c:51: note: inner step divides the vector-size.
+pa2-p2.c:51: note: misalign = 0 bytes of ref c[j_133][i_128]
+pa2-p2.c:51: note: vect_compute_data_ref_alignment:
+pa2-p2.c:51: note: inner step divides the vector-size.
+pa2-p2.c:51: note: misalign = 0 bytes of ref cc[j_133][i_128]
+pa2-p2.c:51: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:51: note: === vect_prune_runtime_alias_test_list ===
+pa2-p2.c:51: note: === vect_enhance_data_refs_alignment ===
+pa2-p2.c:51: note: vect_can_advance_ivs_p:
+pa2-p2.c:51: note: Analyze phi: .MEM_49 = PHI <.MEM_71(27), .MEM_74(32)>
+
+pa2-p2.c:51: note: virtual phi. skip.
+pa2-p2.c:51: note: Analyze phi: i_128 = PHI <0(27), i_76(32)>
+
+pa2-p2.c:51: note: Access function of PHI: {0, +, 1}_8
+pa2-p2.c:51: note: Analyze phi: ivtmp_144 = PHI <2000(27), ivtmp_143(32)>
+
+pa2-p2.c:51: note: Access function of PHI: {2000, +, 4294967295}_8
+pa2-p2.c:51: note: === vect_analyze_slp ===
+pa2-p2.c:51: note: === vect_make_slp_decision ===
+pa2-p2.c:51: note: === vect_detect_hybrid_slp ===
+pa2-p2.c:51: note: === vect_analyze_loop_operations ===
+pa2-p2.c:51: note: examining phi: .MEM_49 = PHI <.MEM_71(27), .MEM_74(32)>
+
+pa2-p2.c:51: note: examining phi: i_128 = PHI <0(27), i_76(32)>
+
+pa2-p2.c:51: note: examining phi: ivtmp_144 = PHI <2000(27), ivtmp_143(32)>
+
+pa2-p2.c:51: note: ==> examining statement: # DEBUG i => i_128
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG j => 0
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: examining phi: j_133 = PHI <j_75(28), 0(33)>
+
+pa2-p2.c:51: note: examining phi: .MEM_139 = PHI <.MEM_74(28), .MEM_49(33)>
+
+pa2-p2.c:51: note: examining phi: ivtmp_153 = PHI <ivtmp_145(28), 2000(33)>
+
+pa2-p2.c:51: note: ==> examining statement: # DEBUG j => j_133
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: num. args = 4 (not unary/binary/ternary op).
+pa2-p2.c:51: note: vect_is_simple_use: operand c[j_133][i_128]
+pa2-p2.c:51: note: not ssa-name.
+pa2-p2.c:51: note: use not simple.
+pa2-p2.c:51: note: vect_model_load_cost: aligned.
+pa2-p2.c:51: note: vect_model_load_cost: inside_cost = 50, prologue_cost = 0 .
+pa2-p2.c:51: note: ==> examining statement: cc[j_133][i_128] = _73;
+
+pa2-p2.c:51: note: vect_is_simple_use: operand _73
+pa2-p2.c:51: note: def_stmt: _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: type of def: 3.
+pa2-p2.c:51: note: vect_model_store_cost: aligned.
+pa2-p2.c:51: note: vect_model_store_cost: inside_cost = 50, prologue_cost = 0 .
+pa2-p2.c:51: note: ==> examining statement: j_75 = j_133 + 1;
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG j => j_75
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG j => j_75
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: ivtmp_145 = ivtmp_153 - 1;
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: if (ivtmp_145 != 0)
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: i_76 = i_128 + 1;
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG i => i_76
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: # DEBUG i => i_76
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: ivtmp_143 = ivtmp_144 - 1;
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: ==> examining statement: if (ivtmp_143 != 0)
+
+pa2-p2.c:51: note: irrelevant.
+pa2-p2.c:51: note: vectorization_factor = 4, niters = 2000
+pa2-p2.c:51: note: === vect_update_slp_costs_according_to_vf ===
+pa2-p2.c:51: note: Cost model analysis: 
+  Vector inside of loop cost: 100
+  Vector prologue cost: 0
+  Vector epilogue cost: 0
+  Scalar iteration cost: 100
+  Scalar outside cost: 0
+  Vector outside cost: 0
+  prologue iterations: 0
+  epilogue iterations: 0
+  Calculated minimum iters for profitability: 1
+
+pa2-p2.c:51: note:   Runtime profitability threshold = 3
+
+pa2-p2.c:51: note:   Static estimate profitability threshold = 3
+
+
+Vectorizing loop at pa2-p2.c:51
+
+pa2-p2.c:51: note: === vec_transform_loop ===
+pa2-p2.c:51: note: ------>vectorizing phi: .MEM_49 = PHI <.MEM_71(41), .MEM_74(32)>
+
+pa2-p2.c:51: note: ------>vectorizing phi: i_128 = PHI <0(41), i_76(32)>
+
+pa2-p2.c:51: note: ------>vectorizing phi: ivtmp_144 = PHI <2000(41), ivtmp_143(32)>
+
+pa2-p2.c:51: note: ------>vectorizing statement: # DEBUG i => i_128
+
+pa2-p2.c:51: note: ------>vectorizing statement: # DEBUG j => 0
+
+pa2-p2.c:51: note: ------>vectorizing phi: j_133 = PHI <j_75(28), 0(33)>
+
+pa2-p2.c:51: note: ------>vectorizing phi: .MEM_139 = PHI <.MEM_74(28), .MEM_49(33)>
+
+pa2-p2.c:51: note: ------>vectorizing phi: ivtmp_153 = PHI <ivtmp_145(28), 2000(33)>
+
+pa2-p2.c:51: note: ------>vectorizing statement: # DEBUG j => j_133
+
+pa2-p2.c:51: note: ------>vectorizing statement: _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: transform statement.
+pa2-p2.c:51: note: transform load. ncopies = 1
+pa2-p2.c:51: note: create vector_type-pointer variable to type: vector(4) float  vectorizing an array ref: c
+pa2-p2.c:51: note: created vect_pc.85_104
+pa2-p2.c:51: note: add new stmt: vect_var_.86_22 = MEM[(float[2000][2000] *)vect_pc.82_72];
+
+pa2-p2.c:51: note: ------>vectorizing statement: cc[j_133][i_128] = _73;
+
+pa2-p2.c:51: note: transform statement.
+pa2-p2.c:51: note: vect_is_simple_use: operand _73
+pa2-p2.c:51: note: def_stmt: _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: type of def: 3.
+pa2-p2.c:51: note: transform store. ncopies = 1
+pa2-p2.c:51: note: vect_get_vec_def_for_operand: _73
+pa2-p2.c:51: note: vect_is_simple_use: operand _73
+pa2-p2.c:51: note: def_stmt: _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: type of def: 3.
+pa2-p2.c:51: note: def =  _73  def_stmt =  _73 = c[j_133][i_128];
+
+pa2-p2.c:51: note: create vector_type-pointer variable to type: vector(4) float  vectorizing an array ref: cc
+pa2-p2.c:51: note: created vect_pcc.90_21
+pa2-p2.c:51: note: add new stmt: MEM[(float[2000][2000] *)vect_pcc.87_18] = vect_var_.86_22;
+
+pa2-p2.c:51: note: ------>vectorizing statement: j_75 = j_133 + 1;
+
+pa2-p2.c:51: note: ------>vectorizing statement: # DEBUG j => j_75
+
+pa2-p2.c:51: note: ------>vectorizing statement: # DEBUG j => j_75
+
+pa2-p2.c:51: note: ------>vectorizing statement: ivtmp_145 = ivtmp_153 - 1;
+
+pa2-p2.c:51: note: ------>vectorizing statement: vect_pc.82_34 = vect_pc.82_72 + 8000;
+
+pa2-p2.c:51: note: ------>vectorizing statement: vect_pcc.87_11 = vect_pcc.87_18 + 8000;
+
+pa2-p2.c:51: note: ------>vectorizing statement: if (ivtmp_145 != 0)
+
+pa2-p2.c:51: note: ------>vectorizing statement: i_76 = i_128 + 1;
+
+pa2-p2.c:51: note: ------>vectorizing statement: # DEBUG i => i_76
+
+pa2-p2.c:51: note: ------>vectorizing statement: # DEBUG i => i_76
+
+pa2-p2.c:51: note: ------>vectorizing statement: ivtmp_143 = ivtmp_144 - 1;
+
+pa2-p2.c:51: note: ------>vectorizing statement: vect_pc.82_77 = vect_pc.82_103 + 16;
+
+pa2-p2.c:51: note: ------>vectorizing statement: vect_pcc.87_19 = vect_pcc.87_20 + 16;
+
+pa2-p2.c:51: note: ------>vectorizing statement: if (ivtmp_143 != 0)
+if (ivtmp_9 < 500)
+
+pa2-p2.c:51: note: LOOP VECTORIZED.
+pa2-p2.c:51: note: OUTER LOOP VECTORIZED.
+Analyzing loop at pa2-p2.c:52
+
+pa2-p2.c:52: note: ===== analyze_loop_nest =====
+pa2-p2.c:52: note: outer-loop already vectorized.
+Analyzing loop at pa2-p2.c:44
+
+pa2-p2.c:44: note: ===== analyze_loop_nest =====
+pa2-p2.c:44: note: === vect_analyze_loop_form ===
+pa2-p2.c:44: note: not vectorized: multiple nested loops.
+pa2-p2.c:44: note: bad loop form.
+Analyzing loop at pa2-p2.c:45
+
+pa2-p2.c:45: note: ===== analyze_loop_nest =====
+pa2-p2.c:45: note: === vect_analyze_loop_form ===
+pa2-p2.c:45: note: ===== analyze_loop_nest_1 =====
+pa2-p2.c:45: note: === vect_analyze_loop_form ===
+pa2-p2.c:45: note: === get_loop_niters ===
+pa2-p2.c:45: note: ==> get_loop_niters:2000
+pa2-p2.c:45: note: Considering outer-loop vectorization.
+pa2-p2.c:45: note: === get_loop_niters ===
+pa2-p2.c:45: note: ==> get_loop_niters:2000
+pa2-p2.c:45: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: analyze in outer-loop: a
+pa2-p2.c:45: note: 	outer base_address: &a
+	outer offset from base address: (ssizetype) ((sizetype) i_127 * 4)
+	outer constant offset from base address: 0
+	outer step: 0
+	outer aligned to: 4
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: analyze in outer-loop: b
+pa2-p2.c:45: note: 	outer base_address: &b
+	outer offset from base address: 0
+	outer constant offset from base address: 0
+	outer step: 4
+	outer aligned to: 128
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:45: note: Analyze phi: .MEM_96 = PHI <.MEM_68(26), .MEM_155(22)>
+
+pa2-p2.c:45: note: Analyze phi: j_132 = PHI <0(26), j_64(22)>
+
+pa2-p2.c:45: note: Access function of PHI: {0, +, 1}_6
+pa2-p2.c:45: note: step: 1,  init: 0
+pa2-p2.c:45: note: Detected induction.
+pa2-p2.c:45: note: Analyze phi: ivtmp_124 = PHI <2000(26), ivtmp_123(22)>
+
+pa2-p2.c:45: note: Access function of PHI: {2000, +, 4294967295}_6
+pa2-p2.c:45: note: step: 4294967295,  init: 2000
+pa2-p2.c:45: note: Detected induction.
+pa2-p2.c:45: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:45: note: Analyze phi: k_135 = PHI <k_63(19), 0(23)>
+
+pa2-p2.c:45: note: Access function of PHI: {0, +, 1}_7
+pa2-p2.c:45: note: step: 1,  init: 0
+pa2-p2.c:45: note: Detected induction.
+pa2-p2.c:45: note: Analyze phi: .MEM_138 = PHI <.MEM_138(19), .MEM_96(23)>
+
+pa2-p2.c:45: note: Analyze phi: prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:45: note: Access function of PHI: {pretmp_150, +, _60}_7
+pa2-p2.c:45: note: step: _60,  init: pretmp_150
+pa2-p2.c:45: note: step unknown.
+pa2-p2.c:45: note: Analyze phi: ivtmp_142 = PHI <ivtmp_141(19), 2000(23)>
+
+pa2-p2.c:45: note: Access function of PHI: {2000, +, 4294967295}_7
+pa2-p2.c:45: note: step: 4294967295,  init: 2000
+pa2-p2.c:45: note: Detected induction.
+pa2-p2.c:45: note: Analyze phi: prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:45: note: detected reduction: _61 = _60 + prephitmp_151;
+
+pa2-p2.c:45: note: Detected vectorizable nested cycle.
+pa2-p2.c:45: note: === vect_pattern_recog ===
+pa2-p2.c:45: note: vect_is_simple_use: operand _58
+pa2-p2.c:45: note: def_stmt: _58 = a[k_135][i_127];
+
+pa2-p2.c:45: note: type of def: 3.
+pa2-p2.c:45: note: === vect_mark_stmts_to_be_vectorized ===
+pa2-p2.c:45: note: init: phi relevant? .MEM_96 = PHI <.MEM_68(26), .MEM_155(22)>
+
+pa2-p2.c:45: note: init: phi relevant? j_132 = PHI <0(26), j_64(22)>
+
+pa2-p2.c:45: note: init: phi relevant? ivtmp_124 = PHI <2000(26), ivtmp_123(22)>
+
+pa2-p2.c:45: note: init: stmt relevant? # DEBUG j => j_132
+
+pa2-p2.c:45: note: init: stmt relevant? # DEBUG k => 0
+
+pa2-p2.c:45: note: init: stmt relevant? pretmp_150 = c[j_132][i_127];
+
+pa2-p2.c:45: note: init: phi relevant? k_135 = PHI <k_63(19), 0(23)>
+
+pa2-p2.c:45: note: init: phi relevant? .MEM_138 = PHI <.MEM_138(19), .MEM_96(23)>
+
+pa2-p2.c:45: note: init: phi relevant? prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:45: note: init: phi relevant? ivtmp_142 = PHI <ivtmp_141(19), 2000(23)>
+
+pa2-p2.c:45: note: init: stmt relevant? # DEBUG k => k_135
+
+pa2-p2.c:45: note: init: stmt relevant? _58 = a[k_135][i_127];
+
+pa2-p2.c:45: note: init: stmt relevant? _59 = b[k_135][j_132];
+
+pa2-p2.c:45: note: init: stmt relevant? _60 = _58 * _59;
+
+pa2-p2.c:45: note: init: stmt relevant? _61 = _60 + prephitmp_151;
+
+pa2-p2.c:45: note: init: stmt relevant? k_63 = k_135 + 1;
+
+pa2-p2.c:45: note: init: stmt relevant? # DEBUG k => k_63
+
+pa2-p2.c:45: note: init: stmt relevant? # DEBUG k => k_63
+
+pa2-p2.c:45: note: init: stmt relevant? ivtmp_141 = ivtmp_142 - 1;
+
+pa2-p2.c:45: note: init: stmt relevant? if (ivtmp_141 != 0)
+
+pa2-p2.c:45: note: init: phi relevant? c_I_I_lsm.76_154 = PHI <_61(20)>
+
+pa2-p2.c:45: note: init: stmt relevant? c[j_132][i_127] = c_I_I_lsm.76_154;
+
+pa2-p2.c:45: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:45: note: mark relevant 4, live 0.
+pa2-p2.c:45: note: init: stmt relevant? j_64 = j_132 + 1;
+
+pa2-p2.c:45: note: init: stmt relevant? # DEBUG j => j_64
+
+pa2-p2.c:45: note: init: stmt relevant? # DEBUG j => j_64
+
+pa2-p2.c:45: note: init: stmt relevant? ivtmp_123 = ivtmp_124 - 1;
+
+pa2-p2.c:45: note: init: stmt relevant? if (ivtmp_123 != 0)
+
+pa2-p2.c:45: note: worklist: examine stmt: c[j_132][i_127] = c_I_I_lsm.76_154;
+
+pa2-p2.c:45: note: vect_is_simple_use: operand c_I_I_lsm.76_154
+pa2-p2.c:45: note: def_stmt: c_I_I_lsm.76_154 = PHI <_61(20)>
+
+pa2-p2.c:45: note: type of def: 3.
+pa2-p2.c:45: note: mark relevant 4, live 0.
+pa2-p2.c:45: note: worklist: examine stmt: c_I_I_lsm.76_154 = PHI <_61(20)>
+
+pa2-p2.c:45: note: vect_is_simple_use: operand _61
+pa2-p2.c:45: note: def_stmt: _61 = _60 + prephitmp_151;
+
+pa2-p2.c:45: note: type of def: 7.
+pa2-p2.c:45: note: inner-loop def-stmt defining outer-loop stmt.
+pa2-p2.c:45: note: mark relevant 2, live 0.
+pa2-p2.c:45: note: worklist: examine stmt: _61 = _60 + prephitmp_151;
+
+pa2-p2.c:45: note: vect_is_simple_use: operand _60
+pa2-p2.c:45: note: def_stmt: _60 = _58 * _59;
+
+pa2-p2.c:45: note: type of def: 3.
+pa2-p2.c:45: note: mark relevant 2, live 0.
+pa2-p2.c:45: note: vect_is_simple_use: operand prephitmp_151
+pa2-p2.c:45: note: def_stmt: prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:45: note: type of def: 7.
+pa2-p2.c:45: note: mark relevant 2, live 0.
+pa2-p2.c:45: note: worklist: examine stmt: prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:45: note: vect_is_simple_use: operand _61
+pa2-p2.c:45: note: def_stmt: _61 = _60 + prephitmp_151;
+
+pa2-p2.c:45: note: type of def: 7.
+pa2-p2.c:45: note: mark relevant 2, live 0.
+pa2-p2.c:45: note: already marked relevant/live.
+pa2-p2.c:45: note: vect_is_simple_use: operand pretmp_150
+pa2-p2.c:45: note: def_stmt: pretmp_150 = c[j_132][i_127];
+
+pa2-p2.c:45: note: type of def: 3.
+pa2-p2.c:45: note: outer-loop def-stmt defining inner-loop stmt.
+pa2-p2.c:45: note: mark relevant 4, live 0.
+pa2-p2.c:45: note: worklist: examine stmt: pretmp_150 = c[j_132][i_127];
+
+pa2-p2.c:45: note: worklist: examine stmt: _60 = _58 * _59;
+
+pa2-p2.c:45: note: vect_is_simple_use: operand _58
+pa2-p2.c:45: note: def_stmt: _58 = a[k_135][i_127];
+
+pa2-p2.c:45: note: type of def: 3.
+pa2-p2.c:45: note: mark relevant 2, live 0.
+pa2-p2.c:45: note: vect_is_simple_use: operand _59
+pa2-p2.c:45: note: def_stmt: _59 = b[k_135][j_132];
+
+pa2-p2.c:45: note: type of def: 3.
+pa2-p2.c:45: note: mark relevant 2, live 0.
+pa2-p2.c:45: note: worklist: examine stmt: _59 = b[k_135][j_132];
+
+pa2-p2.c:45: note: worklist: examine stmt: _58 = a[k_135][i_127];
+
+pa2-p2.c:45: note: === vect_analyze_dependences ===
+pa2-p2.c:45: note: dependence distance  = 0.
+pa2-p2.c:45: note: dependence distance == 0 between c[j_132][i_127] and c[j_132][i_127]
+pa2-p2.c:45: note: === vect_determine_vectorization_factor ===
+pa2-p2.c:45: note: ==> examining phi: .MEM_96 = PHI <.MEM_68(26), .MEM_155(22)>
+
+pa2-p2.c:45: note: ==> examining phi: j_132 = PHI <0(26), j_64(22)>
+
+pa2-p2.c:45: note: ==> examining phi: ivtmp_124 = PHI <2000(26), ivtmp_123(22)>
+
+pa2-p2.c:45: note: ==> examining statement: # DEBUG j => j_132
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: # DEBUG k => 0
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: pretmp_150 = c[j_132][i_127];
+
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: nunits = 4
+pa2-p2.c:45: note: ==> examining phi: k_135 = PHI <k_63(19), 0(23)>
+
+pa2-p2.c:45: note: ==> examining phi: .MEM_138 = PHI <.MEM_138(19), .MEM_96(23)>
+
+pa2-p2.c:45: note: ==> examining phi: prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: nunits = 4
+pa2-p2.c:45: note: ==> examining phi: ivtmp_142 = PHI <ivtmp_141(19), 2000(23)>
+
+pa2-p2.c:45: note: ==> examining statement: # DEBUG k => k_135
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: _58 = a[k_135][i_127];
+
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: nunits = 4
+pa2-p2.c:45: note: ==> examining statement: _59 = b[k_135][j_132];
+
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: nunits = 4
+pa2-p2.c:45: note: ==> examining statement: _60 = _58 * _59;
+
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: nunits = 4
+pa2-p2.c:45: note: ==> examining statement: _61 = _60 + prephitmp_151;
+
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: nunits = 4
+pa2-p2.c:45: note: ==> examining statement: k_63 = k_135 + 1;
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: # DEBUG k => k_63
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: # DEBUG k => k_63
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: ivtmp_141 = ivtmp_142 - 1;
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: if (ivtmp_141 != 0)
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining phi: c_I_I_lsm.76_154 = PHI <_61(20)>
+
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: nunits = 4
+pa2-p2.c:45: note: ==> examining statement: c[j_132][i_127] = c_I_I_lsm.76_154;
+
+pa2-p2.c:45: note: get vectype for scalar type:  float
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: nunits = 4
+pa2-p2.c:45: note: ==> examining statement: j_64 = j_132 + 1;
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: # DEBUG j => j_64
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: # DEBUG j => j_64
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: ivtmp_123 = ivtmp_124 - 1;
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: ==> examining statement: if (ivtmp_123 != 0)
+
+pa2-p2.c:45: note: skip.
+pa2-p2.c:45: note: vectorization factor = 4
+pa2-p2.c:45: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:45: note: dependence distance  = 0.
+pa2-p2.c:45: note: accesses have the same alignment.dependence distance modulo vf == 0 between c[j_132][i_127] and c[j_132][i_127]
+pa2-p2.c:45: note: vect_compute_data_ref_alignment:
+pa2-p2.c:45: note: Unknown alignment for access: c
+pa2-p2.c:45: note: vect_compute_data_ref_alignment:
+pa2-p2.c:45: note: inner step divides the vector-size.
+pa2-p2.c:45: note: Unknown alignment for access: a
+pa2-p2.c:45: note: vect_compute_data_ref_alignment:
+pa2-p2.c:45: note: inner step divides the vector-size.
+pa2-p2.c:45: note: misalign = 0 bytes of ref b[k_135][j_132]
+pa2-p2.c:45: note: vect_compute_data_ref_alignment:
+pa2-p2.c:45: note: Unknown alignment for access: c
+pa2-p2.c:45: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:45: note: not consecutive access pretmp_150 = c[j_132][i_127];
+
+pa2-p2.c:45: note: not vectorized: complicated access pattern.
+pa2-p2.c:45: note: bad data access.
+Analyzing loop at pa2-p2.c:46
+
+pa2-p2.c:46: note: ===== analyze_loop_nest =====
+pa2-p2.c:46: note: === vect_analyze_loop_form ===
+pa2-p2.c:46: note: === get_loop_niters ===
+pa2-p2.c:46: note: ==> get_loop_niters:2000
+pa2-p2.c:46: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:46: note: get vectype with 4 units of type float
+pa2-p2.c:46: note: vectype: vector(4) float
+pa2-p2.c:46: note: get vectype with 4 units of type float
+pa2-p2.c:46: note: vectype: vector(4) float
+pa2-p2.c:46: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:46: note: Analyze phi: k_135 = PHI <k_63(19), 0(23)>
+
+pa2-p2.c:46: note: Access function of PHI: {0, +, 1}_7
+pa2-p2.c:46: note: step: 1,  init: 0
+pa2-p2.c:46: note: Detected induction.
+pa2-p2.c:46: note: Analyze phi: .MEM_138 = PHI <.MEM_138(19), .MEM_96(23)>
+
+pa2-p2.c:46: note: Analyze phi: prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:46: note: Access function of PHI: {pretmp_150, +, _60}_7
+pa2-p2.c:46: note: step: _60,  init: pretmp_150
+pa2-p2.c:46: note: step unknown.
+pa2-p2.c:46: note: Analyze phi: ivtmp_142 = PHI <ivtmp_141(19), 2000(23)>
+
+pa2-p2.c:46: note: Access function of PHI: {2000, +, 4294967295}_7
+pa2-p2.c:46: note: step: 4294967295,  init: 2000
+pa2-p2.c:46: note: Detected induction.
+pa2-p2.c:46: note: Analyze phi: prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:46: note: reduction: unsafe fp math optimization: _61 = _60 + prephitmp_151;
+
+pa2-p2.c:46: note: Unknown def-use cycle pattern.
+pa2-p2.c:46: note: === vect_pattern_recog ===
+pa2-p2.c:46: note: vect_is_simple_use: operand _58
+pa2-p2.c:46: note: def_stmt: _58 = a[k_135][i_127];
+
+pa2-p2.c:46: note: type of def: 3.
+pa2-p2.c:46: note: === vect_mark_stmts_to_be_vectorized ===
+pa2-p2.c:46: note: init: phi relevant? k_135 = PHI <k_63(19), 0(23)>
+
+pa2-p2.c:46: note: init: phi relevant? .MEM_138 = PHI <.MEM_138(19), .MEM_96(23)>
+
+pa2-p2.c:46: note: init: phi relevant? prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:46: note: init: phi relevant? ivtmp_142 = PHI <ivtmp_141(19), 2000(23)>
+
+pa2-p2.c:46: note: init: stmt relevant? # DEBUG k => k_135
+
+pa2-p2.c:46: note: init: stmt relevant? _58 = a[k_135][i_127];
+
+pa2-p2.c:46: note: init: stmt relevant? _59 = b[k_135][j_132];
+
+pa2-p2.c:46: note: init: stmt relevant? _60 = _58 * _59;
+
+pa2-p2.c:46: note: init: stmt relevant? _61 = _60 + prephitmp_151;
+
+pa2-p2.c:46: note: vec_stmt_relevant_p: used out of loop.
+pa2-p2.c:46: note: mark relevant 0, live 1.
+pa2-p2.c:46: note: init: stmt relevant? k_63 = k_135 + 1;
+
+pa2-p2.c:46: note: init: stmt relevant? # DEBUG k => k_63
+
+pa2-p2.c:46: note: init: stmt relevant? # DEBUG k => k_63
+
+pa2-p2.c:46: note: init: stmt relevant? ivtmp_141 = ivtmp_142 - 1;
+
+pa2-p2.c:46: note: init: stmt relevant? if (ivtmp_141 != 0)
+
+pa2-p2.c:46: note: worklist: examine stmt: _61 = _60 + prephitmp_151;
+
+pa2-p2.c:46: note: vect_is_simple_use: operand _60
+pa2-p2.c:46: note: def_stmt: _60 = _58 * _59;
+
+pa2-p2.c:46: note: type of def: 3.
+pa2-p2.c:46: note: mark relevant 0, live 1.
+pa2-p2.c:46: note: vect_is_simple_use: operand prephitmp_151
+pa2-p2.c:46: note: def_stmt: prephitmp_151 = PHI <_61(19), pretmp_150(23)>
+
+pa2-p2.c:46: note: Unsupported pattern.
+pa2-p2.c:46: note: not vectorized: unsupported use in stmt.
+pa2-p2.c:46: note: unexpected pattern.
+Analyzing loop at pa2-p2.c:42
+
+pa2-p2.c:42: note: ===== analyze_loop_nest =====
+pa2-p2.c:42: note: === vect_analyze_loop_form ===
+pa2-p2.c:42: note: ===== analyze_loop_nest_1 =====
+pa2-p2.c:42: note: === vect_analyze_loop_form ===
+pa2-p2.c:42: note: === get_loop_niters ===
+pa2-p2.c:42: note: ==> get_loop_niters:2000
+pa2-p2.c:42: note: Considering outer-loop vectorization.
+pa2-p2.c:42: note: === get_loop_niters ===
+pa2-p2.c:42: note: ==> get_loop_niters:2000
+pa2-p2.c:42: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:42: note: analyze in outer-loop: c
+pa2-p2.c:42: note: 	outer base_address: &c
+	outer offset from base address: 0
+	outer constant offset from base address: 0
+	outer step: 4
+	outer aligned to: 128
+pa2-p2.c:42: note: get vectype with 4 units of type float
+pa2-p2.c:42: note: vectype: vector(4) float
+pa2-p2.c:42: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:42: note: Analyze phi: .MEM_100 = PHI <.MEM_46(10), .MEM_50(16)>
+
+pa2-p2.c:42: note: Analyze phi: i_126 = PHI <0(10), i_52(16)>
+
+pa2-p2.c:42: note: Access function of PHI: {0, +, 1}_3
+pa2-p2.c:42: note: step: 1,  init: 0
+pa2-p2.c:42: note: Detected induction.
+pa2-p2.c:42: note: Analyze phi: ivtmp_118 = PHI <2000(10), ivtmp_117(16)>
+
+pa2-p2.c:42: note: Access function of PHI: {2000, +, 4294967295}_3
+pa2-p2.c:42: note: step: 4294967295,  init: 2000
+pa2-p2.c:42: note: Detected induction.
+pa2-p2.c:42: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:42: note: Analyze phi: j_131 = PHI <j_51(13), 0(17)>
+
+pa2-p2.c:42: note: Access function of PHI: {0, +, 1}_4
+pa2-p2.c:42: note: step: 1,  init: 0
+pa2-p2.c:42: note: Detected induction.
+pa2-p2.c:42: note: Analyze phi: .MEM_137 = PHI <.MEM_50(13), .MEM_100(17)>
+
+pa2-p2.c:42: note: Analyze phi: ivtmp_120 = PHI <ivtmp_119(13), 2000(17)>
+
+pa2-p2.c:42: note: Access function of PHI: {2000, +, 4294967295}_4
+pa2-p2.c:42: note: step: 4294967295,  init: 2000
+pa2-p2.c:42: note: Detected induction.
+pa2-p2.c:42: note: === vect_pattern_recog ===
+pa2-p2.c:42: note: === vect_mark_stmts_to_be_vectorized ===
+pa2-p2.c:42: note: init: phi relevant? .MEM_100 = PHI <.MEM_46(10), .MEM_50(16)>
+
+pa2-p2.c:42: note: init: phi relevant? i_126 = PHI <0(10), i_52(16)>
+
+pa2-p2.c:42: note: init: phi relevant? ivtmp_118 = PHI <2000(10), ivtmp_117(16)>
+
+pa2-p2.c:42: note: init: stmt relevant? # DEBUG i => i_126
+
+pa2-p2.c:42: note: init: stmt relevant? # DEBUG j => 0
+
+pa2-p2.c:42: note: init: phi relevant? j_131 = PHI <j_51(13), 0(17)>
+
+pa2-p2.c:42: note: init: phi relevant? .MEM_137 = PHI <.MEM_50(13), .MEM_100(17)>
+
+pa2-p2.c:42: note: init: phi relevant? ivtmp_120 = PHI <ivtmp_119(13), 2000(17)>
+
+pa2-p2.c:42: note: init: stmt relevant? # DEBUG j => j_131
+
+pa2-p2.c:42: note: init: stmt relevant? c[j_131][i_126] = 0.0;
+
+pa2-p2.c:42: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:42: note: mark relevant 4, live 0.
+pa2-p2.c:42: note: init: stmt relevant? j_51 = j_131 + 1;
+
+pa2-p2.c:42: note: init: stmt relevant? # DEBUG j => j_51
+
+pa2-p2.c:42: note: init: stmt relevant? # DEBUG j => j_51
+
+pa2-p2.c:42: note: init: stmt relevant? ivtmp_119 = ivtmp_120 - 1;
+
+pa2-p2.c:42: note: init: stmt relevant? if (ivtmp_119 != 0)
+
+pa2-p2.c:42: note: init: stmt relevant? i_52 = i_126 + 1;
+
+pa2-p2.c:42: note: init: stmt relevant? # DEBUG i => i_52
+
+pa2-p2.c:42: note: init: stmt relevant? # DEBUG i => i_52
+
+pa2-p2.c:42: note: init: stmt relevant? ivtmp_117 = ivtmp_118 - 1;
+
+pa2-p2.c:42: note: init: stmt relevant? if (ivtmp_117 != 0)
+
+pa2-p2.c:42: note: worklist: examine stmt: c[j_131][i_126] = 0.0;
+
+pa2-p2.c:42: note: === vect_analyze_dependences ===
+pa2-p2.c:42: note: === vect_determine_vectorization_factor ===
+pa2-p2.c:42: note: ==> examining phi: .MEM_100 = PHI <.MEM_46(10), .MEM_50(16)>
+
+pa2-p2.c:42: note: ==> examining phi: i_126 = PHI <0(10), i_52(16)>
+
+pa2-p2.c:42: note: ==> examining phi: ivtmp_118 = PHI <2000(10), ivtmp_117(16)>
+
+pa2-p2.c:42: note: ==> examining statement: # DEBUG i => i_126
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG j => 0
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining phi: j_131 = PHI <j_51(13), 0(17)>
+
+pa2-p2.c:42: note: ==> examining phi: .MEM_137 = PHI <.MEM_50(13), .MEM_100(17)>
+
+pa2-p2.c:42: note: ==> examining phi: ivtmp_120 = PHI <ivtmp_119(13), 2000(17)>
+
+pa2-p2.c:42: note: ==> examining statement: # DEBUG j => j_131
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: c[j_131][i_126] = 0.0;
+
+pa2-p2.c:42: note: get vectype for scalar type:  float
+pa2-p2.c:42: note: get vectype with 4 units of type float
+pa2-p2.c:42: note: vectype: vector(4) float
+pa2-p2.c:42: note: vectype: vector(4) float
+pa2-p2.c:42: note: nunits = 4
+pa2-p2.c:42: note: ==> examining statement: j_51 = j_131 + 1;
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG j => j_51
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG j => j_51
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: ivtmp_119 = ivtmp_120 - 1;
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: if (ivtmp_119 != 0)
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: i_52 = i_126 + 1;
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG i => i_52
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG i => i_52
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: ivtmp_117 = ivtmp_118 - 1;
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: ==> examining statement: if (ivtmp_117 != 0)
+
+pa2-p2.c:42: note: skip.
+pa2-p2.c:42: note: vectorization factor = 4
+pa2-p2.c:42: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:42: note: vect_compute_data_ref_alignment:
+pa2-p2.c:42: note: inner step divides the vector-size.
+pa2-p2.c:42: note: misalign = 0 bytes of ref c[j_131][i_126]
+pa2-p2.c:42: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:42: note: === vect_prune_runtime_alias_test_list ===
+pa2-p2.c:42: note: === vect_enhance_data_refs_alignment ===
+pa2-p2.c:42: note: vect_can_advance_ivs_p:
+pa2-p2.c:42: note: Analyze phi: .MEM_100 = PHI <.MEM_46(10), .MEM_50(16)>
+
+pa2-p2.c:42: note: virtual phi. skip.
+pa2-p2.c:42: note: Analyze phi: i_126 = PHI <0(10), i_52(16)>
+
+pa2-p2.c:42: note: Access function of PHI: {0, +, 1}_3
+pa2-p2.c:42: note: Analyze phi: ivtmp_118 = PHI <2000(10), ivtmp_117(16)>
+
+pa2-p2.c:42: note: Access function of PHI: {2000, +, 4294967295}_3
+pa2-p2.c:42: note: === vect_analyze_slp ===
+pa2-p2.c:42: note: === vect_make_slp_decision ===
+pa2-p2.c:42: note: === vect_detect_hybrid_slp ===
+pa2-p2.c:42: note: === vect_analyze_loop_operations ===
+pa2-p2.c:42: note: examining phi: .MEM_100 = PHI <.MEM_46(10), .MEM_50(16)>
+
+pa2-p2.c:42: note: examining phi: i_126 = PHI <0(10), i_52(16)>
+
+pa2-p2.c:42: note: examining phi: ivtmp_118 = PHI <2000(10), ivtmp_117(16)>
+
+pa2-p2.c:42: note: ==> examining statement: # DEBUG i => i_126
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG j => 0
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: examining phi: j_131 = PHI <j_51(13), 0(17)>
+
+pa2-p2.c:42: note: examining phi: .MEM_137 = PHI <.MEM_50(13), .MEM_100(17)>
+
+pa2-p2.c:42: note: examining phi: ivtmp_120 = PHI <ivtmp_119(13), 2000(17)>
+
+pa2-p2.c:42: note: ==> examining statement: # DEBUG j => j_131
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: c[j_131][i_126] = 0.0;
+
+pa2-p2.c:42: note: vect_is_simple_use: operand 0.0
+pa2-p2.c:42: note: vect_model_store_cost: aligned.
+pa2-p2.c:42: note: vect_model_store_cost: inside_cost = 50, prologue_cost = 1 .
+pa2-p2.c:42: note: ==> examining statement: j_51 = j_131 + 1;
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG j => j_51
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG j => j_51
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: ivtmp_119 = ivtmp_120 - 1;
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: if (ivtmp_119 != 0)
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: i_52 = i_126 + 1;
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG i => i_52
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: # DEBUG i => i_52
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: ivtmp_117 = ivtmp_118 - 1;
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: ==> examining statement: if (ivtmp_117 != 0)
+
+pa2-p2.c:42: note: irrelevant.
+pa2-p2.c:42: note: vectorization_factor = 4, niters = 2000
+pa2-p2.c:42: note: === vect_update_slp_costs_according_to_vf ===
+pa2-p2.c:42: note: Cost model analysis: 
+  Vector inside of loop cost: 50
+  Vector prologue cost: 1
+  Vector epilogue cost: 0
+  Scalar iteration cost: 50
+  Scalar outside cost: 0
+  Vector outside cost: 1
+  prologue iterations: 0
+  epilogue iterations: 0
+  Calculated minimum iters for profitability: 1
+
+pa2-p2.c:42: note:   Runtime profitability threshold = 3
+
+pa2-p2.c:42: note:   Static estimate profitability threshold = 3
+
+
+Vectorizing loop at pa2-p2.c:42
+
+pa2-p2.c:42: note: === vec_transform_loop ===
+pa2-p2.c:42: note: ------>vectorizing phi: .MEM_100 = PHI <.MEM_46(42), .MEM_50(16)>
+
+pa2-p2.c:42: note: ------>vectorizing phi: i_126 = PHI <0(42), i_52(16)>
+
+pa2-p2.c:42: note: ------>vectorizing phi: ivtmp_118 = PHI <2000(42), ivtmp_117(16)>
+
+pa2-p2.c:42: note: ------>vectorizing statement: # DEBUG i => i_126
+
+pa2-p2.c:42: note: ------>vectorizing statement: # DEBUG j => 0
+
+pa2-p2.c:42: note: ------>vectorizing phi: j_131 = PHI <j_51(13), 0(17)>
+
+pa2-p2.c:42: note: ------>vectorizing phi: .MEM_137 = PHI <.MEM_50(13), .MEM_100(17)>
+
+pa2-p2.c:42: note: ------>vectorizing phi: ivtmp_120 = PHI <ivtmp_119(13), 2000(17)>
+
+pa2-p2.c:42: note: ------>vectorizing statement: # DEBUG j => j_131
+
+pa2-p2.c:42: note: ------>vectorizing statement: c[j_131][i_126] = 0.0;
+
+pa2-p2.c:42: note: transform statement.
+pa2-p2.c:42: note: vect_is_simple_use: operand 0.0
+pa2-p2.c:42: note: transform store. ncopies = 1
+pa2-p2.c:42: note: vect_get_vec_def_for_operand: 0.0
+pa2-p2.c:42: note: vect_is_simple_use: operand 0.0
+pa2-p2.c:42: note: get vectype with 4 units of type float
+pa2-p2.c:42: note: vectype: vector(4) float
+pa2-p2.c:42: note: Create vector_cst. nunits = 4
+pa2-p2.c:42: note: created new init_stmt: vect_cst_.91_8 = { 0.0, 0.0, 0.0, 0.0 };
+
+pa2-p2.c:42: note: create vector_type-pointer variable to type: vector(4) float  vectorizing an array ref: c
+pa2-p2.c:42: note: created vect_pc.95_7
+pa2-p2.c:42: note: add new stmt: MEM[(float[2000][2000] *)vect_pc.92_4] = vect_cst_.91_8;
+
+pa2-p2.c:42: note: ------>vectorizing statement: j_51 = j_131 + 1;
+
+pa2-p2.c:42: note: ------>vectorizing statement: # DEBUG j => j_51
+
+pa2-p2.c:42: note: ------>vectorizing statement: # DEBUG j => j_51
+
+pa2-p2.c:42: note: ------>vectorizing statement: ivtmp_119 = ivtmp_120 - 1;
+
+pa2-p2.c:42: note: ------>vectorizing statement: vect_pc.92_3 = vect_pc.92_4 + 8000;
+
+pa2-p2.c:42: note: ------>vectorizing statement: if (ivtmp_119 != 0)
+
+pa2-p2.c:42: note: ------>vectorizing statement: i_52 = i_126 + 1;
+
+pa2-p2.c:42: note: ------>vectorizing statement: # DEBUG i => i_52
+
+pa2-p2.c:42: note: ------>vectorizing statement: # DEBUG i => i_52
+
+pa2-p2.c:42: note: ------>vectorizing statement: ivtmp_117 = ivtmp_118 - 1;
+
+pa2-p2.c:42: note: ------>vectorizing statement: vect_pc.92_5 = vect_pc.92_6 + 16;
+
+pa2-p2.c:42: note: ------>vectorizing statement: if (ivtmp_117 != 0)
+if (ivtmp_1 < 500)
+
+pa2-p2.c:42: note: LOOP VECTORIZED.
+pa2-p2.c:42: note: OUTER LOOP VECTORIZED.
+Analyzing loop at pa2-p2.c:42
+
+pa2-p2.c:42: note: ===== analyze_loop_nest =====
+pa2-p2.c:42: note: outer-loop already vectorized.
+Analyzing loop at pa2-p2.c:36
+
+pa2-p2.c:36: note: ===== analyze_loop_nest =====
+pa2-p2.c:36: note: === vect_analyze_loop_form ===
+pa2-p2.c:36: note: ===== analyze_loop_nest_1 =====
+pa2-p2.c:36: note: === vect_analyze_loop_form ===
+pa2-p2.c:36: note: === get_loop_niters ===
+pa2-p2.c:36: note: ==> get_loop_niters:2000
+pa2-p2.c:36: note: Considering outer-loop vectorization.
+pa2-p2.c:36: note: === get_loop_niters ===
+pa2-p2.c:36: note: ==> get_loop_niters:2000
+pa2-p2.c:36: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:36: note: analyze in outer-loop: a
+pa2-p2.c:36: note: 	outer base_address: &a
+	outer offset from base address: 0
+	outer constant offset from base address: 0
+	outer step: 8000
+	outer aligned to: 128
+pa2-p2.c:36: note: get vectype with 4 units of type float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: analyze in outer-loop: b
+pa2-p2.c:36: note: 	outer base_address: &b
+	outer offset from base address: 0
+	outer constant offset from base address: 0
+	outer step: 8000
+	outer aligned to: 128
+pa2-p2.c:36: note: get vectype with 4 units of type float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:36: note: Analyze phi: .MEM_102 = PHI <.MEM_33(6), .MEM_46(11)>
+
+pa2-p2.c:36: note: Analyze phi: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:36: note: Access function of PHI: {0, +, 1}_1
+pa2-p2.c:36: note: step: 1,  init: 0
+pa2-p2.c:36: note: Detected induction.
+pa2-p2.c:36: note: Analyze phi: ivtmp_114 = PHI <2000(6), ivtmp_113(11)>
+
+pa2-p2.c:36: note: Access function of PHI: {2000, +, 4294967295}_1
+pa2-p2.c:36: note: step: 4294967295,  init: 2000
+pa2-p2.c:36: note: Detected induction.
+pa2-p2.c:36: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:36: note: Analyze phi: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:36: note: Access function of PHI: {0, +, 1}_2
+pa2-p2.c:36: note: step: 1,  init: 0
+pa2-p2.c:36: note: Detected induction.
+pa2-p2.c:36: note: Analyze phi: .MEM_136 = PHI <.MEM_46(7), .MEM_102(12)>
+
+pa2-p2.c:36: note: Analyze phi: ivtmp_116 = PHI <ivtmp_115(7), 2000(12)>
+
+pa2-p2.c:36: note: Access function of PHI: {2000, +, 4294967295}_2
+pa2-p2.c:36: note: step: 4294967295,  init: 2000
+pa2-p2.c:36: note: Detected induction.
+pa2-p2.c:36: note: === vect_pattern_recog ===
+pa2-p2.c:36: note: vect_is_simple_use: operand i_125
+pa2-p2.c:36: note: def_stmt: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:36: note: type of def: 4.
+pa2-p2.c:36: note: vect_is_simple_use: operand _37
+pa2-p2.c:36: note: def_stmt: _37 = (double) _36;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: vect_is_simple_use: operand j_130
+pa2-p2.c:36: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:36: note: type of def: 4.
+pa2-p2.c:36: note: vect_is_simple_use: operand _43
+pa2-p2.c:36: note: def_stmt: _43 = (double) _42;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: === vect_mark_stmts_to_be_vectorized ===
+pa2-p2.c:36: note: init: phi relevant? .MEM_102 = PHI <.MEM_33(6), .MEM_46(11)>
+
+pa2-p2.c:36: note: init: phi relevant? i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:36: note: init: phi relevant? ivtmp_114 = PHI <2000(6), ivtmp_113(11)>
+
+pa2-p2.c:36: note: init: stmt relevant? # DEBUG i => i_125
+
+pa2-p2.c:36: note: init: stmt relevant? # DEBUG j => 0
+
+pa2-p2.c:36: note: init: stmt relevant? pretmp_28 = i_125 * 2;
+
+pa2-p2.c:36: note: init: phi relevant? j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:36: note: init: phi relevant? .MEM_136 = PHI <.MEM_46(7), .MEM_102(12)>
+
+pa2-p2.c:36: note: init: phi relevant? ivtmp_116 = PHI <ivtmp_115(7), 2000(12)>
+
+pa2-p2.c:36: note: init: stmt relevant? # DEBUG j => j_130
+
+pa2-p2.c:36: note: init: stmt relevant? _36 = pretmp_28 + j_130;
+
+pa2-p2.c:36: note: init: stmt relevant? _37 = (double) _36;
+
+pa2-p2.c:36: note: init: stmt relevant? _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:36: note: init: stmt relevant? _39 = (float) _38;
+
+pa2-p2.c:36: note: init: stmt relevant? a[i_125][j_130] = _39;
+
+pa2-p2.c:36: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: init: stmt relevant? _41 = j_130 * 2;
+
+pa2-p2.c:36: note: init: stmt relevant? _42 = _41 + i_125;
+
+pa2-p2.c:36: note: init: stmt relevant? _43 = (double) _42;
+
+pa2-p2.c:36: note: init: stmt relevant? _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:36: note: init: stmt relevant? _45 = (float) _44;
+
+pa2-p2.c:36: note: init: stmt relevant? b[i_125][j_130] = _45;
+
+pa2-p2.c:36: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: init: stmt relevant? j_47 = j_130 + 1;
+
+pa2-p2.c:36: note: init: stmt relevant? # DEBUG j => j_47
+
+pa2-p2.c:36: note: init: stmt relevant? # DEBUG j => j_47
+
+pa2-p2.c:36: note: init: stmt relevant? ivtmp_115 = ivtmp_116 - 1;
+
+pa2-p2.c:36: note: init: stmt relevant? if (ivtmp_115 != 0)
+
+pa2-p2.c:36: note: init: stmt relevant? i_48 = i_125 + 1;
+
+pa2-p2.c:36: note: init: stmt relevant? # DEBUG i => i_48
+
+pa2-p2.c:36: note: init: stmt relevant? # DEBUG i => i_48
+
+pa2-p2.c:36: note: init: stmt relevant? ivtmp_113 = ivtmp_114 - 1;
+
+pa2-p2.c:36: note: init: stmt relevant? if (ivtmp_113 != 0)
+
+pa2-p2.c:36: note: worklist: examine stmt: b[i_125][j_130] = _45;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand _45
+pa2-p2.c:36: note: def_stmt: _45 = (float) _44;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: _45 = (float) _44;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand _44
+pa2-p2.c:36: note: def_stmt: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand _43
+pa2-p2.c:36: note: def_stmt: _43 = (double) _42;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: _43 = (double) _42;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand _42
+pa2-p2.c:36: note: def_stmt: _42 = _41 + i_125;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: _42 = _41 + i_125;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand _41
+pa2-p2.c:36: note: def_stmt: _41 = j_130 * 2;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: vect_is_simple_use: operand i_125
+pa2-p2.c:36: note: def_stmt: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:36: note: type of def: 4.
+pa2-p2.c:36: note: outer-loop def-stmt defining inner-loop stmt.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:36: note: vect_is_simple_use: operand 0
+pa2-p2.c:36: note: vect_is_simple_use: operand i_48
+pa2-p2.c:36: note: def_stmt: i_48 = i_125 + 1;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: i_48 = i_125 + 1;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand i_125
+pa2-p2.c:36: note: def_stmt: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:36: note: type of def: 4.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: already marked relevant/live.
+pa2-p2.c:36: note: worklist: examine stmt: _41 = j_130 * 2;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand j_130
+pa2-p2.c:36: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:36: note: type of def: 4.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:36: note: vect_is_simple_use: operand j_47
+pa2-p2.c:36: note: def_stmt: j_47 = j_130 + 1;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: vect_is_simple_use: operand 0
+pa2-p2.c:36: note: worklist: examine stmt: j_47 = j_130 + 1;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand j_130
+pa2-p2.c:36: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:36: note: type of def: 4.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: already marked relevant/live.
+pa2-p2.c:36: note: worklist: examine stmt: a[i_125][j_130] = _39;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand _39
+pa2-p2.c:36: note: def_stmt: _39 = (float) _38;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: _39 = (float) _38;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand _38
+pa2-p2.c:36: note: def_stmt: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand _37
+pa2-p2.c:36: note: def_stmt: _37 = (double) _36;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: _37 = (double) _36;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand _36
+pa2-p2.c:36: note: def_stmt: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: worklist: examine stmt: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand pretmp_28
+pa2-p2.c:36: note: def_stmt: pretmp_28 = i_125 * 2;
+
+pa2-p2.c:36: note: type of def: 3.
+pa2-p2.c:36: note: outer-loop def-stmt defining inner-loop stmt.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: vect_is_simple_use: operand j_130
+pa2-p2.c:36: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:36: note: type of def: 4.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: already marked relevant/live.
+pa2-p2.c:36: note: worklist: examine stmt: pretmp_28 = i_125 * 2;
+
+pa2-p2.c:36: note: vect_is_simple_use: operand i_125
+pa2-p2.c:36: note: def_stmt: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:36: note: type of def: 4.
+pa2-p2.c:36: note: mark relevant 4, live 0.
+pa2-p2.c:36: note: already marked relevant/live.
+pa2-p2.c:36: note: === vect_analyze_dependences ===
+pa2-p2.c:36: note: === vect_determine_vectorization_factor ===
+pa2-p2.c:36: note: ==> examining phi: .MEM_102 = PHI <.MEM_33(6), .MEM_46(11)>
+
+pa2-p2.c:36: note: ==> examining phi: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining phi: ivtmp_114 = PHI <2000(6), ivtmp_113(11)>
+
+pa2-p2.c:36: note: ==> examining statement: # DEBUG i => i_125
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: # DEBUG j => 0
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: pretmp_28 = i_125 * 2;
+
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining phi: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining phi: .MEM_136 = PHI <.MEM_46(7), .MEM_102(12)>
+
+pa2-p2.c:36: note: ==> examining phi: ivtmp_116 = PHI <ivtmp_115(7), 2000(12)>
+
+pa2-p2.c:36: note: ==> examining statement: # DEBUG j => j_130
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: _37 = (double) _36;
+
+pa2-p2.c:36: note: get vectype for scalar type:  double
+pa2-p2.c:36: note: get vectype with 2 units of type double
+pa2-p2.c:36: note: vectype: vector(2) double
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:36: note: get vectype for scalar type:  double
+pa2-p2.c:36: note: get vectype with 2 units of type double
+pa2-p2.c:36: note: vectype: vector(2) double
+pa2-p2.c:36: note: get vectype for scalar type:  double
+pa2-p2.c:36: note: get vectype with 2 units of type double
+pa2-p2.c:36: note: vectype: vector(2) double
+pa2-p2.c:36: note: vectype: vector(2) double
+pa2-p2.c:36: note: nunits = 2
+pa2-p2.c:36: note: ==> examining statement: _39 = (float) _38;
+
+pa2-p2.c:36: note: get vectype for scalar type:  float
+pa2-p2.c:36: note: get vectype with 4 units of type float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: get vectype for scalar type:  float
+pa2-p2.c:36: note: get vectype with 4 units of type float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: a[i_125][j_130] = _39;
+
+pa2-p2.c:36: note: get vectype for scalar type:  float
+pa2-p2.c:36: note: get vectype with 4 units of type float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: _41 = j_130 * 2;
+
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: _42 = _41 + i_125;
+
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: _43 = (double) _42;
+
+pa2-p2.c:36: note: get vectype for scalar type:  double
+pa2-p2.c:36: note: get vectype with 2 units of type double
+pa2-p2.c:36: note: vectype: vector(2) double
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:36: note: get vectype for scalar type:  double
+pa2-p2.c:36: note: get vectype with 2 units of type double
+pa2-p2.c:36: note: vectype: vector(2) double
+pa2-p2.c:36: note: get vectype for scalar type:  double
+pa2-p2.c:36: note: get vectype with 2 units of type double
+pa2-p2.c:36: note: vectype: vector(2) double
+pa2-p2.c:36: note: vectype: vector(2) double
+pa2-p2.c:36: note: nunits = 2
+pa2-p2.c:36: note: ==> examining statement: _45 = (float) _44;
+
+pa2-p2.c:36: note: get vectype for scalar type:  float
+pa2-p2.c:36: note: get vectype with 4 units of type float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: get vectype for scalar type:  float
+pa2-p2.c:36: note: get vectype with 4 units of type float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: b[i_125][j_130] = _45;
+
+pa2-p2.c:36: note: get vectype for scalar type:  float
+pa2-p2.c:36: note: get vectype with 4 units of type float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: vectype: vector(4) float
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: j_47 = j_130 + 1;
+
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: # DEBUG j => j_47
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: # DEBUG j => j_47
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: ivtmp_115 = ivtmp_116 - 1;
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: if (ivtmp_115 != 0)
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: i_48 = i_125 + 1;
+
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: get vectype for scalar type:  int
+pa2-p2.c:36: note: get vectype with 4 units of type int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: vectype: vector(4) int
+pa2-p2.c:36: note: nunits = 4
+pa2-p2.c:36: note: ==> examining statement: # DEBUG i => i_48
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: # DEBUG i => i_48
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: ivtmp_113 = ivtmp_114 - 1;
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: ==> examining statement: if (ivtmp_113 != 0)
+
+pa2-p2.c:36: note: skip.
+pa2-p2.c:36: note: vectorization factor = 4
+pa2-p2.c:36: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:36: note: vect_compute_data_ref_alignment:
+pa2-p2.c:36: note: inner step doesn't divide the vector-size.
+pa2-p2.c:36: note: Unknown alignment for access: a
+pa2-p2.c:36: note: vect_compute_data_ref_alignment:
+pa2-p2.c:36: note: inner step doesn't divide the vector-size.
+pa2-p2.c:36: note: Unknown alignment for access: b
+pa2-p2.c:36: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:36: note: grouped access in outer loop.
+pa2-p2.c:36: note: not vectorized: complicated access pattern.
+pa2-p2.c:36: note: bad data access.
+Analyzing loop at pa2-p2.c:37
+
+pa2-p2.c:37: note: ===== analyze_loop_nest =====
+pa2-p2.c:37: note: === vect_analyze_loop_form ===
+pa2-p2.c:37: note: === get_loop_niters ===
+pa2-p2.c:37: note: ==> get_loop_niters:2000
+pa2-p2.c:37: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:37: note: get vectype with 4 units of type float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: get vectype with 4 units of type float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: === vect_analyze_scalar_cycles ===
+pa2-p2.c:37: note: Analyze phi: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: Access function of PHI: {0, +, 1}_2
+pa2-p2.c:37: note: step: 1,  init: 0
+pa2-p2.c:37: note: Detected induction.
+pa2-p2.c:37: note: Analyze phi: .MEM_136 = PHI <.MEM_46(7), .MEM_102(12)>
+
+pa2-p2.c:37: note: Analyze phi: ivtmp_116 = PHI <ivtmp_115(7), 2000(12)>
+
+pa2-p2.c:37: note: Access function of PHI: {2000, +, 4294967295}_2
+pa2-p2.c:37: note: step: 4294967295,  init: 2000
+pa2-p2.c:37: note: Detected induction.
+pa2-p2.c:37: note: === vect_pattern_recog ===
+pa2-p2.c:37: note: vect_is_simple_use: operand _37
+pa2-p2.c:37: note: def_stmt: _37 = (double) _36;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: vect_is_simple_use: operand _43
+pa2-p2.c:37: note: def_stmt: _43 = (double) _42;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: === vect_mark_stmts_to_be_vectorized ===
+pa2-p2.c:37: note: init: phi relevant? j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: init: phi relevant? .MEM_136 = PHI <.MEM_46(7), .MEM_102(12)>
+
+pa2-p2.c:37: note: init: phi relevant? ivtmp_116 = PHI <ivtmp_115(7), 2000(12)>
+
+pa2-p2.c:37: note: init: stmt relevant? # DEBUG j => j_130
+
+pa2-p2.c:37: note: init: stmt relevant? _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: init: stmt relevant? _37 = (double) _36;
+
+pa2-p2.c:37: note: init: stmt relevant? _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: init: stmt relevant? _39 = (float) _38;
+
+pa2-p2.c:37: note: init: stmt relevant? a[i_125][j_130] = _39;
+
+pa2-p2.c:37: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: init: stmt relevant? _41 = j_130 * 2;
+
+pa2-p2.c:37: note: init: stmt relevant? _42 = _41 + i_125;
+
+pa2-p2.c:37: note: init: stmt relevant? _43 = (double) _42;
+
+pa2-p2.c:37: note: init: stmt relevant? _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: init: stmt relevant? _45 = (float) _44;
+
+pa2-p2.c:37: note: init: stmt relevant? b[i_125][j_130] = _45;
+
+pa2-p2.c:37: note: vec_stmt_relevant_p: stmt has vdefs.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: init: stmt relevant? j_47 = j_130 + 1;
+
+pa2-p2.c:37: note: init: stmt relevant? # DEBUG j => j_47
+
+pa2-p2.c:37: note: init: stmt relevant? # DEBUG j => j_47
+
+pa2-p2.c:37: note: init: stmt relevant? ivtmp_115 = ivtmp_116 - 1;
+
+pa2-p2.c:37: note: init: stmt relevant? if (ivtmp_115 != 0)
+
+pa2-p2.c:37: note: worklist: examine stmt: b[i_125][j_130] = _45;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _45
+pa2-p2.c:37: note: def_stmt: _45 = (float) _44;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: worklist: examine stmt: _45 = (float) _44;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _44
+pa2-p2.c:37: note: def_stmt: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: worklist: examine stmt: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _43
+pa2-p2.c:37: note: def_stmt: _43 = (double) _42;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: worklist: examine stmt: _43 = (double) _42;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _42
+pa2-p2.c:37: note: def_stmt: _42 = _41 + i_125;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: worklist: examine stmt: _42 = _41 + i_125;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _41
+pa2-p2.c:37: note: def_stmt: _41 = j_130 * 2;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: vect_is_simple_use: operand i_125
+pa2-p2.c:37: note: def_stmt: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:37: note: type of def: 2.
+pa2-p2.c:37: note: def_stmt is out of loop.
+pa2-p2.c:37: note: worklist: examine stmt: _41 = j_130 * 2;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: worklist: examine stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: vect_is_simple_use: operand j_47
+pa2-p2.c:37: note: def_stmt: j_47 = j_130 + 1;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: vect_is_simple_use: operand 0
+pa2-p2.c:37: note: worklist: examine stmt: j_47 = j_130 + 1;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: already marked relevant/live.
+pa2-p2.c:37: note: worklist: examine stmt: a[i_125][j_130] = _39;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _39
+pa2-p2.c:37: note: def_stmt: _39 = (float) _38;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: worklist: examine stmt: _39 = (float) _38;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _38
+pa2-p2.c:37: note: def_stmt: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: worklist: examine stmt: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _37
+pa2-p2.c:37: note: def_stmt: _37 = (double) _36;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: worklist: examine stmt: _37 = (double) _36;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _36
+pa2-p2.c:37: note: def_stmt: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: worklist: examine stmt: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand pretmp_28
+pa2-p2.c:37: note: def_stmt: pretmp_28 = i_125 * 2;
+
+pa2-p2.c:37: note: type of def: 2.
+pa2-p2.c:37: note: def_stmt is out of loop.
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: mark relevant 4, live 0.
+pa2-p2.c:37: note: already marked relevant/live.
+pa2-p2.c:37: note: === vect_analyze_dependences ===
+pa2-p2.c:37: note: === vect_determine_vectorization_factor ===
+pa2-p2.c:37: note: ==> examining phi: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining phi: .MEM_136 = PHI <.MEM_46(7), .MEM_102(12)>
+
+pa2-p2.c:37: note: ==> examining phi: ivtmp_116 = PHI <ivtmp_115(7), 2000(12)>
+
+pa2-p2.c:37: note: ==> examining statement: # DEBUG j => j_130
+
+pa2-p2.c:37: note: skip.
+pa2-p2.c:37: note: ==> examining statement: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: _37 = (double) _36;
+
+pa2-p2.c:37: note: get vectype for scalar type:  double
+pa2-p2.c:37: note: get vectype with 2 units of type double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: get vectype for scalar type:  double
+pa2-p2.c:37: note: get vectype with 2 units of type double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: get vectype for scalar type:  double
+pa2-p2.c:37: note: get vectype with 2 units of type double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: nunits = 2
+pa2-p2.c:37: note: ==> examining statement: _39 = (float) _38;
+
+pa2-p2.c:37: note: get vectype for scalar type:  float
+pa2-p2.c:37: note: get vectype with 4 units of type float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: get vectype for scalar type:  float
+pa2-p2.c:37: note: get vectype with 4 units of type float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: a[i_125][j_130] = _39;
+
+pa2-p2.c:37: note: get vectype for scalar type:  float
+pa2-p2.c:37: note: get vectype with 4 units of type float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: _41 = j_130 * 2;
+
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: _42 = _41 + i_125;
+
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: _43 = (double) _42;
+
+pa2-p2.c:37: note: get vectype for scalar type:  double
+pa2-p2.c:37: note: get vectype with 2 units of type double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: get vectype for scalar type:  double
+pa2-p2.c:37: note: get vectype with 2 units of type double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: get vectype for scalar type:  double
+pa2-p2.c:37: note: get vectype with 2 units of type double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: nunits = 2
+pa2-p2.c:37: note: ==> examining statement: _45 = (float) _44;
+
+pa2-p2.c:37: note: get vectype for scalar type:  float
+pa2-p2.c:37: note: get vectype with 4 units of type float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: get vectype for scalar type:  float
+pa2-p2.c:37: note: get vectype with 4 units of type float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: b[i_125][j_130] = _45;
+
+pa2-p2.c:37: note: get vectype for scalar type:  float
+pa2-p2.c:37: note: get vectype with 4 units of type float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: vectype: vector(4) float
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: j_47 = j_130 + 1;
+
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: get vectype for scalar type:  int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: nunits = 4
+pa2-p2.c:37: note: ==> examining statement: # DEBUG j => j_47
+
+pa2-p2.c:37: note: skip.
+pa2-p2.c:37: note: ==> examining statement: # DEBUG j => j_47
+
+pa2-p2.c:37: note: skip.
+pa2-p2.c:37: note: ==> examining statement: ivtmp_115 = ivtmp_116 - 1;
+
+pa2-p2.c:37: note: skip.
+pa2-p2.c:37: note: ==> examining statement: if (ivtmp_115 != 0)
+
+pa2-p2.c:37: note: skip.
+pa2-p2.c:37: note: vectorization factor = 4
+pa2-p2.c:37: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:37: note: vect_compute_data_ref_alignment:
+pa2-p2.c:37: note: misalign = 0 bytes of ref a[i_125][j_130]
+pa2-p2.c:37: note: vect_compute_data_ref_alignment:
+pa2-p2.c:37: note: misalign = 0 bytes of ref b[i_125][j_130]
+pa2-p2.c:37: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:37: note: === vect_prune_runtime_alias_test_list ===
+pa2-p2.c:37: note: === vect_enhance_data_refs_alignment ===
+pa2-p2.c:37: note: vect_can_advance_ivs_p:
+pa2-p2.c:37: note: Analyze phi: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: Access function of PHI: {0, +, 1}_2
+pa2-p2.c:37: note: Analyze phi: .MEM_136 = PHI <.MEM_46(7), .MEM_102(12)>
+
+pa2-p2.c:37: note: virtual phi. skip.
+pa2-p2.c:37: note: Analyze phi: ivtmp_116 = PHI <ivtmp_115(7), 2000(12)>
+
+pa2-p2.c:37: note: Access function of PHI: {2000, +, 4294967295}_2
+pa2-p2.c:37: note: vect_model_store_cost: aligned.
+pa2-p2.c:37: note: vect_get_data_access_cost: inside_cost = 1, outside_cost = 0.
+pa2-p2.c:37: note: vect_model_store_cost: aligned.
+pa2-p2.c:37: note: vect_get_data_access_cost: inside_cost = 2, outside_cost = 0.
+pa2-p2.c:37: note: === vect_analyze_slp ===
+pa2-p2.c:37: note: === vect_make_slp_decision ===
+pa2-p2.c:37: note: === vect_detect_hybrid_slp ===
+pa2-p2.c:37: note: === vect_analyze_loop_operations ===
+pa2-p2.c:37: note: examining phi: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: === vectorizable_induction ===
+pa2-p2.c:37: note: vect_model_induction_cost: inside_cost = 1, prologue_cost = 2 .
+pa2-p2.c:37: note: examining phi: .MEM_136 = PHI <.MEM_46(7), .MEM_102(12)>
+
+pa2-p2.c:37: note: examining phi: ivtmp_116 = PHI <ivtmp_115(7), 2000(12)>
+
+pa2-p2.c:37: note: ==> examining statement: # DEBUG j => j_130
+
+pa2-p2.c:37: note: irrelevant.
+pa2-p2.c:37: note: ==> examining statement: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand pretmp_28
+pa2-p2.c:37: note: def_stmt: pretmp_28 = i_125 * 2;
+
+pa2-p2.c:37: note: type of def: 2.
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: === vectorizable_operation ===
+pa2-p2.c:37: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 1 .
+pa2-p2.c:37: note: ==> examining statement: _37 = (double) _36;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _36
+pa2-p2.c:37: note: def_stmt: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: === vectorizable_conversion ===
+pa2-p2.c:37: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:37: note: ==> examining statement: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _37
+pa2-p2.c:37: note: def_stmt: _37 = (double) _36;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: vect_is_simple_use: operand 1.100000000000000088817841970012523233890533447265625e+0
+pa2-p2.c:37: note: === vectorizable_operation ===
+pa2-p2.c:37: note: vect_model_simple_cost: inside_cost = 2, prologue_cost = 1 .
+pa2-p2.c:37: note: ==> examining statement: _39 = (float) _38;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _38
+pa2-p2.c:37: note: def_stmt: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: === vectorizable_conversion ===
+pa2-p2.c:37: note: vect_model_promotion_demotion_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:37: note: ==> examining statement: a[i_125][j_130] = _39;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _39
+pa2-p2.c:37: note: def_stmt: _39 = (float) _38;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: vect_model_store_cost: aligned.
+pa2-p2.c:37: note: vect_model_store_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:37: note: ==> examining statement: _41 = j_130 * 2;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: vect_is_simple_use: operand 2
+pa2-p2.c:37: note: === vectorizable_operation ===
+pa2-p2.c:37: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 1 .
+pa2-p2.c:37: note: ==> examining statement: _42 = _41 + i_125;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _41
+pa2-p2.c:37: note: def_stmt: _41 = j_130 * 2;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: vect_is_simple_use: operand i_125
+pa2-p2.c:37: note: def_stmt: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:37: note: type of def: 2.
+pa2-p2.c:37: note: === vectorizable_operation ===
+pa2-p2.c:37: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 1 .
+pa2-p2.c:37: note: ==> examining statement: _43 = (double) _42;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _42
+pa2-p2.c:37: note: def_stmt: _42 = _41 + i_125;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: === vectorizable_conversion ===
+pa2-p2.c:37: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:37: note: ==> examining statement: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _43
+pa2-p2.c:37: note: def_stmt: _43 = (double) _42;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: vect_is_simple_use: operand 1.1999999999999999555910790149937383830547332763671875e+0
+pa2-p2.c:37: note: === vectorizable_operation ===
+pa2-p2.c:37: note: vect_model_simple_cost: inside_cost = 2, prologue_cost = 1 .
+pa2-p2.c:37: note: ==> examining statement: _45 = (float) _44;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _44
+pa2-p2.c:37: note: def_stmt: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: === vectorizable_conversion ===
+pa2-p2.c:37: note: vect_model_promotion_demotion_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:37: note: ==> examining statement: b[i_125][j_130] = _45;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand _45
+pa2-p2.c:37: note: def_stmt: _45 = (float) _44;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: vect_model_store_cost: aligned.
+pa2-p2.c:37: note: vect_model_store_cost: inside_cost = 1, prologue_cost = 0 .
+pa2-p2.c:37: note: ==> examining statement: j_47 = j_130 + 1;
+
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(12)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: vect_is_simple_use: operand 1
+pa2-p2.c:37: note: === vectorizable_operation ===
+pa2-p2.c:37: note: vect_model_simple_cost: inside_cost = 1, prologue_cost = 1 .
+pa2-p2.c:37: note: ==> examining statement: # DEBUG j => j_47
+
+pa2-p2.c:37: note: irrelevant.
+pa2-p2.c:37: note: ==> examining statement: # DEBUG j => j_47
+
+pa2-p2.c:37: note: irrelevant.
+pa2-p2.c:37: note: ==> examining statement: ivtmp_115 = ivtmp_116 - 1;
+
+pa2-p2.c:37: note: irrelevant.
+pa2-p2.c:37: note: ==> examining statement: if (ivtmp_115 != 0)
+
+pa2-p2.c:37: note: irrelevant.
+pa2-p2.c:37: note: vectorization_factor = 4, niters = 2000
+pa2-p2.c:37: note: === vect_update_slp_costs_according_to_vf ===
+pa2-p2.c:37: note: Cost model analysis: 
+  Vector inside of loop cost: 15
+  Vector prologue cost: 8
+  Vector epilogue cost: 0
+  Scalar iteration cost: 12
+  Scalar outside cost: 0
+  Vector outside cost: 8
+  prologue iterations: 0
+  epilogue iterations: 0
+  Calculated minimum iters for profitability: 1
+
+pa2-p2.c:37: note:   Runtime profitability threshold = 3
+
+pa2-p2.c:37: note:   Static estimate profitability threshold = 3
+
+
+Vectorizing loop at pa2-p2.c:37
+
+pa2-p2.c:37: note: === vec_transform_loop ===
+pa2-p2.c:37: note: ------>vectorizing phi: j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: transform phi.
+pa2-p2.c:37: note: transform induction phi.
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: created new init_stmt: stmp_var_.96_160 = 0 + 1;
+
+pa2-p2.c:37: note: created new init_stmt: stmp_var_.96_159 = stmp_var_.96_160 + 1;
+
+pa2-p2.c:37: note: created new init_stmt: stmp_var_.96_158 = stmp_var_.96_159 + 1;
+
+pa2-p2.c:37: note: created new init_stmt: vect_cst_.97_157 = {0, stmp_var_.96_160, stmp_var_.96_159, stmp_var_.96_158};
+
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: created new init_stmt: vect_cst_.98_152 = { 4, 4, 4, 4 };
+
+pa2-p2.c:37: note: transform induction: created def-use cycle: vect_vec_iv_.99_149 = PHI <vect_vec_iv_.99_148(7), vect_cst_.97_157(43)>
+
+vect_vec_iv_.99_148 = vect_vec_iv_.99_149 + vect_cst_.98_152;
+
+pa2-p2.c:37: note: ------>vectorizing phi: .MEM_136 = PHI <.MEM_46(7), .MEM_102(43)>
+
+pa2-p2.c:37: note: ------>vectorizing phi: ivtmp_116 = PHI <ivtmp_115(7), 2000(43)>
+
+pa2-p2.c:37: note: ------>vectorizing phi: vect_vec_iv_.99_149 = PHI <vect_vec_iv_.99_148(7), vect_cst_.97_157(43)>
+
+pa2-p2.c:37: note: ------>vectorizing statement: vect_vec_iv_.99_148 = vect_vec_iv_.99_149 + vect_cst_.98_152;
+
+pa2-p2.c:37: note: ------>vectorizing statement: # DEBUG j => j_130
+
+pa2-p2.c:37: note: ------>vectorizing statement: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand pretmp_28
+pa2-p2.c:37: note: def_stmt: pretmp_28 = i_125 * 2;
+
+pa2-p2.c:37: note: type of def: 2.
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: transform binary/unary operation.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: pretmp_28
+pa2-p2.c:37: note: vect_is_simple_use: operand pretmp_28
+pa2-p2.c:37: note: def_stmt: pretmp_28 = i_125 * 2;
+
+pa2-p2.c:37: note: type of def: 2.
+pa2-p2.c:37: note: def =  pretmp_28  def_stmt =  pretmp_28 = i_125 * 2;
+
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: Create vector_inv.
+pa2-p2.c:37: note: created new init_stmt: vect_cst_.101_147 = {pretmp_28, pretmp_28, pretmp_28, pretmp_28};
+
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: j_130
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: def =  j_130  def_stmt =  j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: add new stmt: vect_var_.100_146 = vect_cst_.101_147 + vect_vec_iv_.99_149;
+
+pa2-p2.c:37: note: ------>vectorizing statement: _37 = (double) _36;
+
+pa2-p2.c:37: note: multiple-types.
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand _36
+pa2-p2.c:37: note: def_stmt: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: transform conversion. ncopies = 1.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: _36
+pa2-p2.c:37: note: vect_is_simple_use: operand _36
+pa2-p2.c:37: note: def_stmt: _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: def =  _36  def_stmt =  _36 = pretmp_28 + j_130;
+
+pa2-p2.c:37: note: add new stmt: vect_var_.102_101 = [vec_unpack_float_lo_expr] vect_var_.100_146;
+
+pa2-p2.c:37: note: add new stmt: vect_var_.102_99 = [vec_unpack_float_hi_expr] vect_var_.100_146;
+
+pa2-p2.c:37: note: ------>vectorizing statement: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: multiple-types.
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand _37
+pa2-p2.c:37: note: def_stmt: _37 = (double) _36;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: vect_is_simple_use: operand 1.100000000000000088817841970012523233890533447265625e+0
+pa2-p2.c:37: note: transform binary/unary operation.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: _37
+pa2-p2.c:37: note: vect_is_simple_use: operand _37
+pa2-p2.c:37: note: def_stmt: _37 = (double) _36;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: def =  _37  def_stmt =  _37 = (double) _36;
+
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: 1.100000000000000088817841970012523233890533447265625e+0
+pa2-p2.c:37: note: vect_is_simple_use: operand 1.100000000000000088817841970012523233890533447265625e+0
+pa2-p2.c:37: note: get vectype with 2 units of type double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: Create vector_cst. nunits = 2
+pa2-p2.c:37: note: created new init_stmt: vect_cst_.104_98 = { 1.100000000000000088817841970012523233890533447265625e+0, 1.100000000000000088817841970012523233890533447265625e+0 };
+
+pa2-p2.c:37: note: add new stmt: vect_var_.103_97 = vect_var_.102_101 * vect_cst_.104_98;
+
+pa2-p2.c:37: note: add new stmt: vect_var_.103_95 = vect_var_.102_99 * vect_cst_.104_98;
+
+pa2-p2.c:37: note: ------>vectorizing statement: _39 = (float) _38;
+
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand _38
+pa2-p2.c:37: note: def_stmt: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: transform conversion. ncopies = 1.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: _38
+pa2-p2.c:37: note: vect_is_simple_use: operand _38
+pa2-p2.c:37: note: def_stmt: _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: def =  _38  def_stmt =  _38 = _37 * 1.100000000000000088817841970012523233890533447265625e+0;
+
+pa2-p2.c:37: note: add new stmt: vect_var_.105_55 = VEC_PACK_TRUNC_EXPR <vect_var_.103_97, vect_var_.103_95>;
+
+pa2-p2.c:37: note: ------>vectorizing statement: a[i_125][j_130] = _39;
+
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand _39
+pa2-p2.c:37: note: def_stmt: _39 = (float) _38;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: transform store. ncopies = 1
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: _39
+pa2-p2.c:37: note: vect_is_simple_use: operand _39
+pa2-p2.c:37: note: def_stmt: _39 = (float) _38;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: def =  _39  def_stmt =  _39 = (float) _38;
+
+pa2-p2.c:37: note: create vector_type-pointer variable to type: vector(4) float  vectorizing an array ref: a
+pa2-p2.c:37: note: created vect_pa.109_15
+pa2-p2.c:37: note: add new stmt: MEM[(float[2000][2000] *)vect_pa.106_14] = vect_var_.105_55;
+
+pa2-p2.c:37: note: ------>vectorizing statement: _41 = j_130 * 2;
+
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: vect_is_simple_use: operand 2
+pa2-p2.c:37: note: transform binary/unary operation.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: j_130
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: def =  j_130  def_stmt =  j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: 2
+pa2-p2.c:37: note: vect_is_simple_use: operand 2
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: Create vector_cst. nunits = 4
+pa2-p2.c:37: note: created new init_stmt: vect_cst_.111_40 = { 2, 2, 2, 2 };
+
+pa2-p2.c:37: note: add new stmt: vect_var_.110_161 = vect_vec_iv_.99_149 * vect_cst_.111_40;
+
+pa2-p2.c:37: note: ------>vectorizing statement: _42 = _41 + i_125;
+
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand _41
+pa2-p2.c:37: note: def_stmt: _41 = j_130 * 2;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: vect_is_simple_use: operand i_125
+pa2-p2.c:37: note: def_stmt: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:37: note: type of def: 2.
+pa2-p2.c:37: note: transform binary/unary operation.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: _41
+pa2-p2.c:37: note: vect_is_simple_use: operand _41
+pa2-p2.c:37: note: def_stmt: _41 = j_130 * 2;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: def =  _41  def_stmt =  _41 = j_130 * 2;
+
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: i_125
+pa2-p2.c:37: note: vect_is_simple_use: operand i_125
+pa2-p2.c:37: note: def_stmt: i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:37: note: type of def: 2.
+pa2-p2.c:37: note: def =  i_125  def_stmt =  i_125 = PHI <0(6), i_48(11)>
+
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: Create vector_inv.
+pa2-p2.c:37: note: created new init_stmt: vect_cst_.113_162 = {i_125, i_125, i_125, i_125};
+
+pa2-p2.c:37: note: add new stmt: vect_var_.112_163 = vect_var_.110_161 + vect_cst_.113_162;
+
+pa2-p2.c:37: note: ------>vectorizing statement: _43 = (double) _42;
+
+pa2-p2.c:37: note: multiple-types.
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand _42
+pa2-p2.c:37: note: def_stmt: _42 = _41 + i_125;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: transform conversion. ncopies = 1.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: _42
+pa2-p2.c:37: note: vect_is_simple_use: operand _42
+pa2-p2.c:37: note: def_stmt: _42 = _41 + i_125;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: def =  _42  def_stmt =  _42 = _41 + i_125;
+
+pa2-p2.c:37: note: add new stmt: vect_var_.114_164 = [vec_unpack_float_lo_expr] vect_var_.112_163;
+
+pa2-p2.c:37: note: add new stmt: vect_var_.114_165 = [vec_unpack_float_hi_expr] vect_var_.112_163;
+
+pa2-p2.c:37: note: ------>vectorizing statement: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: multiple-types.
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand _43
+pa2-p2.c:37: note: def_stmt: _43 = (double) _42;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: vect_is_simple_use: operand 1.1999999999999999555910790149937383830547332763671875e+0
+pa2-p2.c:37: note: transform binary/unary operation.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: _43
+pa2-p2.c:37: note: vect_is_simple_use: operand _43
+pa2-p2.c:37: note: def_stmt: _43 = (double) _42;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: def =  _43  def_stmt =  _43 = (double) _42;
+
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: 1.1999999999999999555910790149937383830547332763671875e+0
+pa2-p2.c:37: note: vect_is_simple_use: operand 1.1999999999999999555910790149937383830547332763671875e+0
+pa2-p2.c:37: note: get vectype with 2 units of type double
+pa2-p2.c:37: note: vectype: vector(2) double
+pa2-p2.c:37: note: Create vector_cst. nunits = 2
+pa2-p2.c:37: note: created new init_stmt: vect_cst_.116_166 = { 1.1999999999999999555910790149937383830547332763671875e+0, 1.1999999999999999555910790149937383830547332763671875e+0 };
+
+pa2-p2.c:37: note: add new stmt: vect_var_.115_167 = vect_var_.114_164 * vect_cst_.116_166;
+
+pa2-p2.c:37: note: add new stmt: vect_var_.115_168 = vect_var_.114_165 * vect_cst_.116_166;
+
+pa2-p2.c:37: note: ------>vectorizing statement: _45 = (float) _44;
+
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand _44
+pa2-p2.c:37: note: def_stmt: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: transform conversion. ncopies = 1.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: _44
+pa2-p2.c:37: note: vect_is_simple_use: operand _44
+pa2-p2.c:37: note: def_stmt: _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: def =  _44  def_stmt =  _44 = _43 * 1.1999999999999999555910790149937383830547332763671875e+0;
+
+pa2-p2.c:37: note: add new stmt: vect_var_.117_169 = VEC_PACK_TRUNC_EXPR <vect_var_.115_167, vect_var_.115_168>;
+
+pa2-p2.c:37: note: ------>vectorizing statement: b[i_125][j_130] = _45;
+
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand _45
+pa2-p2.c:37: note: def_stmt: _45 = (float) _44;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: transform store. ncopies = 1
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: _45
+pa2-p2.c:37: note: vect_is_simple_use: operand _45
+pa2-p2.c:37: note: def_stmt: _45 = (float) _44;
+
+pa2-p2.c:37: note: type of def: 3.
+pa2-p2.c:37: note: def =  _45  def_stmt =  _45 = (float) _44;
+
+pa2-p2.c:37: note: create vector_type-pointer variable to type: vector(4) float  vectorizing an array ref: b
+pa2-p2.c:37: note: created vect_pb.121_172
+pa2-p2.c:37: note: add new stmt: MEM[(float[2000][2000] *)vect_pb.118_173] = vect_var_.117_169;
+
+pa2-p2.c:37: note: ------>vectorizing statement: j_47 = j_130 + 1;
+
+pa2-p2.c:37: note: transform statement.
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: vect_is_simple_use: operand 1
+pa2-p2.c:37: note: transform binary/unary operation.
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: j_130
+pa2-p2.c:37: note: vect_is_simple_use: operand j_130
+pa2-p2.c:37: note: def_stmt: j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: type of def: 4.
+pa2-p2.c:37: note: def =  j_130  def_stmt =  j_130 = PHI <j_47(7), 0(43)>
+
+pa2-p2.c:37: note: vect_get_vec_def_for_operand: 1
+pa2-p2.c:37: note: vect_is_simple_use: operand 1
+pa2-p2.c:37: note: get vectype with 4 units of type int
+pa2-p2.c:37: note: vectype: vector(4) int
+pa2-p2.c:37: note: Create vector_cst. nunits = 4
+pa2-p2.c:37: note: created new init_stmt: vect_cst_.123_46 = { 1, 1, 1, 1 };
+
+pa2-p2.c:37: note: add new stmt: vect_j.122_176 = vect_vec_iv_.99_149 + vect_cst_.123_46;
+
+pa2-p2.c:37: note: ------>vectorizing statement: # DEBUG j => j_47
+
+pa2-p2.c:37: note: ------>vectorizing statement: # DEBUG j => j_47
+
+pa2-p2.c:37: note: ------>vectorizing statement: ivtmp_115 = ivtmp_116 - 1;
+
+pa2-p2.c:37: note: ------>vectorizing statement: vect_pa.106_13 = vect_pa.106_14 + 16;
+
+pa2-p2.c:37: note: ------>vectorizing statement: vect_pb.118_174 = vect_pb.118_173 + 16;
+
+pa2-p2.c:37: note: ------>vectorizing statement: if (ivtmp_115 != 0)
+
+loop at pa2-p2.c:38: if (ivtmp_178 < 500)
+
+pa2-p2.c:37: note: LOOP VECTORIZED.
+pa2-p2.c:16: note: vectorized 4 loops in function.
+
+pa2-p2.c:24: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:24: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:24: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:25: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:25: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:25: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:28: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:28: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:28: note: get vectype with 2 units of type long unsigned int
+pa2-p2.c:28: note: vectype: vector(2) long unsigned int
+pa2-p2.c:28: note: === vect_pattern_recog ===
+pa2-p2.c:28: note: === vect_analyze_dependences ===
+pa2-p2.c:28: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:28: note: vect_compute_data_ref_alignment:
+pa2-p2.c:28: note: can't force alignment of ref: MEM[(char * *)argv_27(D) + 8B]
+pa2-p2.c:28: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:28: note: not consecutive access _29 = MEM[(char * *)argv_27(D) + 8B];
+
+pa2-p2.c:28: note: === vect_analyze_slp ===
+pa2-p2.c:28: note: Failed to SLP the basic block.
+pa2-p2.c:28: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:30: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:30: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:30: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:33: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:33: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:33: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:38: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:38: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:38: note: not vectorized: no vectype for stmt: MEM[(float[2000][2000] *)vect_pa.106_14] = vect_var_.105_55;
+ scalar_type: vector(4) float
+pa2-p2.c:38: note: === vect_pattern_recog ===
+pa2-p2.c:38: note: vect_is_simple_use: operand vect_var_.102_101
+pa2-p2.c:38: note: def_stmt: vect_var_.102_101 = [vec_unpack_float_lo_expr] vect_var_.100_146;
+
+pa2-p2.c:38: note: type of def: 3.
+pa2-p2.c:38: note: vect_is_simple_use: operand vect_var_.102_99
+pa2-p2.c:38: note: def_stmt: vect_var_.102_99 = [vec_unpack_float_hi_expr] vect_var_.100_146;
+
+pa2-p2.c:38: note: type of def: 3.
+pa2-p2.c:38: note: vect_is_simple_use: operand vect_vec_iv_.99_149
+pa2-p2.c:38: note: def_stmt: vect_vec_iv_.99_149 = PHI <vect_vec_iv_.99_148(7), vect_cst_.97_157(12)>
+
+pa2-p2.c:38: note: type of def: 2.
+pa2-p2.c:38: note: vect_is_simple_use: operand vect_var_.114_164
+pa2-p2.c:38: note: def_stmt: vect_var_.114_164 = [vec_unpack_float_lo_expr] vect_var_.112_163;
+
+pa2-p2.c:38: note: type of def: 3.
+pa2-p2.c:38: note: vect_is_simple_use: operand vect_var_.114_165
+pa2-p2.c:38: note: def_stmt: vect_var_.114_165 = [vec_unpack_float_hi_expr] vect_var_.112_163;
+
+pa2-p2.c:38: note: type of def: 3.
+pa2-p2.c:38: note: === vect_analyze_dependences ===
+pa2-p2.c:38: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:38: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:38: note: === vect_analyze_slp ===
+pa2-p2.c:38: note: Failed to SLP the basic block.
+pa2-p2.c:38: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:36: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:36: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:36: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:42: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:42: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:42: note: not vectorized: no vectype for stmt: MEM[(float[2000][2000] *)vect_pc.92_4] = vect_cst_.91_8;
+ scalar_type: vector(4) float
+pa2-p2.c:42: note: === vect_pattern_recog ===
+pa2-p2.c:42: note: === vect_analyze_dependences ===
+pa2-p2.c:42: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:42: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:42: note: === vect_analyze_slp ===
+pa2-p2.c:42: note: Failed to SLP the basic block.
+pa2-p2.c:42: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:42: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:42: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:42: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:43: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:43: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:43: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:47: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:47: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:47: note: get vectype with 4 units of type float
+pa2-p2.c:47: note: vectype: vector(4) float
+pa2-p2.c:47: note: get vectype with 4 units of type float
+pa2-p2.c:47: note: vectype: vector(4) float
+pa2-p2.c:47: note: === vect_pattern_recog ===
+pa2-p2.c:47: note: vect_is_simple_use: operand _58
+pa2-p2.c:47: note: def_stmt: _58 = a[k_135][i_127];
+
+pa2-p2.c:47: note: type of def: 3.
+pa2-p2.c:47: note: === vect_analyze_dependences ===
+pa2-p2.c:47: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:47: note: vect_compute_data_ref_alignment:
+pa2-p2.c:47: note: Unknown alignment for access: a
+pa2-p2.c:47: note: vect_compute_data_ref_alignment:
+pa2-p2.c:47: note: Unknown alignment for access: b
+pa2-p2.c:47: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:47: note: not consecutive access _58 = a[k_135][i_127];
+
+pa2-p2.c:47: note: not consecutive access _59 = b[k_135][j_132];
+
+pa2-p2.c:47: note: === vect_analyze_slp ===
+pa2-p2.c:47: note: Failed to SLP the basic block.
+pa2-p2.c:47: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:45: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:45: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:45: note: get vectype with 4 units of type float
+pa2-p2.c:45: note: vectype: vector(4) float
+pa2-p2.c:45: note: === vect_pattern_recog ===
+pa2-p2.c:45: note: === vect_analyze_dependences ===
+pa2-p2.c:45: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:45: note: vect_compute_data_ref_alignment:
+pa2-p2.c:45: note: Unknown alignment for access: c
+pa2-p2.c:45: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:45: note: not consecutive access c[j_132][i_127] = c_I_I_lsm.76_154;
+
+pa2-p2.c:45: note: === vect_analyze_slp ===
+pa2-p2.c:45: note: Failed to SLP the basic block.
+pa2-p2.c:45: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: get vectype with 4 units of type float
+pa2-p2.c:16: note: vectype: vector(4) float
+pa2-p2.c:16: note: === vect_pattern_recog ===
+pa2-p2.c:16: note: === vect_analyze_dependences ===
+pa2-p2.c:16: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:16: note: vect_compute_data_ref_alignment:
+pa2-p2.c:16: note: Unknown alignment for access: c
+pa2-p2.c:16: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:16: note: not consecutive access pretmp_150 = c[j_132][i_127];
+
+pa2-p2.c:16: note: === vect_analyze_slp ===
+pa2-p2.c:16: note: Failed to SLP the basic block.
+pa2-p2.c:16: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:44: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:44: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:44: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:48: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:48: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:48: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:53: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:53: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:53: note: not vectorized: no vectype for stmt: vect_var_.86_22 = MEM[(float[2000][2000] *)vect_pc.82_72];
+ scalar_type: vector(4) float
+pa2-p2.c:53: note: === vect_pattern_recog ===
+pa2-p2.c:53: note: === vect_analyze_dependences ===
+pa2-p2.c:53: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:53: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:53: note: === vect_analyze_slp ===
+pa2-p2.c:53: note: Failed to SLP the basic block.
+pa2-p2.c:53: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:51: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:51: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:51: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:58: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:58: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:58: note: not vectorized: no vectype for stmt: MEM[(float[2000][2000] *)vect_pc.78_108] = vect_cst_.77_112;
+ scalar_type: vector(4) float
+pa2-p2.c:58: note: === vect_pattern_recog ===
+pa2-p2.c:58: note: === vect_analyze_dependences ===
+pa2-p2.c:58: note: === vect_analyze_data_refs_alignment ===
+pa2-p2.c:58: note: === vect_analyze_data_ref_accesses ===
+pa2-p2.c:58: note: === vect_analyze_slp ===
+pa2-p2.c:58: note: Failed to SLP the basic block.
+pa2-p2.c:58: note: not vectorized: failed to find SLP opportunities in basic block.
+
+pa2-p2.c:58: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:58: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:58: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:16: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:16: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:16: note: not vectorized: not enough data-refs in basic block.
+
+pa2-p2.c:59: note: ===vect_slp_analyze_bb===
+
+pa2-p2.c:59: note: === vect_analyze_data_refs ===
+
+pa2-p2.c:59: note: not vectorized: not enough data-refs in basic block.
