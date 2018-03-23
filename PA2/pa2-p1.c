@@ -45,32 +45,31 @@ void Merge_Sort_Par(int a[],int b[],int n, int nThreads)
 {
   omp_set_num_threads(nThreads);
 // To be modified to create a parallel merge sort
-int num_exe, i, block_size_keep;
+int num_exe, i, block_size_keep; //define variables for later
 #pragma omp parallel
 {
 	int id = omp_get_thread_num();
 	int num_threads = omp_get_num_threads();
 
-	int block_size = ( n + num_threads - 1 ) / num_threads; // ciel
-	int thread_start = block_size * id;
-	int thread_end = thread_start + block_size - 1;
-	if( thread_end == n ) thread_end--;
+	int block_size = ( n + num_threads - 1 ) / num_threads; // calculate BS
+	int thread_start = block_size * id; // beginning of this thread
+	int thread_end = thread_start + block_size - 1; // end of this thread
+	if( thread_end == n ) thread_end--; // fix boundaries
 
-	#pragma omp master
-	{
-		num_exe = num_threads;
-		block_size_keep = block_size;
-	}
+	#pragma omp single nowait
+	num_exe = num_threads; // save for later
+	#pragma omp single nowait
+	block_size_keep = block_size; // save for later
 
-	Merge_Sort( a, b, thread_start, thread_end );
+	Merge_Sort( a, b, thread_start, thread_end ); // run subsection
 }
 
-for( i=1; i<num_exe; i++ ) {
-	int thread_start = block_size_keep * i - 1;
+for( i=1; i<num_exe; i++ ) { // merge parallel results
+	int thread_start = block_size_keep * i - 1; // same as above
 	int thread_stop = thread_start + block_size_keep - 1;
 	if( thread_stop == n ) thread_stop--;
 
-	Merge( a, b, 0, thread_start, thread_stop);
+	Merge( a, b, 0, thread_start, thread_stop); // merge partial results
 }
 
 }
