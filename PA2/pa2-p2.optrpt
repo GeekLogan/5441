@@ -120,15 +120,15 @@ LOOP BEGIN at pa2-p2.c(58,18)
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p2.c(89,3) inlined into pa2-p2.c(69,2)
+LOOP BEGIN at pa2-p2.c(108,3) inlined into pa2-p2.c(88,2)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p2.c(90,4) inlined into pa2-p2.c(69,2)
-      remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(93,6) ]
-      remark #15388: vectorization support: reference cc has aligned access   [ pa2-p2.c(93,6) ]
+   LOOP BEGIN at pa2-p2.c(109,4) inlined into pa2-p2.c(88,2)
+      remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(112,6) ]
+      remark #15388: vectorization support: reference cc has aligned access   [ pa2-p2.c(112,6) ]
       remark #15305: vectorization support: vector length 4
       remark #15309: vectorization support: normalized vectorization overhead 0.767
-      remark #15417: vectorization support: number of FP up converts: single precision to double precision 1   [ pa2-p2.c(94,20) ]
+      remark #15417: vectorization support: number of FP up converts: single precision to double precision 1   [ pa2-p2.c(113,20) ]
       remark #15300: LOOP WAS VECTORIZED
       remark #15448: unmasked aligned unit stride loads: 2 
       remark #15475: --- begin vector loop cost summary ---
@@ -140,51 +140,66 @@ LOOP BEGIN at pa2-p2.c(89,3) inlined into pa2-p2.c(69,2)
    LOOP END
 LOOP END
 
-LOOP BEGIN at pa2-p2.c(63,2)
+LOOP BEGIN at pa2-p2.c(64,1)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p2.c(63,2)
+   LOOP BEGIN at pa2-p2.c(65,1)
       remark #15542: loop was not vectorized: inner loop was already vectorized
 
-      LOOP BEGIN at pa2-p2.c(63,2)
+      LOOP BEGIN at pa2-p2.c(70,2)
          remark #15542: loop was not vectorized: inner loop was already vectorized
 
-         LOOP BEGIN at pa2-p2.c(63,2)
+         LOOP BEGIN at pa2-p2.c(71,3)
             remark #15542: loop was not vectorized: inner loop was already vectorized
 
-            LOOP BEGIN at pa2-p2.c(62,1)
-               remark #15542: loop was not vectorized: inner loop was already vectorized
+            LOOP BEGIN at pa2-p2.c(72,4)
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(73,5) ]
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(73,5) ]
+               remark #15388: vectorization support: reference a has aligned access   [ pa2-p2.c(73,5) ]
+               remark #15305: vectorization support: vector length 4
+               remark #15399: vectorization support: unroll factor set to 4
+               remark #15309: vectorization support: normalized vectorization overhead 0.094
+               remark #15300: LOOP WAS VECTORIZED
+               remark #15448: unmasked aligned unit stride loads: 2 
+               remark #15449: unmasked aligned unit stride stores: 1 
+               remark #15475: --- begin vector loop cost summary ---
+               remark #15476: scalar loop cost: 9 
+               remark #15477: vector loop cost: 2.000 
+               remark #15478: estimated potential speedup: 4.490 
+               remark #15488: --- end vector loop cost summary ---
+            LOOP END
+         LOOP END
+      LOOP END
 
-               LOOP BEGIN at pa2-p2.c(64,3)
-                  remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(65,4) ]
-                  remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(65,4) ]
-                  remark #15388: vectorization support: reference a has aligned access   [ pa2-p2.c(65,4) ]
-                  remark #15305: vectorization support: vector length 4
-                  remark #15399: vectorization support: unroll factor set to 2
-                  remark #15309: vectorization support: normalized vectorization overhead 0.188
-                  remark #15300: LOOP WAS VECTORIZED
-                  remark #15448: unmasked aligned unit stride loads: 2 
-                  remark #15449: unmasked aligned unit stride stores: 1 
-                  remark #15475: --- begin vector loop cost summary ---
-                  remark #15476: scalar loop cost: 9 
-                  remark #15477: vector loop cost: 2.000 
-                  remark #15478: estimated potential speedup: 4.440 
-                  remark #15488: --- end vector loop cost summary ---
-               LOOP END
+      LOOP BEGIN at pa2-p2.c(76,2)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
 
-               LOOP BEGIN at pa2-p2.c(64,3)
-               <Remainder loop for vectorization>
-                  remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(65,4) ]
-                  remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(65,4) ]
-                  remark #15388: vectorization support: reference a has aligned access   [ pa2-p2.c(65,4) ]
-                  remark #15305: vectorization support: vector length 4
-                  remark #15309: vectorization support: normalized vectorization overhead 0.929
-                  remark #15301: REMAINDER LOOP WAS VECTORIZED
-               LOOP END
+         LOOP BEGIN at pa2-p2.c(77,3)
+            remark #15542: loop was not vectorized: inner loop was already vectorized
 
-               LOOP BEGIN at pa2-p2.c(64,3)
-               <Remainder loop for vectorization>
-               LOOP END
+            LOOP BEGIN at pa2-p2.c(78,4)
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(79,5) ]
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(79,5) ]
+               remark #15388: vectorization support: reference a has aligned access   [ pa2-p2.c(79,5) ]
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(80,5) ]
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(80,5) ]
+               remark #15388: vectorization support: reference a has aligned access   [ pa2-p2.c(80,5) ]
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(81,5) ]
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(81,5) ]
+               remark #15388: vectorization support: reference a has aligned access   [ pa2-p2.c(81,5) ]
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(82,5) ]
+               remark #15388: vectorization support: reference c has aligned access   [ pa2-p2.c(82,5) ]
+               remark #15388: vectorization support: reference a has aligned access   [ pa2-p2.c(82,5) ]
+               remark #15305: vectorization support: vector length 4
+               remark #15309: vectorization support: normalized vectorization overhead 0.375
+               remark #15300: LOOP WAS VECTORIZED
+               remark #15448: unmasked aligned unit stride loads: 8 
+               remark #15449: unmasked aligned unit stride stores: 4 
+               remark #15475: --- begin vector loop cost summary ---
+               remark #15476: scalar loop cost: 36 
+               remark #15477: vector loop cost: 8.000 
+               remark #15478: estimated potential speedup: 4.490 
+               remark #15488: --- end vector loop cost summary ---
             LOOP END
          LOOP END
       LOOP END
@@ -197,19 +212,19 @@ Begin optimization report for: compare(int, float (*)[*], float (*)[*])
     Report from: Vector optimizations [vec]
 
 
-LOOP BEGIN at pa2-p2.c(89,3)
+LOOP BEGIN at pa2-p2.c(108,3)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at pa2-p2.c(90,4)
+   LOOP BEGIN at pa2-p2.c(109,4)
    <Peeled loop for vectorization>
    LOOP END
 
-   LOOP BEGIN at pa2-p2.c(90,4)
-      remark #15388: vectorization support: reference wref has aligned access   [ pa2-p2.c(93,6) ]
-      remark #15388: vectorization support: reference w has aligned access   [ pa2-p2.c(93,6) ]
+   LOOP BEGIN at pa2-p2.c(109,4)
+      remark #15388: vectorization support: reference wref has aligned access   [ pa2-p2.c(112,6) ]
+      remark #15388: vectorization support: reference w has aligned access   [ pa2-p2.c(112,6) ]
       remark #15305: vectorization support: vector length 4
       remark #15309: vectorization support: normalized vectorization overhead 1.093
-      remark #15417: vectorization support: number of FP up converts: single precision to double precision 1   [ pa2-p2.c(94,20) ]
+      remark #15417: vectorization support: number of FP up converts: single precision to double precision 1   [ pa2-p2.c(113,20) ]
       remark #15300: LOOP WAS VECTORIZED
       remark #15442: entire loop may be executed in remainder
       remark #15448: unmasked aligned unit stride loads: 2 
@@ -221,11 +236,11 @@ LOOP BEGIN at pa2-p2.c(89,3)
       remark #15488: --- end vector loop cost summary ---
    LOOP END
 
-   LOOP BEGIN at pa2-p2.c(90,4)
+   LOOP BEGIN at pa2-p2.c(109,4)
    <Alternate Alignment Vectorized Loop>
    LOOP END
 
-   LOOP BEGIN at pa2-p2.c(90,4)
+   LOOP BEGIN at pa2-p2.c(109,4)
    <Remainder loop for vectorization>
    LOOP END
 LOOP END

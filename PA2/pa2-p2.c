@@ -58,11 +58,30 @@ for(i=0;i<N;i++)
 for(i=0;i<N;i++) for(j=0;j<N;j++) c[j][i] = 0;
 t1 = rtclock();
 
-#pragma omp parallel for private(k,i)
-for(j=0;j<N;j++)
-	for(k=0;k<N;k++)
-		for(i=0;i<N;i++)
-			c[j][i] += a[k][i] * b[k][j];
+const int T = 12; // must be divisible by 4
+int jt, kt, jl, kl; // define variables for parallel
+#pragma omp parallel for private(k,i,j,jt,jl,kt,kl)
+for(jt=0;jt<N;jt+=T) // 2-way tiling
+for(kt=0;kt<N;kt+=T) {
+	jl=jt+T; if(jl>N) jl=N; // set boundaries
+	kl=kt+T; if(kl>N) kl=N; // for loops
+
+	if(kl==N) // remainder loop (tile overlap)
+	for(j=jt;j<jl;j++) // loop over tile limits
+		for(k=kt;k<N;k++)
+			for(i=0;i<N;i++)
+				c[j][i] += a[k][i] * b[k][j];
+
+	else // main loop
+	for(j=jt;j<jl;j+=4) // Tile in units of 4 for ilp
+		for(k=kt;k<kl;k++)
+			for(i=0;i<N;i++) {
+				c[j][i] += a[k][i] * b[k][j];
+				c[j+1][i] += a[k][i] * b[k][j+1];
+				c[j+2][i] += a[k][i] * b[k][j+2];
+				c[j+3][i] += a[k][i] * b[k][j+3];
+			}
+}
 
 t2 = rtclock();
 printf("Optimized/parallelized version: %.2f GFLOPs; Time = %.2f\n",2.0e-9*N*N*N/(t2-t1),t2-t1);
