@@ -9,12 +9,9 @@
 #define N (2000)
 #define threshold (0.0000001)
 
-#define BLOCK_SIZE 96
-
 void compare(int n, float wref[][n], float w[][n]);
 
 float c[N][N],b[N][N],a[N][N],cc[N][N];
-
 
 int main(int argc, char *argv[]){
  int nThreads;
@@ -61,26 +58,11 @@ for(i=0;i<N;i++)
 for(i=0;i<N;i++) for(j=0;j<N;j++) c[j][i] = 0;
 t1 = rtclock();
 
-#pragma omp parallel private( i, j, k )
-{
-int id = omp_get_thread_num();
-int num_threads = omp_get_num_threads();
-
-float * sum = (float *) malloc( N*N*sizeof(float) );
-for(i=0;i<N*N;i++) sum[i] = (float) 0.0;
-
-for(k=id;k<N;k+=num_threads) for(j=0;j<N;j++) for(i=0;i<N;i++)
-	sum[j*N+i] += a[k][i] * b[k][j];
-
-#pragma omp critical
-{
-for(j=0;j<N;j++) for(i=0;i<N;i++) //i
-	c[j][i] += sum[j*N+i];
-}
-
-//free( sum );
-
-}
+#pragma omp parallel for
+for(j=0;j<N;j++)
+	for(k=0;k<N;k++)
+		for(i=0;i<N;i++)
+			c[j][i] += a[k][i] * b[k][j];
 
 t2 = rtclock();
 printf("Optimized/parallelized version: %.2f GFLOPs; Time = %.2f\n",2.0e-9*N*N*N/(t2-t1),t2-t1);
