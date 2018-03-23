@@ -6,7 +6,7 @@
 #include <sys/time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define N (1500)
+#define N (2000)
 #define threshold (0.0000001)
 
 #define BLOCK_SIZE 96
@@ -61,39 +61,25 @@ for(i=0;i<N;i++)
 for(i=0;i<N;i++) for(j=0;j<N;j++) c[j][i] = 0;
 t1 = rtclock();
 
-//#pragma omp parallel for private(k,i) schedule(static, BLOCK_SIZE)
-//for(k=0;k<N;k++)
-//	for(j=0;j<N;j++) //j
-//		for(i=0;i<N;i++) //i
-//			c[j][i] += a[k][i] * b[k][j];
-
-#pragma omp parallel private(i,j,k)
+float * sum;
+#pragma omp parallel private( i, j, sum )
 {
-	int id = omp_get_thread_num();
-	int num_threads = omp_get_num_threads();
 
-	float sum[N][N];
-	for(j=0;j<N;j++) for(i=0;i<N;i++) sum[i][j] = 0;
+sum = (float *) malloc( N*N*sizeof(float) );
+for(i=0;i<N*N;i++) sum[i] = (float) 0.0;
 
-	printf( "HERE[1]\n" );
+#pragma omp for
+for(k=0;k<N;k++) for(j=0;j<N;j++) for(i=0;i<N;i++)
+	sum[j*N+i] += a[k][i] * b[k][j];
 
-	for(k=id;k<N;k+=num_threads)
-		for(j=0;j<N;j++) //j
-			for(i=0;i<N;i++) //i
-			{
-			//	printf( "(%d, %d, %d)\n", i, j, k);
-			//	sum[j][i] += a[k][i] * b[k][j];
-			sum[j][i] += a[k][i] * b[k][j];
-			}
+#pragma omp critical
+{
+for(j=0;j<N;j++) for(i=0;i<N;i++) //i
+	c[j][i] += sum[j*N+i];
+}
 
-	printf( "HERE[2]\n" );
+free( sum );
 
-	#pragma omp critical
-	for(j=0;j<N;j++) {
-		for(i=0;i<N;i++) {
-			c[j][i] += sum[j][i];
-		}
-	}
 }
 
 t2 = rtclock();
