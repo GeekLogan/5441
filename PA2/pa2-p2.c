@@ -61,15 +61,15 @@ for(i=0;i<N;i++)
 for(i=0;i<N;i++) for(j=0;j<N;j++) c[j][i] = 0;
 t1 = rtclock();
 
-float * sum;
-#pragma omp parallel private( i, j, sum )
+#pragma omp parallel private( i, j, k )
 {
+int id = omp_get_thread_num();
+int num_threads = omp_get_num_threads();
 
-sum = (float *) malloc( N*N*sizeof(float) );
+float * sum = (float *) malloc( N*N*sizeof(float) );
 for(i=0;i<N*N;i++) sum[i] = (float) 0.0;
 
-#pragma omp for
-for(k=0;k<N;k++) for(j=0;j<N;j++) for(i=0;i<N;i++)
+for(k=id;k<N;k+=num_threads) for(j=0;j<N;j++) for(i=0;i<N;i++)
 	sum[j*N+i] += a[k][i] * b[k][j];
 
 #pragma omp critical
@@ -78,7 +78,7 @@ for(j=0;j<N;j++) for(i=0;i<N;i++) //i
 	c[j][i] += sum[j*N+i];
 }
 
-free( sum );
+//free( sum );
 
 }
 
