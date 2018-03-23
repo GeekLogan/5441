@@ -58,7 +58,7 @@ for(i=0;i<N;i++)
 for(i=0;i<N;i++) for(j=0;j<N;j++) c[j][i] = 0;
 t1 = rtclock();
 
-#pragma omp parallel for
+#pragma omp parallel for private(k,i)
 for(j=0;j<N;j++)
 	for(k=0;k<N;k++)
 		for(i=0;i<N;i++)
