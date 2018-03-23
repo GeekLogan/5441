@@ -17,7 +17,7 @@ buildp2:
 buildp3:
 	gcc -O3 -g -DENABLE_PAPI -lpapi -fopenmp -ftree-vectorizer-verbose=5 pa2-p3.c >& pa2-p3.gccvecrpt
 	mv a.out pa2-p3.gcc
-	icc -O3 -DENABLE_PAPI -lpapi -qopenmp -qopt-report=5 -qopt-report-phase=vec pa2-p3.c
+	icc -O2 -DENABLE_PAPI -lpapi -qopenmp -qopt-report=5 -qopt-report-phase=vec pa2-p3.c
 	mv a.out pa2-p3.icc
 
 clean:
