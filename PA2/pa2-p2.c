@@ -58,6 +58,7 @@ for(i=0;i<N;i++)
 for(i=0;i<N;i++) for(j=0;j<N;j++) c[j][i] = 0;
 t1 = rtclock();
 
+omp_set_num_threads( nThreads );
 const int T = 12; // must be divisible by 4
 int jt, kt, jl, kl; // define variables for parallel
 #pragma omp parallel for private(k,i,j,jt,jl,kt,kl)
