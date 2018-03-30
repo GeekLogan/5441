@@ -71,12 +71,12 @@ __global__ void test_kernel(int N, double *A, double *B, double *C)
 // You can make any changes; only requirement is that correctness test passes
 
 int k;
-int i = blockIdx.x * BLOCK_SIZE + threadIdx.x;
+int i = blockIdx.x * BLOCK_SIZE + threadIdx.x; // define offset indicies
 int j = blockIdx.y * BLOCK_SIZE + threadIdx.y;
 
 double sum = 0;
 
-if( i<N && j<N ) {
+if( i<N && j<N ) { // ignore out of bounds thread
 	for (k=0;k<N;k++)
 		sum += A[k*N+i] * B[k*N+j];
 
