@@ -64,16 +64,11 @@ int size;
   }
 }
 
-__global__ void test_kernel(int N, double *A, double *B, double *C)
-{
-// Template version uses only one thread, which does all the work
-// This must be changed (and the launch parameters) to exploit GPU parallelism
-// You can make any changes; only requirement is that correctness test passes
-
+__global__ void test_kernel(int N, double *A, double *B, double *C) {
 int k, kt;
 
 const int tx = threadIdx.x*2;
-const int ty = threadIdx.y*2;
+const int ty = threadIdx.y*2; // both offset by 2
 
 const int i = blockIdx.x * BLOCK_SIZE + tx;
 const int j = blockIdx.y * BLOCK_SIZE + ty;
@@ -83,11 +78,9 @@ __shared__ double a_buffer[ BLOCK_SIZE ][ BLOCK_SIZE ];
 __shared__ double b_buffer[ BLOCK_SIZE ][ BLOCK_SIZE ];
 
 double sum[4];
-
 for(kt=0;kt<4;kt++) sum[kt]=0;
 
 for(kt=0;kt<N;kt+=BLOCK_SIZE){
-
 	a_buffer[ ty ][ tx ] = A[ (kt+ty)*N+i ];
 	a_buffer[ ty+1 ][ tx ] = A[ (kt+ty+1)*N+i ];
 	a_buffer[ ty ][ tx+1 ] = A[ (kt+ty)*N+i+1 ];
@@ -97,6 +90,7 @@ for(kt=0;kt<N;kt+=BLOCK_SIZE){
 	b_buffer[ ty+1 ][ tx ] = B[ (kt+ty+1)*N+col_offset ];
 	b_buffer[ ty ][ tx+1 ] = B[ (kt+ty)*N+col_offset+1 ];
 	b_buffer[ ty+1 ][ tx+1 ] = B[ (kt+ty+1)*N+col_offset+1 ];
+	// now unrolled in X and Y
 
 	__syncthreads();
 
